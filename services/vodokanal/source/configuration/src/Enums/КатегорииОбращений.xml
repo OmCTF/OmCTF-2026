@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+  <Enum uuid="2babbbbd-a0d2-0191-8068-ca985c94f5c2">
+    <InternalInfo>
+      <xr:GeneratedType name="EnumRef.КатегорииОбращений" category="Ref">
+        <xr:TypeId>d626b263-a099-0a35-32b9-571e3458486a</xr:TypeId>
+        <xr:ValueId>e6019295-68c3-20ba-242c-e74bfb729ae3</xr:ValueId>
+      </xr:GeneratedType>
+      <xr:GeneratedType name="EnumManager.КатегорииОбращений" category="Manager">
+        <xr:TypeId>013a62aa-5ae8-91c2-3453-1be3e4e3a701</xr:TypeId>
+        <xr:ValueId>640e5b95-1293-ee1a-cc18-cc0c015a3385</xr:ValueId>
+      </xr:GeneratedType>
+      <xr:GeneratedType name="EnumList.КатегорииОбращений" category="List">
+        <xr:TypeId>8695d180-f2c2-0b69-bec9-5d98b91e0cfa</xr:TypeId>
+        <xr:ValueId>9ad0146d-6618-1216-2dde-be0d925f1238</xr:ValueId>
+      </xr:GeneratedType>
+    </InternalInfo>
+    <Properties>
+      <Name>КатегорииОбращений</Name>
+      <Synonym>
+        <v8:item>
+          <v8:lang>ru</v8:lang>
+          <v8:content>Тип обращения</v8:content>
+        </v8:item>
+      </Synonym>
+      <Comment />
+      <UseStandardCommands>false</UseStandardCommands>
+      <Characteristics></Characteristics>
+      <QuickChoice>true</QuickChoice>
+      <ChoiceMode>BothWays</ChoiceMode>
+      <DefaultListForm></DefaultListForm>
+      <DefaultChoiceForm></DefaultChoiceForm>
+      <AuxiliaryListForm></AuxiliaryListForm>
+      <AuxiliaryChoiceForm></AuxiliaryChoiceForm>
+      <ListPresentation></ListPresentation>
+      <ExtendedListPresentation></ExtendedListPresentation>
+      <Explanation></Explanation>
+      <ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+    </Properties>
+    <ChildObjects>
+      <EnumValue uuid="a8729aa7-48e8-ad94-d915-2d28ccd23005">
+        <Properties>
+          <Name>Утечка</Name>
+          <Synonym>
+            <v8:item>
+              <v8:lang>ru</v8:lang>
+              <v8:content>Утечка</v8:content>
+            </v8:item>
+          </Synonym>
+          <Comment />
+        </Properties>
+      </EnumValue>
+      <EnumValue uuid="970c8502-e24f-a573-bc91-aadde2c7264c">
+        <Properties>
+          <Name>НетВоды</Name>
+          <Synonym>
+            <v8:item>
+              <v8:lang>ru</v8:lang>
+              <v8:content>Нет воды</v8:content>
+            </v8:item>
+          </Synonym>
+          <Comment />
+        </Properties>
+      </EnumValue>
+      <EnumValue uuid="46ec0b0a-ca64-d5b4-9ce6-89c15699e1ed">
+        <Properties>
+          <Name>НизкоеДавление</Name>
+          <Synonym>
+            <v8:item>
+              <v8:lang>ru</v8:lang>
+              <v8:content>Слабое давление</v8:content>
+            </v8:item>
+          </Synonym>
+          <Comment />
+        </Properties>
+      </EnumValue>
+      <EnumValue uuid="ac63013e-9d14-ea5e-13d6-245c04f25a04">
+        <Properties>
+          <Name>Канализация</Name>
+          <Synonym>
+            <v8:item>
+              <v8:lang>ru</v8:lang>
+              <v8:content>Канализация</v8:content>
+            </v8:item>
+          </Synonym>
+          <Comment />
+        </Properties>
+      </EnumValue>
+    </ChildObjects>
+  </Enum>
+</MetaDataObject>

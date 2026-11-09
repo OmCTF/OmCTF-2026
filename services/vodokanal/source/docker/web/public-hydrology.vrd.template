@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<point xmlns="http://v8.1c.ru/8.2/virtual-resource-system"
+    base="/public-hydrology"
+    ib="Srvr=&quot;onec:1541&quot;;Ref=&quot;vodokanal&quot;;Usr=&quot;vodokanal_hydrology_reader&quot;;Pwd=&quot;__HYDROLOGY_READER_PASSWORD__&quot;;"
+    enable="false">
+    <ws pointEnableCommon="false"/>
+    <httpServices publishByDefault="false" publishExtensionsByDefault="false">
+        <service name="СервисПубличнойГидрологии" rootUrl="hydrology" enable="true"/>
+    </httpServices>
+</point>

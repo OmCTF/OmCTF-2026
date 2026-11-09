@@ -1,0 +1,1 @@
+user default on nopass ~kpp7:tasks:* +@all -@admin -@scripting +evalsha +script|load -flushall -flushdb -swapdb -restore -restore-asking -sort -keys -copy -migrate -replicaof -slaveof -config -module -shutdown -save -bgsave

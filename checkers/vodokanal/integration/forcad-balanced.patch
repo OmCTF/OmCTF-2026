@@ -1,0 +1,38 @@
+diff --git a/backend/services/tasks/actions.py b/backend/services/tasks/actions.py
+index 6109aad..9e2c7c9 100644
+--- a/backend/services/tasks/actions.py
++++ b/backend/services/tasks/actions.py
+@@ -25,6 +25,7 @@ def put_action(
+         team: models.Team,
+         task: models.Task,
+         current_round: int,
++        put_index: int = 0,
+ ) -> models.CheckerVerdict:
+     """
+     Run "put" checker action.
+@@ -45,7 +46,10 @@ def put_action(
+         current_round,
+     )
+ 
+-    place = secrets.choice(range(1, task.places + 1))
++    if 'balanced' in task.checker_tags:
++        place = put_index % task.places + 1
++    else:
++        place = secrets.choice(range(1, task.places + 1))
+     flag = models.Flag.generate(
+         service=task.name[0].upper(),
+         team_id=team.id or 0,
+diff --git a/backend/services/ticker/hooks/utils.py b/backend/services/ticker/hooks/utils.py
+index 705960a..30a9fd3 100644
+--- a/backend/services/ticker/hooks/utils.py
++++ b/backend/services/ticker/hooks/utils.py
+@@ -35,7 +35,7 @@ def get_check_signature(app: Celery, kwargs: dict, params: dict) -> signature:
+ 
+ def get_puts_group(app: Celery, task: models.Task, kwargs: dict, params: dict) -> group:
+     signatures = [
+-        app.signature(JobNames.put_action, kwargs=kwargs, **params)
+-        for _ in range(task.puts)
++        app.signature(JobNames.put_action, kwargs={**kwargs, 'put_index': index}, **params)
++        for index in range(task.puts)
+     ]
+     return group(*signatures)

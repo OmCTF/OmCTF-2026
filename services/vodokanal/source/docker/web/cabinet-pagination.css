@@ -1,0 +1,10 @@
+
+#application [data-cabinet-page-hidden],#application [data-cabinet-continuation]{display:none!important}
+body.service-site #application .cabinet-pagination{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:16px 0 22px;max-width:100%;min-width:0}
+body.service-site #application .cabinet-pagination[hidden]{display:none}
+body.service-site #application .cabinet-page-numbers{display:flex;flex-wrap:wrap;gap:6px;min-width:0}
+body.service-site #application .cabinet-pagination-status{flex-basis:100%;color:#748497;font-size:.86rem;line-height:1.6}
+body.service-site #application .cabinet-pagination button{margin:0;min-width:36px;min-height:36px;padding:7px 12px}
+body.service-site #application .cabinet-pagination button[aria-current="page"]:not(:disabled){background:#087bbd;color:#fff;border-color:#087bbd}
+body.service-site #application .pub-admin-list{max-block-size:none;overflow:visible}
+@media(max-width:640px){body.service-site #application .cabinet-pagination button{min-width:44px;min-height:44px;font-size:1rem}}

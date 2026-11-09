@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Rights xmlns="http://v8.1c.ru/8.2/roles" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Rights" version="2.21">
+  <setForNewObjects>false</setForNewObjects>
+  <setForAttributesByDefault>true</setForAttributesByDefault>
+  <independentRightsOfChildObjects>false</independentRightsOfChildObjects>
+  <object>
+    <name>Catalog.Гидропосты</name>
+    <right>
+      <name>Read</name>
+      <value>true</value>
+      <restrictionByCondition>
+        <condition>ГДЕ ЛОЖЬ</condition>
+      </restrictionByCondition>
+      <restrictionByCondition>
+        <field>Ref</field>
+        <field>DeletionMark</field>
+        <field>Description</field>
+        <field>КодРеки</field>
+        <field>ВерсияСправочника</field>
+        <field>Местоположение</field>
+        <field>НижнийПорог</field>
+        <field>ВерхнийПорог</field>
+        <field>СрокАктуальности</field>
+        <field>Опубликован</field>
+        <field>Ревизия</field>
+        <condition>ГДЕ Опубликован И НЕ ПометкаУдаления</condition>
+      </restrictionByCondition>
+    </right>
+  </object>
+  <object>
+    <name>InformationRegister.ТекущиеИзмеренияГидрологии</name>
+    <right>
+      <name>Read</name>
+      <value>true</value>
+      <restrictionByCondition>
+        <condition>ГДЕ ЛОЖЬ</condition>
+      </restrictionByCondition>
+      <restrictionByCondition>
+        <field>Гидропост</field>
+        <field>ВремяИзмерения</field>
+        <field>Ревизия</field>
+        <field>Идентификатор</field>
+        <condition>ГДЕ Гидропост.Опубликован И НЕ Гидропост.ПометкаУдаления</condition>
+      </restrictionByCondition>
+    </right>
+  </object>
+  <object>
+    <name>InformationRegister.РедакцииИзмеренийГидрологии</name>
+    <right>
+      <name>Read</name>
+      <value>true</value>
+      <restrictionByCondition>
+        <condition>ГДЕ ЛОЖЬ</condition>
+      </restrictionByCondition>
+      <restrictionByCondition>
+        <field>Гидропост</field>
+        <field>ВремяИзмерения</field>
+        <field>Ревизия</field>
+        <field>Идентификатор</field>
+        <field>Уровень</field>
+        <field>Источник</field>
+        <field>Опубликован</field>
+        <condition>ГДЕ Опубликован И Гидропост.Опубликован И НЕ Гидропост.ПометкаУдаления</condition>
+      </restrictionByCondition>
+    </right>
+  </object>
+  <object>
+    <name>HTTPService.СервисПубличнойГидрологии.URLTemplate.СправочникиМаршрут.Method.Справочники</name>
+    <right>
+      <name>Use</name>
+      <value>true</value>
+    </right>
+  </object>
+  <object>
+    <name>HTTPService.СервисПубличнойГидрологии.URLTemplate.ПостыМаршрут.Method.Посты</name>
+    <right>
+      <name>Use</name>
+      <value>true</value>
+    </right>
+  </object>
+  <object>
+    <name>HTTPService.СервисПубличнойГидрологии.URLTemplate.РядМаршрут.Method.Ряд</name>
+    <right>
+      <name>Use</name>
+      <value>true</value>
+    </right>
+  </object>
+</Rights>

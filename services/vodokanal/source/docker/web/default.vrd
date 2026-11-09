@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<point xmlns="http://v8.1c.ru/8.2/virtual-resource-system"
+       base="/vodokanal"
+       ib="Srvr=&quot;onec:1541&quot;;Ref=&quot;vodokanal&quot;;"
+       enable="false">
+    <ws pointEnableCommon="false" />
+    <httpServices publishByDefault="false" publishExtensionsByDefault="false">
+        <service name="СервисAPI" rootUrl="api" enable="true" />
+    </httpServices>
+</point>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+  <Enum uuid="3a774f4a-8011-861c-82f0-346c74f92d1e">
+    <InternalInfo>
+      <xr:GeneratedType name="EnumRef.СостоянияОбращений" category="Ref">
+        <xr:TypeId>98b474d4-12b3-3465-8c83-9ff749c8220f</xr:TypeId>
+        <xr:ValueId>5064286d-3bb0-5f68-e249-72598ddce872</xr:ValueId>
+      </xr:GeneratedType>
+      <xr:GeneratedType name="EnumManager.СостоянияОбращений" category="Manager">
+        <xr:TypeId>8e143b6e-fc6d-d159-12fc-3f763943d9d6</xr:TypeId>
+        <xr:ValueId>cd94c352-85f0-8919-c256-2a4d14d93ce9</xr:ValueId>
+      </xr:GeneratedType>
+      <xr:GeneratedType name="EnumList.СостоянияОбращений" category="List">
+        <xr:TypeId>67fc7a2a-785b-7a3a-25e1-6d57eb582dcd</xr:TypeId>
+        <xr:ValueId>4c19b780-0b89-3795-a9c2-e4330ab28f4a</xr:ValueId>
+      </xr:GeneratedType>
+    </InternalInfo>
+    <Properties>
+      <Name>СостоянияОбращений</Name>
+      <Synonym>
+        <v8:item>
+          <v8:lang>ru</v8:lang>
+          <v8:content>Статус заявки</v8:content>
+        </v8:item>
+      </Synonym>
+      <Comment />
+      <UseStandardCommands>false</UseStandardCommands>
+      <Characteristics></Characteristics>
+      <QuickChoice>true</QuickChoice>
+      <ChoiceMode>BothWays</ChoiceMode>
+      <DefaultListForm></DefaultListForm>
+      <DefaultChoiceForm></DefaultChoiceForm>
+      <AuxiliaryListForm></AuxiliaryListForm>
+      <AuxiliaryChoiceForm></AuxiliaryChoiceForm>
+      <ListPresentation></ListPresentation>
+      <ExtendedListPresentation></ExtendedListPresentation>
+      <Explanation></Explanation>
+      <ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+    </Properties>
+    <ChildObjects>
+      <EnumValue uuid="e7afadd3-4537-1794-d3ef-26b08715af62">
+        <Properties>
+          <Name>Новая</Name>
+          <Synonym>
+            <v8:item>
+              <v8:lang>ru</v8:lang>
+              <v8:content>Новая</v8:content>
+            </v8:item>
+          </Synonym>
+          <Comment />
+        </Properties>
+      </EnumValue>
+      <EnumValue uuid="c3c08fe8-36bf-f9df-e598-3280d45495dc">
+        <Properties>
+          <Name>Назначена</Name>
+          <Synonym>
+            <v8:item>
+              <v8:lang>ru</v8:lang>
+              <v8:content>Назначена</v8:content>
+            </v8:item>
+          </Synonym>
+          <Comment />
+        </Properties>
+      </EnumValue>
+      <EnumValue uuid="3c3d7282-0440-3218-27d3-c576b7dc4223">
+        <Properties>
+          <Name>ВРаботе</Name>
+          <Synonym>
+            <v8:item>
+              <v8:lang>ru</v8:lang>
+              <v8:content>В работе</v8:content>
+            </v8:item>
+          </Synonym>
+          <Comment />
+        </Properties>
+      </EnumValue>
+      <EnumValue uuid="4eede7b8-eb11-4b3a-3188-a63a49730421">
+        <Properties>
+          <Name>Выполнена</Name>
+          <Synonym>
+            <v8:item>
+              <v8:lang>ru</v8:lang>
+              <v8:content>Выполнена</v8:content>
+            </v8:item>
+          </Synonym>
+          <Comment />
+        </Properties>
+      </EnumValue>
+      <EnumValue uuid="2477b7b9-606e-32bd-6fe7-02f57a85a8ed">
+        <Properties>
+          <Name>Отменена</Name>
+          <Synonym>
+            <v8:item>
+              <v8:lang>ru</v8:lang>
+              <v8:content>Отменена</v8:content>
+            </v8:item>
+          </Synonym>
+          <Comment />
+        </Properties>
+      </EnumValue>
+    </ChildObjects>
+  </Enum>
+</MetaDataObject>

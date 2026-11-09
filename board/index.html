@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>XII OmCTF</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="assets/states.css">
+<style>:root{--n0:#0b1518;--n1:#101d21;--n2:#16272c;--n3:#1d3238;--text:#f6f2e8;--text-2:#d3dad6;--text-3:#b0bab5;--line:rgba(231,224,210,.09);--line-2:rgba(231,224,210,.16);--gold:#c09a55;--wax:#c0472f;--display:"Oranienbaum",Georgia,serif;--ui:"Golos Text",system-ui,-apple-system,sans-serif;--ease:cubic-bezier(.2,.6,.2,1);--D:calc(110*var(--u));--w:calc(220*var(--u))}*{box-sizing:border-box}html,body{height:100%;overflow:hidden}body{margin:0;color:var(--text);font-family:var(--ui);font-weight:400;font-size:calc(14*var(--u));line-height:1.4;font-variant-numeric:tabular-nums;background:var(--n0);-webkit-font-smoothing:antialiased}#skin{position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(168deg,var(--n1),var(--n0) 58%,#081113)}.night #skin:after{content:"";position:absolute;inset:0;background:url(assets/bg/night-city.jpg) center/cover;opacity:.5}.sheet{position:relative;z-index:2;height:100%;max-width:calc(1760*var(--u));margin:0 auto;padding:calc(24*var(--u)) calc(32*var(--u)) calc(16*var(--u));display:flex;flex-direction:column}header{display:flex;align-items:center;gap:calc(24*var(--u));padding-bottom:calc(16*var(--u));border-bottom:calc(1*var(--u)) solid var(--line-2)}.title h1{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(calc(36*var(--u)),3.8vw,calc(64*var(--u)));line-height:1;color:#e3b93c}.sub{display:flex;align-items:baseline;gap:calc(16*var(--u));margin-top:calc(6*var(--u))}.title h2{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(calc(18*var(--u)),1.6vw,calc(28*var(--u)));line-height:1.1}.go{color:var(--text-2);font-size:calc(15*var(--u));text-decoration:none;border-bottom:calc(1*var(--u)) solid var(--line-2);padding-bottom:calc(2*var(--u))}.go:hover{color:var(--gold)}.go.on{color:var(--gold);border-bottom-color:#c09a5580;pointer-events:none}.meter{margin-left:auto;display:flex;align-items:baseline;gap:calc(28*var(--u))}.meter div{text-align:right}.meter b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(calc(24*var(--u)),2.3vw,calc(34*var(--u)));line-height:1}.meter span{display:block;margin-top:calc(4*var(--u));color:var(--text-2);font-size:calc(15*var(--u))}.meter .freeze b,.meter .freeze span{color:var(--wax)}#field{position:relative;flex:1 1 auto;min-height:0;overflow:hidden}#links{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none}#links .shot{animation:shot 4s linear both}#links .ray{animation:ray 1.1s cubic-bezier(.2,.6,.2,1) both;animation-delay:inherit;stroke-dasharray:1}@keyframes shot{0%{opacity:0}3%{opacity:1}72%{opacity:1}to{opacity:0}}@keyframes ray{0%{stroke-dashoffset:1}to{stroke-dashoffset:0}}.post{position:absolute;z-index:3;transform:translate(-50%,calc(var(--D) / -2));cursor:pointer;width:var(--w);text-align:center;transition:left 1.4s var(--ease),top 1.4s var(--ease)}.post:focus-visible{outline:none}.disc{position:relative;width:var(--D);margin:0 auto;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 44% 34%,#22383d,#15262a 60%,#0d1a1d);box-shadow:0 0 0 calc(1*var(--u)) var(--line),0 calc(12*var(--u)) calc(30*var(--u)) #0000008c;transition:box-shadow .3s var(--ease)}.disc svg{position:absolute;inset:0;width:100%;height:100%;display:block}.disc b{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--display);font-weight:400;line-height:1;color:var(--text);font-size:calc(var(--D) * .3)}.disc path{stroke:var(--c);transition:stroke 1s var(--ease)}.post:hover .disc,.post:focus-visible .disc{box-shadow:0 0 0 calc(1*var(--u)) var(--gold),0 calc(12*var(--u)) calc(30*var(--u)) #0000008c}.post .nm{margin-top:calc(var(--D) * .08);font-family:var(--display);font-weight:400;line-height:1.04;font-size:calc(var(--D) * .3);text-shadow:0 0 calc(6*var(--u)) var(--n0),0 0 calc(2*var(--u)) var(--n0),0 0 calc(2*var(--u)) var(--n0);white-space:nowrap;overflow:hidden}.post .nm.two{white-space:normal;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-height:1;overflow-wrap:anywhere}.post .pt{color:var(--text);line-height:1.2;text-shadow:0 0 calc(6*var(--u)) var(--n0),0 0 calc(3*var(--u)) var(--n0);font-size:calc(var(--D) * .22)}.post.lead .disc{box-shadow:0 0 0 calc(1*var(--u)) #c09a558c,0 calc(12*var(--u)) calc(34*var(--u)) #0009}.post.lead .pt{color:var(--gold)}.post.raid .disc{animation:raid 1.5s var(--ease) infinite}@keyframes raid{50%{box-shadow:0 0 0 calc(2*var(--u)) var(--s-atk),0 0 calc(26*var(--u)) var(--s-atk),0 calc(12*var(--u)) calc(30*var(--u)) #0000008c}}.post.gone .nm,.post.gone .disc b{color:var(--text-3)}#seal{position:absolute;z-index:0;width:calc(var(--k,calc(320*var(--u))) * 1.3);aspect-ratio:1;transform:translate(-50%,-50%);pointer-events:none;overflow:visible}#seal .wave{opacity:0;vector-effect:non-scaling-stroke;stroke-width:calc(1*var(--u));animation:wave 16s linear infinite}#seal .wave:nth-child(2){animation-delay:-4s}#seal .wave:nth-child(3){animation-delay:-8s}#seal .wave:nth-child(4){animation-delay:-12s}@keyframes wave{0%{transform:scale(1);opacity:.32}to{transform:scale(2.6);opacity:0}}.key{position:absolute;z-index:1;width:var(--k,calc(320*var(--u)));margin:0;transform:translate(-50%,-50%);pointer-events:none;text-align:center}.key svg{display:block;width:100%}.legend{display:flex;align-items:center;justify-content:center;gap:calc(28*var(--u));flex-wrap:wrap;margin:calc(14*var(--u)) 0 calc(4*var(--u));color:var(--text-2);font-size:calc(17*var(--u))}.legend span{display:flex;align-items:center;gap:calc(9*var(--u))}.legend i{width:calc(26*var(--u));height:calc(5*var(--u));flex:none;border-radius:calc(1*var(--u));background:var(--c)}.legend b{font-weight:500;color:var(--text)}.legend em{font-style:normal;color:var(--text-2);font-size:calc(15*var(--u))}.legend .net{margin-left:auto;color:var(--wax);display:none}.legend .net.on{display:block}#hold{position:fixed;inset:0;z-index:12;display:none;place-items:center;text-align:center;background:var(--n0)}#hold.on{display:grid}#hold div{max-width:calc(560*var(--u));padding:0 calc(32*var(--u))}#hold h2{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(calc(30*var(--u)),3.4vw,calc(46*var(--u)));line-height:1.04}#hold p{margin:calc(12*var(--u)) 0 0;color:var(--text-2);font-size:calc(15*var(--u));line-height:1.52}#hold b{display:block;margin-top:calc(24*var(--u));font-family:var(--display);font-size:calc(40*var(--u));line-height:1;color:var(--gold)}#hold small{display:block;margin-top:calc(28*var(--u));color:var(--text-3);font-size:calc(13*var(--u))}.grid #links,.grid .key,.grid #seal{display:none}@media(max-width:900px){html,body{overflow:auto}.sheet{height:auto;padding:calc(20*var(--u)) calc(16*var(--u)) calc(24*var(--u))}header{flex-wrap:wrap}.meter{width:100%;margin:calc(12*var(--u)) 0 0;justify-content:space-between}.meter div{text-align:left}#field{height:76vh}}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="skin"></div>
+<div class="sheet">
+  <header>
+    <div class="title">
+      <h1 id="gname">XII OmCTF</h1>
+      <div class="sub"><h2>Табло гарнизонов</h2><span class="nav"><a class="go on" aria-current="page" href="index.html">Табло гарнизонов</a><a class="go" id="toTable" href="table.html">Таблица игры</a></span></div>
+    </div>
+    <div class="meter">
+      <div><b id="clock">—</b><span>до конца игры</span></div>
+      <div id="rbox"><b id="round">—</b><span id="rsub">раунд</span></div>
+    </div>
+  </header>
+  <div class="legend">
+    <span class="s-up"><i></i><b>Работает</b></span>
+    <span class="s-mum"><i></i><b>Некорректные данные</b></span>
+    <span class="s-atk"><i></i><b>Под атакой</b></span>
+    <span class="s-down"><i></i><b>Мёртв</b></span>
+    <span class="net" id="net">Нет связи со скорбордом, данные устарели</span>
+  </div>
+  <div id="field">
+    <svg id="links" preserveAspectRatio="none" aria-hidden="true"></svg>
+    <svg id="seal" viewBox="-101 -101 202 202" aria-hidden="true"><defs><linearGradient id="sweep"><stop offset="0" stop-color="#868b85" stop-opacity=".55"/><stop offset="1" stop-color="#868b85" stop-opacity=".06"/></linearGradient></defs>
+      <g fill="none" stroke="#868b85"><circle class="wave" r="100"/><circle class="wave" r="100"/><circle class="wave" r="100"/><circle class="wave" r="100"/></g>
+      <circle r="100" fill="none" stroke="url(#sweep)" stroke-width=".6"><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="40s" repeatCount="indefinite"/></circle></svg>
+    <figure class="key" id="key"></figure>
+  </div>
+</div>
+<div id="hold"><div>
+  <h2 id="holdTitle">Город ждёт</h2>
+  <p id="holdText">Табло оживёт, когда начнётся игра</p>
+  <b id="holdClock"></b>
+  <small id="holdSub">XII OmCTF · 7 ноября 2026</small>
+</div></div>
+<script src="index.js"></script>
+</body>
+</html>

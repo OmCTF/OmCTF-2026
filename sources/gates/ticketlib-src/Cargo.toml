@@ -1,0 +1,31 @@
+[package]
+name = "ticketlib"
+version = "0.9.0"
+edition = "2021"
+description = "Omsk gate SAML assertion library — issue & verify signed gate passes"
+autobins = false
+
+[lib]
+crate-type = ["rlib", "cdylib"]
+
+[features]
+default = []
+python = ["dep:pyo3"]
+
+[dependencies]
+samael = { version = "0.0.22", features = ["xmlsec"] }
+serde = { version = "1", features = ["derive"] }
+chrono = "0.4"
+quick-xml = { version = "0.41", features = ["serialize"] }
+base64 = "0.22"
+pyo3 = { version = "0.22", features = ["extension-module"], optional = true }
+
+[build-dependencies]
+cc = "1"
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true
+codegen-units = 1
+panic = "abort"

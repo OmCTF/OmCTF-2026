@@ -1,0 +1,12 @@
+blacksheep==2.4.5
+idna
+uvicorn[standard]
+sqlalchemy[asyncio]
+asyncpg
+aiosqlite
+pydantic
+pydantic-settings
+bcrypt
+celery[redis]
+redis
+cryptography

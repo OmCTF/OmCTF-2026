@@ -1,0 +1,244 @@
+.mention-editor {
+  position: relative;
+  min-width: 0;
+}
+.identity .chat-window .mention-editor textarea,
+.identity .chat-window .mention-editor-mirror {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  border: 0;
+  padding: 17px 6px;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: normal;
+  tab-size: 8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  text-align: left;
+}
+.identity .chat-window .mention-editor textarea {
+  position: relative;
+  z-index: 1;
+  display: block;
+  min-height: 56px;
+  max-height: 240px;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  caret-color: #f2f3f5;
+  background: transparent;
+  resize: none;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+.identity .chat-window .mention-editor textarea::placeholder {
+  color: #96969f;
+  -webkit-text-fill-color: #96969f;
+}
+.identity .chat-window .mention-editor textarea::selection {
+  background: #5865f2a6;
+}
+.identity .chat-window .mention-editor textarea:focus {
+  outline: none;
+  box-shadow: none;
+}
+.identity .chat-window .mention-editor-mirror {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  color: #e4e4ec;
+}
+.mention-composer-token {
+  border-radius: 3px;
+  background: #5865f24d;
+  color: #c9cdfb;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.mention-composer-token.is-unavailable {
+  background: #ffffff0d;
+  color: #b5b5bf;
+}
+.chat-inline-mention {
+  display: inline;
+  margin: 0;
+  padding: 0 2px;
+  border-radius: 3px;
+  background: #5865f24d;
+  color: #c9cdfb;
+  font-size: inherit;
+  font-weight: 500;
+  line-height: inherit;
+  overflow-wrap: anywhere;
+}
+.identity .chat-window .mention-editor.is-composing textarea {
+  color: #e4e4ec;
+  -webkit-text-fill-color: #e4e4ec;
+}
+.mention-editor.is-composing .mention-editor-mirror {
+  visibility: hidden;
+}
+.identity .chat-window .message-inline-edit .mention-editor {
+  border: 1px solid #36363f;
+  border-radius: 8px;
+  background: #232327;
+}
+.identity .chat-window .message-inline-edit .mention-editor textarea,
+.identity .chat-window .message-inline-edit .mention-editor-mirror {
+  min-height: 68px;
+  padding: 10px 12px;
+  border: 0;
+}
+.identity .chat-window .message-inline-edit .mention-editor:focus-within {
+  border-color: #54545f;
+}
+.identity .chat-window .chat-text .chat-inline-mention {
+  margin: 0;
+  padding: 0 2px;
+}
+.mention-autocomplete {
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 180;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  border-radius: 5px;
+  background: oklab(0.26239 0.00252313 -0.00890189);
+  color: #dbdbe0;
+  box-shadow: 0 8px 24px #0006;
+  font-size: 16px;
+  line-height: 20px;
+}
+.mention-autocomplete[data-placement="above"] {
+  transform: translateY(-100%);
+}
+.mention-autocomplete-heading {
+  display: flex;
+  flex: 0 0 auto;
+  padding: 12px 8px;
+  overflow: hidden;
+  color: #b5b5bf;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18.6667px;
+}
+.mention-autocomplete [role="listbox"] {
+  min-height: 0;
+  padding: 0 8px 8px;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  scrollbar-width: auto;
+  scrollbar-color: #161619 transparent;
+}
+.mention-autocomplete [role="listbox"]::-webkit-scrollbar {
+  width: 8px;
+}
+.mention-autocomplete [role="listbox"]::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background: #161619;
+  background-clip: padding-box;
+}
+@supports selector(::-webkit-scrollbar) {
+  .mention-autocomplete [role="listbox"] {
+    scrollbar-color: auto;
+  }
+}
+.mention-option {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+}
+.mention-option[aria-selected="true"] {
+  background: oklab(0.678923 0.00325415 -0.0111644 / 0.121569);
+  color: #f2f3f5;
+}
+.mention-option.is-role {
+  min-height: 36px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.mention-option-avatar {
+  display: grid;
+  flex: 0 0 24px;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #5865f2;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+}
+.mention-option-avatar.is-role {
+  background: transparent;
+  color: #b5b5bf;
+  font-size: 22px;
+}
+.mention-option-avatar.mint {
+  background: #236d59;
+}
+.mention-option-avatar.rose {
+  background: #96506e;
+}
+.mention-option-avatar.amber {
+  background: #8d4e27;
+}
+.mention-option-avatar.sky {
+  background: #346f94;
+}
+.mention-option-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mention-option-kind {
+  margin-left: auto;
+  color: #96969f;
+  font-size: 12px;
+}
+.mention-autocomplete-empty {
+  padding: 12px 8px;
+  color: #b5b5bf;
+  font-size: 14px;
+}
+.mention-input-error {
+  position: absolute;
+  bottom: 100%;
+  z-index: 4;
+  padding: 8px;
+  border-radius: 4px;
+  background: #242429;
+  color: #ffb4b8;
+  font-size: 12px;
+}
+@media (max-width: 700px) {
+  .identity .chat-window .mention-editor textarea,
+  .identity .chat-window .mention-editor-mirror {
+    min-height: 50px;
+    padding: 14px 2px;
+  }
+  .identity .chat-window .chat-composer.has-inline-mentions {
+    grid-template-columns: 28px minmax(0, 1fr) 28px;
+  }
+  .mention-option-kind {
+    display: none;
+  }
+}

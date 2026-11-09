@@ -1,0 +1,159 @@
+.guild-tree-dragging,
+.guild-tree-dragging * {
+  cursor: grabbing !important;
+  user-select: none !important;
+}
+.guild-tree-drag-layer {
+  pointer-events: none;
+}
+.guild-tree-drop-marker {
+  position: fixed;
+  z-index: 10001;
+  border-radius: 2px;
+  background: #949cf7;
+  box-shadow: 0 0 0 1px #949cf733;
+  pointer-events: none;
+}
+.guild-tree-drop-marker.is-inside {
+  border: 2px solid #949cf7;
+  background: #5865f226;
+  border-radius: 4px;
+}
+.guild-tree-drag-preview {
+  position: fixed;
+  z-index: 10002;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 220px;
+  height: 36px;
+  padding: 0 10px;
+  border: 1px solid #ffffff15;
+  border-radius: 5px;
+  background: #242429;
+  color: #f2f3f5;
+  box-shadow: 0 8px 20px #0006;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+.guild-tree-drag-preview span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.guild-tree-drag-preview svg {
+  flex: 0 0 auto;
+}
+.identity #channel-tree [data-dragging="true"] {
+  opacity: 0.35;
+}
+.identity #channel-tree [data-order-kind] {
+  touch-action: pan-y;
+}
+.identity #channel-tree {
+  position: relative;
+}
+.identity #channel-tree .tree-touch-drag {
+  display: none;
+}
+.identity #channel-tree .guild-category > header {
+  position: relative;
+}
+.identity #channel-tree .guild-category.is-empty-root-drop {
+  position: absolute;
+  z-index: 6;
+  top: 4px;
+  left: 8px;
+  right: 8px;
+  height: 32px;
+  margin: 0;
+  border-radius: 4px;
+  background: #292932;
+  box-shadow: 0 2px 8px #0004;
+}
+.identity #channel-tree .is-empty-root-drop > header {
+  height: 32px;
+  margin: 0;
+}
+.identity #channel-tree .is-empty-root-drop .category-channel-list {
+  display: none;
+}
+.identity #channel-tree .tree-order-status {
+  position: fixed;
+  bottom: 80px;
+  left: 80px;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-sizing: border-box;
+  width: min(280px, calc(100vw - 96px));
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: #242429;
+  box-shadow: 0 4px 12px #0005;
+  color: #b5bac1;
+  font-size: 12px;
+}
+.identity #channel-tree .tree-order-status button {
+  padding: 2px;
+  border: 0;
+  background: transparent;
+  flex: 0 0 auto;
+}
+.identity .guild-app > :is(.id-notice, .id-error) {
+  position: fixed;
+  z-index: 250;
+  left: 50%;
+  bottom: 84px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-sizing: border-box;
+  width: max-content;
+  min-width: 0;
+  max-width: min(560px, calc(100vw - 32px));
+  max-height: 30vh;
+  overflow: auto;
+  margin: 0;
+  padding: 12px 16px;
+  border: 1px solid #ffffff1a;
+  border-radius: 8px;
+  background: #242429;
+  color: #dbdee1;
+  box-shadow: 0 4px 12px #0005;
+  font-size: 14px;
+  line-height: 20px;
+}
+.identity .guild-app > .id-error {
+  border-color: #ed424560;
+  color: #ffb4b8;
+}
+.identity .guild-app > :is(.id-notice, .id-error) button {
+  flex: 0 0 auto;
+  padding: 4px 8px;
+  min-height: 28px;
+}
+@media (pointer: coarse) {
+  .identity #channel-tree .tree-touch-drag {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    right: 30px;
+    top: 0;
+    width: 28px;
+    height: 30px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #94949f;
+    touch-action: none;
+  }
+  .identity #channel-tree .channel-entry:has(.tree-touch-drag) .guild-channel,
+  .identity #channel-tree header:has(.tree-touch-drag) .category-toggle {
+    padding-right: 60px;
+  }
+}

@@ -1,0 +1,8 @@
+tasks:
+  - name: post
+    checker: post/checker.py
+    checker_type: pfr
+    checker_timeout: 25
+    puts: 1
+    gets: 1
+    places: 3

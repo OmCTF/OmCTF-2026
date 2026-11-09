@@ -1,0 +1,733 @@
+.identity .channel-search-box {
+  position: fixed;
+  z-index: 15;
+  top: 46px;
+  right: 33px;
+  display: flex;
+  align-items: center;
+  width: 218px;
+  height: 22px;
+  min-height: 0;
+  padding: 0 4px 0 6px;
+  gap: 4px;
+  margin: 0;
+  border: 1px solid #ffffff0a;
+  border-radius: 4px;
+  background: #121214;
+}
+.identity .dm-heading {
+  padding: 0 9px;
+}
+.identity .dm-heading .sidebar-search {
+  background: #222225;
+  color: #dddde4;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+}
+.identity .channel-search-box input {
+  min-width: 0;
+  width: 100%;
+  height: 20px;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  font-size: 14px;
+  line-height: 20px;
+  color: #dbdbe0;
+  outline: 0;
+}
+.identity .channel-search-box:focus-within {
+  outline: 2px solid #5865f2;
+  outline-offset: 1px;
+}
+.identity .channel-search-box button {
+  display: grid;
+  place-items: center;
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+.guild-space.view-channels:has(.embedded-search) {
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr) 419px;
+}
+.guild-channels > .embedded-search {
+  grid-column: 3;
+  grid-row: 2;
+}
+.dm-layout:has(> .embedded-search) {
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr) 419px;
+}
+.dm-layout > .embedded-search {
+  margin-top: 50px;
+}
+.identity .search-app {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  border-left: 1px solid #ffffff0a;
+  background: #121214;
+}
+.identity .search-app.embedded-search {
+  width: 419px;
+  max-width: none;
+  overflow: hidden;
+}
+.identity .search-app > .search-results-header {
+  display: flex;
+  flex: 0 0 49px;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 8px 16px;
+  margin: 0;
+  border-bottom: 1px solid #ffffff0a;
+}
+.search-results-header > strong {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 600;
+}
+.identity .search-results-header > button,
+.identity .search-sort > button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  min-height: 0;
+  margin: 0;
+  border: 1px solid #ffffff0a;
+  border-radius: 8px;
+  background: #97979f1f;
+  padding: 0 10px;
+  color: #dbdbe0;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 500;
+}
+.search-sort {
+  min-width: 0;
+  flex-shrink: 0;
+}
+.identity .search-sort > button {
+  width: 124px;
+  justify-content: center;
+  gap: 4px;
+  padding: 0 11px;
+  font-size: 14px;
+}
+.search-sort > button > svg {
+  flex-shrink: 0;
+}
+.search-sort-menu {
+  position: fixed;
+  inset: auto;
+  z-index: 2000;
+  width: 176.3px;
+  max-width: calc(100vw - 16px);
+  margin: 0;
+  padding: 8px;
+  border: 1px solid #ffffff1f;
+  border-radius: 8px;
+  background: oklab(0.278878 0.00249207 -0.00875986);
+  color: #dbdbe0;
+  box-shadow: 0 8px 16px #0000003d;
+  animation: select-field-in 90ms ease-out;
+}
+.search-sort-menu::backdrop {
+  background: transparent;
+  pointer-events: none;
+}
+.identity .search-sort-menu > button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  height: 36px;
+  min-height: 36px;
+  margin: 0;
+  padding: 8px;
+  border: 0;
+  border-radius: 2px;
+  background: transparent;
+  color: #dbdbe0;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+  text-align: left;
+}
+.identity .search-sort-menu > button:is(:hover, :focus-visible) {
+  background: #97979f29;
+  color: #fff;
+  outline-offset: -2px;
+}
+.search-sort-radio {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #8e8e99;
+  border-radius: 50%;
+}
+[aria-checked="true"] > .search-sort-radio {
+  border: 6px solid #5865f2;
+  background: #fff;
+}
+.search-results-body {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: 16px;
+  scrollbar-gutter: stable;
+}
+.search-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding-bottom: 50px;
+  text-align: center;
+  color: #94949c;
+}
+.search-empty > svg {
+  width: 200px;
+  height: 150px;
+  opacity: 0.65;
+}
+.search-empty p {
+  max-width: 290px;
+  font-size: 16px;
+  line-height: 20px;
+}
+.search-hit {
+  padding: 0;
+  margin: 0 0 20px;
+}
+.search-hit h3 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 10px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+}
+.search-hit-content {
+  position: relative;
+  padding: 16px;
+  border: 1px solid #ffffff0a;
+  border-radius: 8px;
+  background: #202024;
+}
+.search-hit-content time {
+  color: #94949c;
+  font-size: 12px;
+}
+.search-hit-content p {
+  margin: 8px 0 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 16px;
+  line-height: 22px;
+}
+.identity .search-hit-content > button {
+  position: absolute;
+  right: 8px;
+  top: -14px;
+  min-height: 28px;
+  padding: 0 8px;
+  font-size: 12px;
+  opacity: 0;
+}
+.search-hit-content:hover > button,
+.search-hit-content:focus-within > button {
+  opacity: 1;
+}
+.search-more {
+  width: 100%;
+}
+.channel-entry {
+  position: relative;
+}
+.channel-row-actions {
+  position: absolute;
+  right: 4px;
+  top: 7px;
+  z-index: 2;
+}
+.channel-row-actions > summary {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  list-style: none;
+  color: #94949c;
+  opacity: 0;
+  cursor: pointer;
+}
+.channel-row-actions > summary::-webkit-details-marker {
+  display: none;
+}
+.channel-entry:hover .channel-row-actions > summary,
+.channel-entry:focus-within .channel-row-actions > summary,
+.channel-row-actions[open] > summary {
+  opacity: 1;
+}
+.channel-entry:hover .guild-channel,
+.channel-entry:focus-within .guild-channel {
+  padding-right: 32px;
+}
+.channel-row-menu {
+  position: fixed;
+  z-index: 40;
+  width: 248px;
+  max-height: min(520px, calc(100dvh - 64px));
+  overflow: auto;
+  padding: 8px;
+  border: 1px solid #ffffff14;
+  border-radius: 8px;
+  background: #222327;
+  box-shadow: 0 8px 24px #0006;
+  color: #dbdbe0;
+}
+.channel-row-menu > .guild-resource-tools {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2px;
+}
+.identity .channel-row-menu button {
+  display: flex;
+  align-items: center;
+  min-height: 36px;
+  width: 100%;
+  padding: 8px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  text-align: left;
+  font-size: 14px;
+}
+.identity .channel-row-menu button:hover {
+  background: #ffffff0d;
+}
+.channel-favorite-action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.identity .channel-favorite-action > button {
+  width: 100%;
+  gap: 8px;
+}
+.channel-favorite-action > span {
+  display: none;
+}
+.channel-favorite-action > button::after {
+  content: "В избранное";
+}
+.channel-favorite-action > button[aria-pressed="true"]::after {
+  content: "Убрать из избранного";
+}
+.channel-row-menu .notification-rule {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0;
+}
+.identity .standalone-search-query {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 16px;
+}
+.standalone-search-query input {
+  flex: 1;
+  min-width: 0;
+}
+.identity .search-app.standalone-search {
+  flex: 1;
+  overflow: hidden;
+  margin: 0;
+  height: calc(100% - 50px);
+}
+.identity.app-modal.search-filters-dialog {
+  width: 480px;
+  height: 659px;
+  max-height: calc(100dvh - 32px);
+  padding: 0;
+}
+.identity.app-modal.search-filters-dialog[open] {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.identity.app-modal.search-filters-dialog > .modal-heading {
+  flex: 0 0 56px;
+  height: 56px;
+  padding: 24px 24px 8px;
+  margin: 0;
+}
+.search-filters-dialog > .modal-heading h2 {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+}
+.search-filter-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+  padding: 16px 24px 24px;
+  overflow-y: auto;
+  min-height: 0;
+  flex: 1;
+  align-content: start;
+}
+.search-filters-dialog > form {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex: 1;
+}
+.identity .search-filter-fields label {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 8px;
+  color: #dbdbe0;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 0;
+}
+.identity .search-filter-fields input {
+  width: 100%;
+  min-width: 0;
+  height: 40px;
+  min-height: 0;
+  margin: 0;
+  padding: 8px 12px;
+  border: 1px solid #ffffff14;
+  border-radius: 8px;
+  background: #202024;
+  font-size: 14px;
+}
+.search-date-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  min-width: 0;
+  gap: 16px;
+}
+.search-clear-filters {
+  margin-right: auto;
+}
+.identity .search-filters-dialog .modal-footer {
+  gap: 12px;
+  padding: 16px 24px;
+  flex: 0 0 auto;
+  margin: 0;
+}
+@media (min-width: 1101px) {
+  .guild-space.view-channels:not(:has(.is-voice-room))::after {
+    content: "";
+    position: absolute;
+    left: var(--sidebar-width);
+    right: 0;
+    top: 0;
+    height: 50px;
+    background: #202024;
+    border-bottom: 1px solid #ffffff0a;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .chat-header {
+    position: relative;
+    z-index: 2;
+  }
+  .guild-channel-detail:not(:has(.with-thread, .thread-create-pane)) > .channel-top-actions {
+    position: fixed;
+    top: 41px;
+    right: 264px;
+    z-index: 14;
+  }
+  .chat-window:not(.is-thread) > .chat-header-tools {
+    position: fixed;
+    top: 41px;
+    right: 304px;
+    gap: 8px;
+    z-index: 14;
+  }
+  .identity .chat-header-tools > button,
+  .chat-header-tools > details > summary {
+    width: 32px;
+    height: 32px;
+    min-height: 32px;
+    padding: 6px;
+  }
+  .identity .channel-top-actions > button {
+    width: 32px;
+    height: 32px;
+    min-height: 32px;
+    padding: 6px;
+  }
+  .channel-top-actions > button > svg {
+    width: 20px;
+    height: 20px;
+  }
+  .chat-split:is(.with-thread, :has(.thread-create-pane))
+    > .chat-window:not(.is-thread)
+    > .chat-header-tools {
+    position: absolute;
+    top: 9px;
+    right: 16px;
+  }
+  .chat-split:is(.with-thread, :has(.thread-create-pane)) .channel-search-box {
+    position: static;
+    width: 160px;
+    flex: 0 0 160px;
+  }
+  .chat-split:is(.with-thread, :has(.thread-create-pane))
+    > .chat-window:not(.is-thread)
+    .chat-header
+    > div {
+    max-width: calc(100% - 312px);
+  }
+  .dm-space .chat-window:not(.is-thread) > .chat-header-tools {
+    right: 302px;
+  }
+  .dm-space > .dm-settings {
+    position: fixed;
+    right: 260px;
+    top: 40px;
+    z-index: 14;
+  }
+  .chat-window .chat-header > div,
+  .dm-space .chat-window .chat-header > div {
+    padding-right: 0;
+    max-width: calc(100vw - var(--sidebar-width) - 600px);
+  }
+}
+@media (max-width: 1100px) {
+  .identity .channel-search-box {
+    top: 44px;
+    right: 16px;
+    width: 120px;
+    height: 26px;
+  }
+  .chat-window > .chat-header-tools {
+    right: 248px;
+  }
+  .dm-space .chat-window > .chat-header-tools {
+    right: 180px;
+  }
+  .guild-channel-detail > .channel-top-actions {
+    right: 140px;
+  }
+  .dm-space > .dm-settings {
+    right: 140px;
+  }
+  .chat-window .chat-header > div {
+    padding-right: 0;
+    max-width: calc(100% - 390px);
+  }
+  .dm-space .chat-window .chat-header > div {
+    padding-right: 0;
+    max-width: calc(100% - 320px);
+  }
+  .guild-space.view-channels:has(.embedded-search),
+  .dm-layout:has(> .embedded-search) {
+    grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  }
+  .identity .search-app.embedded-search {
+    position: fixed;
+    inset: 82px 0 0 auto;
+    z-index: 20;
+    margin: 0;
+    width: min(419px, calc(100vw - 56px));
+    box-shadow: -8px 0 24px #0004;
+  }
+}
+@media (max-width: 700px) {
+  .guild-space.view-channels:has(.embedded-search),
+  .dm-layout:has(> .embedded-search) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .identity .channel-search-box {
+    top: 90px;
+    right: 12px;
+    width: 28px;
+    height: 26px;
+    padding: 2px 4px;
+    border-color: transparent;
+    background: transparent;
+    transition:
+      width 160ms ease,
+      background-color 160ms ease;
+  }
+  .identity .channel-search-box input {
+    width: 0;
+    opacity: 0;
+  }
+  .identity .channel-search-box:focus-within,
+  .identity .channel-search-box.is-open {
+    width: 160px;
+    background: #121214;
+  }
+  .identity .channel-search-box:focus-within input,
+  .identity .channel-search-box.is-open input {
+    width: 100%;
+    opacity: 1;
+  }
+  .identity .channel-search-box button {
+    flex-shrink: 0;
+  }
+  .identity .channel-search-box.is-open {
+    right: 12px;
+  }
+  .identity .channel-search-box:not(:focus-within):not(.is-open) {
+    gap: 0;
+  }
+  .identity .channel-search-box:not(:focus-within):not(.is-open) input {
+    flex: 0 0 0;
+  }
+  .identity .dm-space > .dm-settings,
+  .guild-channel-detail > .channel-top-actions {
+    display: block;
+    position: fixed;
+    top: 88px;
+    right: 48px;
+    width: 30px;
+    height: 30px;
+    z-index: 14;
+  }
+  .identity .dm-settings-popover {
+    position: fixed;
+    top: 128px;
+    right: 8px;
+    left: auto;
+    width: min(300px, calc(100vw - 72px));
+    max-height: calc(100dvh - 210px);
+  }
+  .identity .channel-top-actions > button {
+    width: 30px;
+  }
+  .guild-channel-detail.is-voice-room > .channel-top-actions {
+    display: none;
+  }
+  .identity .dm-heading .sidebar-search {
+    max-width: calc(100% - 132px);
+    justify-content: flex-start;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .chat-window:has(.channel-search-box:is(:focus-within, .is-open))
+    > .chat-header-tools
+    > :not(.channel-search-box) {
+    visibility: hidden;
+  }
+  .guild-channel-detail:has(.channel-search-box:is(:focus-within, .is-open)) > .channel-top-actions,
+  .dm-space:has(.channel-search-box:is(:focus-within, .is-open)) > .dm-settings {
+    visibility: hidden;
+  }
+  .identity .search-app.embedded-search {
+    top: 128px;
+  }
+  .chat-window > .chat-header-tools,
+  .dm-space .chat-window > .chat-header-tools {
+    right: 86px;
+  }
+  .chat-window > .chat-header-tools > details,
+  .chat-window > .chat-header-tools > button:not(:first-of-type) {
+    display: none;
+  }
+  .chat-window > .chat-header-tools > .chat-threads-picker {
+    display: block;
+  }
+  .channel-row-actions > summary {
+    opacity: 1;
+  }
+  .chat-window .chat-header > div,
+  .dm-space .chat-window .chat-header > div {
+    max-width: calc(100% - 154px);
+    padding-right: 0;
+  }
+  .search-results-header > strong {
+    font-size: 12px;
+  }
+  .identity .search-results-header > button {
+    font-size: 12px;
+    padding: 0 8px;
+  }
+  .identity .search-sort > button {
+    width: 102px;
+    font-size: 12px;
+  }
+  .search-results-header > button svg,
+  .search-sort > button svg {
+    display: none;
+  }
+  .search-date-fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .search-filters-dialog .modal-footer {
+    flex-wrap: wrap;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .search-sort-menu {
+    animation: none;
+  }
+}
+[data-motion="reduced"] .search-sort-menu {
+  animation: none;
+}
+@media (hover: none) {
+  .identity .search-hit-content > button {
+    opacity: 1;
+  }
+}
+@media (max-width: 700px) {
+  .identity .search-app > .search-results-header {
+    flex-wrap: wrap;
+    flex-basis: auto;
+    min-height: 49px;
+    height: auto;
+    gap: 6px 8px;
+  }
+  .search-results-header > strong {
+    flex: 1 0 100%;
+    overflow: visible;
+    white-space: normal;
+  }
+}
+.guild-space > .guild-tabs {
+  z-index: 60;
+}
+.guild-space > .guild-heading {
+  z-index: 40;
+}
+.guild-space > .guild-channels > #channel-tree {
+  position: relative;
+  z-index: 40;
+}
+.guild-space > .guild-channel-detail,
+.guild-space > .guild-settings {
+  z-index: 0;
+}
+.identity .id-own {
+  z-index: 80;
+}

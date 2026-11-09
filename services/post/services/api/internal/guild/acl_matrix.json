@@ -1,0 +1,131 @@
+{
+  "owner": {
+    "guild": ["VIEW_CHANNEL", "MANAGE_CHANNEL", "MANAGE_ROLES", "KICK_MEMBER", "MANAGE_GUILD"],
+    "category": ["VIEW_CHANNEL", "MANAGE_CHANNEL"],
+    "private-category": ["VIEW_CHANNEL", "MANAGE_CHANNEL"],
+    "text": [
+      "VIEW_CHANNEL",
+      "SEND_MESSAGES",
+      "READ_HISTORY",
+      "ATTACH_FILES",
+      "CREATE_THREAD",
+      "MANAGE_MESSAGES",
+      "CREATE_INVITE",
+      "MANAGE_CHANNEL"
+    ],
+    "private-text": [
+      "VIEW_CHANNEL",
+      "SEND_MESSAGES",
+      "READ_HISTORY",
+      "ATTACH_FILES",
+      "CREATE_THREAD",
+      "MANAGE_MESSAGES",
+      "CREATE_INVITE",
+      "MANAGE_CHANNEL"
+    ],
+    "forum": [
+      "VIEW_CHANNEL",
+      "SEND_MESSAGES",
+      "READ_HISTORY",
+      "ATTACH_FILES",
+      "CREATE_THREAD",
+      "MANAGE_MESSAGES",
+      "CREATE_INVITE",
+      "MANAGE_CHANNEL"
+    ],
+    "voice": [
+      "VIEW_CHANNEL",
+      "SEND_MESSAGES",
+      "READ_HISTORY",
+      "ATTACH_FILES",
+      "CREATE_THREAD",
+      "MANAGE_MESSAGES",
+      "CONNECT_VOICE",
+      "SPEAK",
+      "STREAM_VIDEO",
+      "VIEW_STREAM",
+      "CREATE_INVITE",
+      "MANAGE_CHANNEL"
+    ]
+  },
+  "admin": {
+    "guild": ["VIEW_CHANNEL", "MANAGE_CHANNEL", "MANAGE_ROLES", "KICK_MEMBER", "MANAGE_GUILD"],
+    "category": ["VIEW_CHANNEL", "MANAGE_CHANNEL"],
+    "private-category": ["VIEW_CHANNEL", "MANAGE_CHANNEL"],
+    "text": [
+      "VIEW_CHANNEL",
+      "READ_HISTORY",
+      "ATTACH_FILES",
+      "CREATE_THREAD",
+      "MANAGE_MESSAGES",
+      "CREATE_INVITE",
+      "MANAGE_CHANNEL"
+    ],
+    "private-text": [
+      "VIEW_CHANNEL",
+      "SEND_MESSAGES",
+      "READ_HISTORY",
+      "ATTACH_FILES",
+      "CREATE_THREAD",
+      "MANAGE_MESSAGES",
+      "CREATE_INVITE",
+      "MANAGE_CHANNEL"
+    ],
+    "forum": [
+      "VIEW_CHANNEL",
+      "SEND_MESSAGES",
+      "READ_HISTORY",
+      "ATTACH_FILES",
+      "CREATE_THREAD",
+      "MANAGE_MESSAGES",
+      "CREATE_INVITE",
+      "MANAGE_CHANNEL"
+    ],
+    "voice": [
+      "VIEW_CHANNEL",
+      "SEND_MESSAGES",
+      "READ_HISTORY",
+      "ATTACH_FILES",
+      "CREATE_THREAD",
+      "MANAGE_MESSAGES",
+      "CONNECT_VOICE",
+      "STREAM_VIDEO",
+      "VIEW_STREAM",
+      "CREATE_INVITE",
+      "MANAGE_CHANNEL"
+    ]
+  },
+  "moderator": {
+    "guild": ["VIEW_CHANNEL"],
+    "category": ["VIEW_CHANNEL"],
+    "private-category": ["VIEW_CHANNEL"],
+    "text": ["VIEW_CHANNEL", "SEND_MESSAGES", "READ_HISTORY", "CREATE_INVITE", "MANAGE_MESSAGES"],
+    "private-text": [
+      "VIEW_CHANNEL",
+      "SEND_MESSAGES",
+      "READ_HISTORY",
+      "CREATE_INVITE",
+      "MANAGE_MESSAGES"
+    ],
+    "forum": ["VIEW_CHANNEL", "SEND_MESSAGES", "READ_HISTORY", "CREATE_INVITE", "MANAGE_MESSAGES"],
+    "voice": ["VIEW_CHANNEL", "CREATE_INVITE", "READ_HISTORY", "SEND_MESSAGES", "MANAGE_MESSAGES"]
+  },
+  "member": {
+    "guild": ["VIEW_CHANNEL"],
+    "category": ["VIEW_CHANNEL"],
+    "private-category": [],
+    "text": ["VIEW_CHANNEL", "SEND_MESSAGES", "READ_HISTORY", "CREATE_INVITE"],
+    "private-text": [],
+    "forum": ["VIEW_CHANNEL", "SEND_MESSAGES", "READ_HISTORY", "CREATE_INVITE"],
+    "voice": ["VIEW_CHANNEL", "CREATE_INVITE", "READ_HISTORY", "SEND_MESSAGES"]
+  },
+  "outsider": {
+    "guild": [],
+    "category": [],
+    "private-category": [],
+    "text": [],
+    "private-text": [],
+    "forum": [],
+    "voice": []
+  }
+}

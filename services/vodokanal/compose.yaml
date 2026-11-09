@@ -1,0 +1,190 @@
+name: vodokanal-current-server
+
+services:
+  secret_seed:
+    image: vodokanal-current/onec:20261030
+    platform: linux/amd64
+    entrypoint: ["/bin/bash", "/bootstrap/secret-seed.sh"]
+    volumes:
+      - ./bootstrap/secret-seed.sh:/bootstrap/secret-seed.sh:ro
+      - runtime_secrets:/run/secrets
+    network_mode: none
+    restart: "no"
+
+  db:
+    image: vodokanal-current/postgres:18.4
+    build:
+      context: ./source
+      dockerfile: docker/postgres/Dockerfile
+    platform: linux/amd64
+    environment:
+      PGDATA: /var/lib/postgresql/data
+      POSTGRES_PASSWORD_FILE: /run/secrets/pg_password
+      TZ: Europe/Moscow
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - runtime_secrets:/run/secrets:ro
+    networks: [data]
+    depends_on:
+      secret_seed:
+        condition: service_completed_successfully
+    shm_size: 256mb
+    healthcheck:
+      test: ["CMD-SHELL", "gosu postgres psql -X -qAt -d postgres -c 'SELECT 1' | grep -qx 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+    restart: unless-stopped
+    stop_grace_period: 60s
+
+  runtime_prepare:
+    image: vodokanal-current/onec:20261030
+    build:
+      context: ./source
+      dockerfile: docker/onec/Dockerfile
+      target: runtime
+    platform: linux/amd64
+    entrypoint: ["/bin/bash", "-ec", "install -d -o usr1cv8 -g grp1cv8 -m 0700 /var/1C/licenses"]
+    volumes:
+      - type: bind
+        source: ${VDK_LICENSE_DIR:-/var/lib/vodokanal/onec-licenses}
+        target: /var/1C/licenses
+        bind:
+          create_host_path: true
+    networks: [app]
+    restart: "no"
+
+  onec:
+    image: vodokanal-current/onec-gui:20261030
+    build:
+      context: ./source
+      dockerfile: docker/onec/Dockerfile
+      target: gui
+    platform: linux/amd64
+    hostname: onec
+    entrypoint: ["/bin/bash", "/bootstrap/onec-start.sh"]
+    command: ["ragent", "-port", "1540", "-regport", "1541", "-range", "1560:1591", "-d", "/var/lib/1c/srvinfo"]
+    environment:
+      TZ: Europe/Moscow
+      VDK_HTTP_PORT: "8080"
+    volumes:
+      - ./bootstrap/onec-start.sh:/bootstrap/onec-start.sh:ro
+      - ./bootstrap/activate.sh:/bootstrap/activate.sh:ro
+      - ./bootstrap/auto-license-from-file.sh:/bootstrap/auto-license-from-file.sh:ro
+      - ./bootstrap/license-activate-once.sh:/bootstrap/license-activate-once.sh:ro
+      - ./bootstrap/cancel-license-activation.sh:/bootstrap/cancel-license-activation.sh:ro
+      - ./license-input:/run/vdk-license-input:rw
+      - runtime_secrets:/run/secrets:ro
+      - provision_data:/bootstrap-data
+      - bootstrap_state:/state
+      - onec_srvinfo:/var/lib/1c/srvinfo
+      - onec_home:/home/usr1cv8
+      - type: bind
+        source: ${VDK_LICENSE_DIR:-/var/lib/vodokanal/onec-licenses}
+        target: /var/1C/licenses
+        bind:
+          create_host_path: true
+    networks: [app, data]
+    depends_on:
+      secret_seed:
+        condition: service_completed_successfully
+      db:
+        condition: service_healthy
+      runtime_prepare:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "bash", "-ec", "timeout 3 bash -c '</dev/tcp/127.0.0.1/1540'; timeout 3 bash -c '</dev/tcp/127.0.0.1/1541'"]
+      interval: 10s
+      timeout: 8s
+      retries: 12
+      start_period: 30s
+    restart: unless-stopped
+    stop_grace_period: 60s
+
+  ras:
+    image: vodokanal-current/onec:20261030
+    platform: linux/amd64
+    command: ["ras", "cluster", "--port=1545", "onec:1540"]
+    environment:
+      TZ: Europe/Moscow
+    networks: [app]
+    depends_on:
+      onec:
+        condition: service_healthy
+    restart: unless-stopped
+    stop_grace_period: 30s
+
+  bootstrap:
+    image: vodokanal-current/onec:20261030
+    platform: linux/amd64
+    entrypoint: ["/bin/bash", "/bootstrap/init.sh"]
+    volumes:
+      - ./bootstrap/init.sh:/bootstrap/init.sh:ro
+      - ./source/configuration/src:/src:ro
+      - bootstrap_state:/state
+      - runtime_secrets:/run/secrets:ro
+    networks: [app, data]
+    depends_on:
+      db:
+        condition: service_healthy
+      ras:
+        condition: service_started
+    restart: "no"
+
+  activate:
+    image: vodokanal-current/onec:20261030
+    platform: linux/amd64
+    entrypoint: ["/bin/bash", "/bootstrap/wait-operational.sh"]
+    volumes:
+      - ./bootstrap/wait-operational.sh:/bootstrap/wait-operational.sh:ro
+      - bootstrap_state:/state
+    networks: [app]
+    depends_on:
+      bootstrap:
+        condition: service_completed_successfully
+    restart: "no"
+
+  web:
+    image: vodokanal-current/web-server:20261030
+    build:
+      context: ./source
+      dockerfile: docker/onec/Dockerfile
+      target: web
+    platform: linux/amd64
+    environment:
+      TZ: Europe/Moscow
+      IDENTITY_GATEWAY_ENABLE: "1"
+      PUBLIC_LAB_ENABLE: "1"
+      PUBLIC_HYDROLOGY_ENABLE: "1"
+      PUBLIC_PORTAL_ENABLE: "1"
+      PUBLIC_DISPATCH_ENABLE: "1"
+    volumes:
+      - runtime_secrets:/run/secrets:ro
+    ports:
+      - "0.0.0.0:8080:80"
+    networks: [app]
+    depends_on:
+      activate:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "--silent", "--max-time", "3", "http://127.0.0.1/healthz"]
+      interval: 15s
+      timeout: 5s
+      retries: 8
+      start_period: 30s
+    restart: unless-stopped
+    stop_grace_period: 30s
+
+volumes:
+  runtime_secrets:
+  pgdata:
+  onec_srvinfo:
+  onec_home:
+  bootstrap_state:
+  provision_data:
+
+networks:
+  app:
+  data:
+    internal: true

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Таблица игры · XII OmCTF</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="assets/states.css">
+<style>:root{--n0:#0b1518;--n1:#101d21;--n2:#16272c;--text:#f6f2e8;--text-2:#d3dad6;--text-3:#b0bab5;--line:rgba(231,224,210,.09);--line-2:rgba(231,224,210,.16);--gold:#c09a55;--wax:#c0472f;--display:"Oranienbaum",Georgia,serif;--ui:"Golos Text",system-ui,-apple-system,sans-serif;--r:calc(60*var(--u))}*{box-sizing:border-box}html,body{height:100%;overflow:hidden}body{margin:0;color:var(--text);font-family:var(--ui);font-size:calc(14*var(--u));line-height:1.4;font-variant-numeric:tabular-nums;background:var(--n0);-webkit-font-smoothing:antialiased}#skin{position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(168deg,var(--n1),var(--n0) 58%,#081113)}.sheet{position:relative;z-index:2;height:100%;max-width:calc(1760*var(--u));margin:0 auto;padding:calc(24*var(--u)) calc(32*var(--u)) calc(16*var(--u));display:flex;flex-direction:column}header{display:flex;align-items:center;gap:calc(24*var(--u));padding-bottom:calc(16*var(--u));border-bottom:calc(1*var(--u)) solid var(--line-2)}.title h1{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(calc(36*var(--u)),3.8vw,calc(64*var(--u)));line-height:1;color:#e3b93c}.sub{display:flex;align-items:baseline;gap:calc(16*var(--u));margin-top:calc(6*var(--u))}.title h2{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(calc(18*var(--u)),1.6vw,calc(28*var(--u)));line-height:1.1}.go{color:var(--text-2);font-size:calc(15*var(--u));text-decoration:none;border-bottom:calc(1*var(--u)) solid var(--line-2);padding-bottom:calc(2*var(--u))}.go:hover{color:var(--gold)}.go.on{color:var(--gold);border-bottom-color:#c09a5580;pointer-events:none}.meter{margin-left:auto;display:flex;align-items:baseline;gap:calc(28*var(--u))}.meter div{text-align:right}.meter b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(calc(24*var(--u)),2.3vw,calc(34*var(--u)));line-height:1}.meter span{display:block;margin-top:calc(4*var(--u));color:var(--text-2);font-size:calc(15*var(--u))}.meter .freeze b,.meter .freeze span{color:var(--wax)}.net{display:none;margin-top:calc(10*var(--u));text-align:center;color:var(--wax);font-size:calc(17*var(--u))}.net.on{display:block}#wrap{flex:1 1 auto;min-height:0;overflow:auto;margin-top:calc(12*var(--u));display:grid;grid-template-columns:minmax(0,calc(1000*var(--u)));justify-content:center;align-content:start;align-items:start;gap:calc(24*var(--u))}#wrap.two{grid-template-columns:repeat(2,minmax(0,1fr))}table{width:100%;table-layout:fixed;border-collapse:separate;border-spacing:calc(4*var(--u))}th{height:calc(40*var(--u));padding:0 calc(16*var(--u));background:var(--n0);color:var(--text);font-weight:500;font-size:calc(20*var(--u));text-align:center}th.col-team{text-align:left}th.col-score{text-align:right}th.col-place{width:calc(84*var(--u))}th.col-score{width:calc(230*var(--u))}td{height:var(--r);padding:0 calc(16*var(--u));background:var(--n2);border-radius:calc(6*var(--u))}td.place{padding:0;text-align:center;font-family:var(--display);font-size:clamp(calc(18*var(--u)),calc(var(--r) * .38),calc(40*var(--u)))}td.place i{display:inline-grid;place-items:center;width:1.5em;height:1.5em;border-radius:calc(6*var(--u));font-style:normal}tr.m1 .place i{background:var(--gold);color:var(--n0)}tr.m2 .place i{background:#b3bab7;color:var(--n0)}tr.m3 .place i{background:#a8744a;color:var(--n0)}td.team a{color:inherit;text-decoration:none}td.team a:hover{color:var(--gold)}td.team a{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;overflow-wrap:anywhere;font-family:var(--display);font-size:clamp(calc(18*var(--u)),calc(var(--r) * .4),calc(42*var(--u)));line-height:1.1}td.score{text-align:right;font-family:var(--display);font-size:clamp(calc(18*var(--u)),calc(var(--r) * .4),calc(42*var(--u)))}#hold{position:fixed;inset:0;z-index:12;display:none;place-items:center;text-align:center;background:var(--n0)}#hold.on{display:grid}#hold div{max-width:calc(560*var(--u));padding:0 calc(32*var(--u))}#hold h2{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(calc(30*var(--u)),3.4vw,calc(46*var(--u)));line-height:1.04}#hold p{margin:calc(12*var(--u)) 0 0;color:var(--text-2);font-size:calc(15*var(--u));line-height:1.52}@media(max-width:900px){html,body{height:auto;overflow:auto}.sheet{height:auto;padding:calc(20*var(--u)) calc(16*var(--u)) calc(16*var(--u))}#wrap,#wrap.two{overflow:visible;grid-template-columns:minmax(0,1fr)}th.col-place{width:calc(52*var(--u))}th.col-score{width:calc(96*var(--u))}header{flex-wrap:wrap}.meter{width:100%;margin:calc(12*var(--u)) 0 0;justify-content:space-between}.meter div{text-align:left}}
+</style>
+</head>
+<body>
+<div id="skin"></div>
+<div class="sheet">
+  <header>
+    <div class="title">
+      <h1 id="gname">XII OmCTF</h1>
+      <div class="sub"><h2>Таблица игры</h2><span class="nav"><a class="go" id="toBoard" href="index.html">Табло гарнизонов</a><a class="go on" aria-current="page" href="table.html">Таблица игры</a></span></div>
+    </div>
+    <div class="meter">
+      <div><b id="clock">—</b><span>до конца игры</span></div>
+      <div id="rbox"><b id="round">—</b><span id="rsub">раунд</span></div>
+    </div>
+  </header>
+  <div class="net" id="net">Нет связи со скорбордом, данные устарели</div>
+  <div id="wrap"></div>
+</div>
+<div id="hold"><div>
+  <h2 id="holdTitle">Город ждёт</h2>
+  <p id="holdText">Таблица оживёт, когда начнётся игра</p>
+</div></div>
+<script src="table.js"></script>
+</body>
+</html>

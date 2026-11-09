@@ -1,0 +1,18 @@
+services:
+  arena-treasury:
+    build:
+      context: .
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    pids_limit: 128
+    mem_limit: 2g
+    tmpfs:
+      - /tmp:rw,exec,nosuid,nodev,size=256m,mode=1777
+    environment:
+      ARENA_TOKEN_FILE: /run/secrets/arena-token
+      ARENA_PACKAGE_DIGEST: ${ARENA_PACKAGE_DIGEST:-}
+    volumes:
+      - ${ARENA_TOKEN_PATH:?Set ARENA_TOKEN_PATH}:/run/secrets/arena-token:ro
+    ports:
+      - 127.0.0.1:${ARENA_LOCAL_PORT:-9090}:9090

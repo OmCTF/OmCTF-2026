@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+  <HTTPService uuid="d1838192-e5ea-a734-e3ce-138b7eb60f85">
+    <Properties>
+      <Name>СервисПубличнойЛаборатории</Name>
+      <Synonym>
+        <v8:item>
+          <v8:lang>ru</v8:lang>
+          <v8:content>Публичная лаборатория</v8:content>
+        </v8:item>
+      </Synonym>
+      <Comment />
+      <RootURL>lab</RootURL>
+      <ReuseSessions>DontUse</ReuseSessions>
+      <SessionMaxAge>20</SessionMaxAge>
+    </Properties>
+    <ChildObjects>
+      <URLTemplate xmlns="http://v8.1c.ru/8.3/MDClasses" uuid="916549ea-aaaa-4192-eb31-09d38eb7b418">
+        <Properties>
+          <Name>ПубличныеСправочники</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/reference</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="689ed797-0e73-4982-e552-ffcbc0a9c508">
+            <Properties>
+              <Name>ПолучитьСправочникиHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСправочникиHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate xmlns="http://v8.1c.ru/8.3/MDClasses" uuid="1fc60552-78b6-2995-7a53-74b191f90434">
+        <Properties>
+          <Name>ПубличныеПротоколы</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/protocols</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="a3664823-493a-71fd-48c2-eeecf5f21c82">
+            <Properties>
+              <Name>ПолучитьПротоколыHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьПротоколыHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate xmlns="http://v8.1c.ru/8.3/MDClasses" uuid="8ac367a8-d835-d886-d461-b5f046ea6dbb">
+        <Properties>
+          <Name>ПубличнаяСводка</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/summary</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="b5b7224d-78f3-cf9e-ed24-95ab910e9f29">
+            <Properties>
+              <Name>ПолучитьСводкуHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСводкуHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate xmlns="http://v8.1c.ru/8.3/MDClasses" uuid="b3ec2d70-45a8-1154-3bd6-ad8c5d087092">
+        <Properties>
+          <Name>ПубличныйПротокол</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/samples/{id}/protocol</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="369c4acb-07e5-8bb2-ca17-818ddcbf51b2">
+            <Properties>
+              <Name>ПолучитьПротоколHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьПротоколHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate xmlns="http://v8.1c.ru/8.3/MDClasses" uuid="30734249-eee2-1c5d-40e7-fc57d50afa73">
+        <Properties>
+          <Name>ПубличныйПротоколCSV</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/samples/{id}/protocol.csv</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="fbaaa11d-1e22-9188-ce3f-4b59fd11ca45">
+            <Properties>
+              <Name>ПолучитьПротоколCSVHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьПротоколCSVHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate xmlns="http://v8.1c.ru/8.3/MDClasses" uuid="6c507492-5c2a-731e-cb58-082c87e20d5c">
+        <Properties>
+          <Name>ПубличныйПротоколPDF</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/samples/{id}/protocol.pdf</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="a24f6295-37a5-b559-3db9-606769d46036">
+            <Properties>
+              <Name>ПолучитьПротоколPDFHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьПротоколPDFHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+    </ChildObjects>
+  </HTTPService>
+</MetaDataObject>

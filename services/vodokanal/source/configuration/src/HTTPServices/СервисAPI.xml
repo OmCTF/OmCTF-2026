@@ -1,0 +1,5195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+  <HTTPService uuid="fbb82a50-36dc-49b4-3710-35e0c9e52e22">
+    <Properties>
+      <Name>СервисAPI</Name>
+      <Synonym>
+        <v8:item>
+          <v8:lang>ru</v8:lang>
+          <v8:content>API личного кабинета</v8:content>
+        </v8:item>
+      </Synonym>
+      <Comment />
+      <RootURL>api</RootURL>
+      <ReuseSessions>Use</ReuseSessions>
+      <SessionMaxAge>900</SessionMaxAge>
+    </Properties>
+    <ChildObjects>
+      <URLTemplate uuid="2bd3034b-1263-4c0a-83f2-0a6808136bca">
+        <Properties>
+          <Name>МаршрутКапсулыПриватнойСводки</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/private-summaries/{id}/capsule</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="c8522e6c-aa6a-47de-9543-f908343a4265">
+            <Properties><Name>ПолучитьКапсулуПриватнойСводкиHTTP</Name><Synonym /><Comment /><HTTPMethod>GET</HTTPMethod><Handler>ПолучитьКапсулуПриватнойСводкиHTTP</Handler></Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="880cfa36-72bd-40a5-8429-9943c03f90dd">
+        <Properties>
+          <Name>МаршрутПредпросмотраПриватнойСводки</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/private-summaries/{id}/preview</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="d8b460cd-2e70-41b7-882e-07e34a36fc8e">
+            <Properties><Name>ПредпросмотрПриватнойСводкиHTTP</Name><Synonym /><Comment /><HTTPMethod>GET</HTTPMethod><Handler>ПредпросмотрПриватнойСводкиHTTP</Handler></Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="ebfe660d-29d6-4973-a4d4-07c502558c60">
+        <Properties>
+          <Name>МаршрутПриватныхСводок</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/private-summaries</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="c809f6ae-77fb-4385-86a5-75caa19a8c59">
+            <Properties><Name>СоздатьПриватнуюСводкуHTTP</Name><Synonym /><Comment /><HTTPMethod>POST</HTTPMethod><Handler>СоздатьПриватнуюСводкуHTTP</Handler></Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="9780439e-a892-4594-90e3-2aba6894f498">
+        <Properties>
+          <Name>МаршрутПриватнойСводки</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/private-summaries/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="78813ca6-ed05-4394-b774-3214e0285820">
+            <Properties><Name>ПолучитьПриватнуюСводкуHTTP</Name><Synonym /><Comment /><HTTPMethod>GET</HTTPMethod><Handler>ПолучитьПриватнуюСводкуHTTP</Handler></Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="5037725b-07bc-43c5-88f4-9aa5e87825b7">
+        <Properties>
+          <Name>МаршрутПоискаПриватнойСводки</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/private-summary-lookup</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="12bdbd24-f53d-48a1-97c8-72b361940798">
+            <Properties><Name>НайтиПриватнуюСводкуHTTP</Name><Synonym /><Comment /><HTTPMethod>GET</HTTPMethod><Handler>НайтиПриватнуюСводкуHTTP</Handler></Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="f850484c-55a3-acd8-ac0e-0ab0021fdf53">
+        <Properties>
+          <Name>АрхивироватьДокументHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/documents/{id}/actions/archive</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="e91d281f-ac01-016c-9293-407fd89ecd40">
+            <Properties>
+              <Name>АрхивироватьДокументHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>АрхивироватьДокументHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="e87b48bb-23d2-b74d-e2f7-e4b5a17dd416">
+        <Properties>
+          <Name>ВариантыДопусковНаряда</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work/orders/{id}/permit-options</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="2ee9af74-8eb0-a55d-340d-98b1838edff2">
+            <Properties>
+              <Name>ПолучитьВариантыДопусковНарядаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьВариантыДопусковНарядаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="03c0f8d7-b4c8-aa69-59e2-dafa98a30e2a">
+        <Properties>
+          <Name>ВариантыДоставкиВодыHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/water/delivery-options/{kind}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="3b20ed65-29fd-3ce4-c5c0-4a5a23683e8e">
+            <Properties>
+              <Name>ВариантыДоставкиВодыHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ВариантыДоставкиВодыHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="13fe0d4e-e241-5d31-f0c6-2a9ef1273be9">
+        <Properties>
+          <Name>ВариантыПриемныхP0HTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/intake-options</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="8a55a06c-b8f6-1492-512e-5277e8eb8d00">
+            <Properties>
+              <Name>ВариантыПриемныхP0HTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ВариантыПриемныхP0HTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="a8a94909-e33b-d9dd-7839-d987572f23c8">
+        <Properties>
+          <Name>ГидрологияГенерацияМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/hydrology/posts/{id}/generate</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="01253979-84fe-08ce-434f-e195395aae12">
+            <Properties>
+              <Name>ГидрологияГенерация</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ГидрологияГенерация</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="4d161198-8d73-efc7-3f6a-ba8312ebb042">
+        <Properties>
+          <Name>ГидрологияЗаписатьИзмерениеМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/hydrology/posts/{id}/measurements</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="7778be17-3ca4-6f72-e2c1-e7e9a96d2e78">
+            <Properties>
+              <Name>ГидрологияЗаписатьИзмерение</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ГидрологияЗаписатьИзмерение</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="f984d658-76ad-e8cb-033c-4159e559b06b">
+        <Properties>
+          <Name>ГидрологияИмпортМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/hydrology/posts/{id}/import</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="7956c55c-bfaf-56ee-b33e-c63be597cded">
+            <Properties>
+              <Name>ГидрологияИмпорт</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ГидрологияИмпорт</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="eb86dc1d-cff9-1ea0-be0d-17b1569179ac">
+        <Properties>
+          <Name>ГидрологияИсправитьИзмерениеМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/hydrology/posts/{id}/corrections</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="f4716fe7-a6ea-f67b-1cc1-bc271f59f13a">
+            <Properties>
+              <Name>ГидрологияИсправитьИзмерение</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ГидрологияИсправитьИзмерение</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="4ed028b0-bd16-b604-9a2f-afd103fe98a9">
+        <Properties>
+          <Name>ГидрологияИсторияМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/hydrology/posts/{id}/history</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="96c4c313-2db8-eb06-a1ce-d7f06d3b6322">
+            <Properties>
+              <Name>ГидрологияИстория</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ГидрологияИстория</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="f5b52c06-a11d-939d-e5f0-a11676235c6c">
+        <Properties>
+          <Name>ГидрологияИсторияНастроекМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/hydrology/posts/{id}/settings/history</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="658ec8e1-a8ef-2b4c-5be8-569fbe960816">
+            <Properties>
+              <Name>ГидрологияИсторияНастроек</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ГидрологияИсторияНастроек</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="70059d8d-5674-84c0-66cc-05b91ee25e45">
+        <Properties>
+          <Name>ГидрологияНастроитьПостМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/hydrology/posts/{id}/configuration</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="80b0a843-3309-dbc4-b304-f8f8d45df801">
+            <Properties>
+              <Name>ГидрологияНастроитьПост</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ГидрологияНастроитьПост</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="907a4080-aef2-d801-56b4-96f7d295930f">
+        <Properties>
+          <Name>ГидрологияПостыМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/hydrology/posts</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="22bda415-d395-8595-7b8a-908364b3f267">
+            <Properties>
+              <Name>ГидрологияПосты</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ГидрологияПосты</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="34660a9d-8e49-a2d6-c150-bec28a760e7e">
+            <Properties>
+              <Name>ГидрологияСоздатьПост</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ГидрологияСоздатьПост</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="5b89550f-09b8-261b-e050-0ae0f703a104">
+        <Properties>
+          <Name>ГидрологияРядМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/hydrology/posts/{id}/series</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="577a7960-d8ee-2b93-89a9-b33f11bb7bc0">
+            <Properties>
+              <Name>ГидрологияРяд</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ГидрологияРяд</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="825432f5-90a6-6041-18a3-2bc911fc42e9">
+        <Properties>
+          <Name>ГидрологияСправочникиМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/hydrology/reference</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="7d46491e-079d-53b5-466c-7b233a665583">
+            <Properties>
+              <Name>ГидрологияСправочники</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ГидрологияСправочники</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="b62aa5bf-cf82-3700-280e-5a7f9a6ae075">
+        <Properties>
+          <Name>ЖурналЭксплуатацииHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/admin/audit</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="06167189-4690-900b-585e-4114889022f1">
+            <Properties>
+              <Name>ЖурналЭксплуатацииHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ЖурналЭксплуатацииHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="f39168ff-57c8-4279-f22f-74b8e7ddb81f">
+        <Properties>
+          <Name>ЗагрузитьФотоПоказанияHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/meter-readings/{id}/photo</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="5fc9b4bd-f592-de89-a156-305aaa73cf5a">
+            <Properties>
+              <Name>ЗагрузитьФотоПоказанияHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ЗагрузитьФотоПоказанияHTTP</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="5bafc4fa-c05a-0e5f-09b9-85de0439f877">
+            <Properties>
+              <Name>ПолучитьФотоПоказанияHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьФотоПоказанияHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="929be04d-1fb2-d47e-58c2-cca8eb306a6e">
+        <Properties>
+          <Name>ЗаказУслугиНаряда</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work/service-orders/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="4df84980-4d77-98b8-c078-3f8f324a1e6e">
+            <Properties>
+              <Name>ПолучитьЗаказУслугиНарядаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьЗаказУслугиНарядаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="890099a1-66fc-6461-3ddc-8f8384e77404">
+        <Properties>
+          <Name>ЗаказыУслугНарядов</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work/service-orders</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="199f8462-16a5-c0dc-5390-0ca822a64bbe">
+            <Properties>
+              <Name>СписокЗаказовУслугНарядовHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>СписокЗаказовУслугНарядовHTTP</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="1297fdac-faae-9750-cc51-d8fdd16505f5">
+            <Properties>
+              <Name>СоздатьЗаказУслугиНарядаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьЗаказУслугиНарядаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="aa21398e-23ce-516c-773f-98d4789f41a6">
+        <Properties>
+          <Name>ЗаменитьДокументHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/documents/{id}/versions</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="b7386b13-a9ee-1bbf-8409-6b926475e920">
+            <Properties>
+              <Name>ЗаменитьДокументHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ЗаменитьДокументHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="2ca71434-1983-29a4-018d-d14bc88fc766">
+        <Properties>
+          <Name>ЗапроситьПодтверждениеКонтактаHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/account/contact/actions/request</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="5e358896-5dd7-a312-e0db-e52bddff51f6">
+            <Properties>
+              <Name>ЗапроситьПодтверждениеКонтактаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ЗапроситьПодтверждениеКонтактаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="a7a39f42-b54f-f348-d28a-5704e04eb0ca">
+        <Properties>
+          <Name>ЗаявкиКорректировкиПоказанийHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/meter-installations/{id}/correction-requests</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="3af21437-9e7b-4210-8948-f67f5d3f36f5">
+            <Properties>
+              <Name>ЗаявкиКорректировкиПоказанийHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ЗаявкиКорректировкиПоказанийHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="4a55401a-b5d4-6ba7-23b0-06610c534546">
+        <Properties>
+          <Name>ИзменитьДоставкуВодыHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/water/deliveries/{id}/actions/{action}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="2021ccf0-2dd1-a857-1d91-a8295c985487">
+            <Properties>
+              <Name>ИзменитьДоставкуВодыHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ИзменитьДоставкуВодыHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="eddd8d1e-50f6-2b42-4dac-10d68da59bcb">
+        <Properties>
+          <Name>ИзменитьОбъектСетиP0HTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/network-assets/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="f19918f9-a1e0-5956-fa5a-7eef9cf6342e">
+            <Properties>
+              <Name>ИзменитьОбъектСетиP0HTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ИзменитьОбъектСетиP0HTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="4700213d-14af-033e-4e84-bd28848a8741">
+        <Properties>
+          <Name>ИзменитьОтключениеP0HTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/outages/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="8230571b-566a-77f6-6633-1188f0bb39a2">
+            <Properties>
+              <Name>ИзменитьОтключениеP0HTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ИзменитьОтключениеP0HTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="6be4e159-7ba4-d25c-1f6a-51f6493ba7eb">
+        <Properties>
+          <Name>ИзменитьСвязьСетиP0HTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/network-links/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="1b63fabb-e23a-335f-a42b-4e0dde9818b4">
+            <Properties>
+              <Name>ИзменитьСвязьСетиP0HTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ИзменитьСвязьСетиP0HTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="1aefd988-5cfa-34d4-9014-1e52801b6237">
+        <Properties>
+          <Name>ИсполнениеНаряда</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work/orders/{id}/execution</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="b18b9d58-81ad-9496-d0f1-9ec724565703">
+            <Properties>
+              <Name>ПолучитьИсполнениеНарядаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьИсполнениеНарядаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="a88b11a0-5012-9d3d-a632-3919521d35c1">
+        <Properties>
+          <Name>ИсторияНастроекЭксплуатацииHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/admin/settings/history</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="b0643979-9cfe-abab-8edd-6dae0c4666c2">
+            <Properties>
+              <Name>ИсторияНастроекЭксплуатацииHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ИсторияНастроекЭксплуатацииHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="97779163-1618-6db1-4146-476c3674a678">
+        <Properties>
+          <Name>ИсторияОбращенияP0HTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/requests/{id}/timeline</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="a6933f2f-9404-5714-19f1-891278597ff0">
+            <Properties>
+              <Name>ИсторияОбращенияP0HTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ИсторияОбращенияP0HTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="0fb665c0-f1f9-f893-e6e5-ef139e8a1bec">
+        <Properties>
+          <Name>КарточкаДокументаHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/documents/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="41fa86ee-fbe8-a026-2df3-fc79da971895">
+            <Properties>
+              <Name>КарточкаДокументаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>КарточкаДокументаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="d9b45ebc-e444-92bf-43ba-84fb149f167c">
+        <Properties>
+          <Name>КонтактКабинетаHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/account/contact</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="3be35cbe-a98f-ab3d-f3d7-5ac20617e853">
+            <Properties>
+              <Name>КонтактКабинетаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>КонтактКабинетаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="20a2b6ce-1220-7698-5683-293e446f3324">
+        <Properties>
+          <Name>ЛабЗаказЛаборанта</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/technician/orders/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="b4a52772-deb4-948c-7d0f-98a166502464">
+            <Properties>
+              <Name>ПолучитьЗаказЛабораторииЛаборантаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьЗаказЛабораторииЛаборантаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="bb9667dc-3a61-8e7e-6987-860fda022a4c">
+        <Properties>
+          <Name>ЛабЗаказМоей</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/my/orders/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="6a8a6c0f-14cb-02e8-dbfd-71242e9fecf1">
+            <Properties>
+              <Name>ПолучитьЗаказЛабораторииМоейHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьЗаказЛабораторииМоейHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="a787cfbe-3dd1-b598-1d96-a54725bcf692">
+        <Properties>
+          <Name>ЛабЗаказОтменить</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/my/orders/{id}/actions/cancel</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="f66c7a8a-c4dc-b5d1-7af2-e85e01a19118">
+            <Properties>
+              <Name>ОтменитьЗаказЛабораторииHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ОтменитьЗаказЛабораторииHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="342b7288-1add-9a79-05be-a345eb4c1feb">
+        <Properties>
+          <Name>ЛабЗаказПодать</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/my/orders/{id}/actions/submit</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="c3368185-d906-095d-662f-1278a2ae58b9">
+            <Properties>
+              <Name>ПодатьЗаказЛабораторииHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ПодатьЗаказЛабораторииHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="262df4be-a879-6ba8-ccfc-725dd044e601">
+        <Properties>
+          <Name>ЛабЗаказУтверждающего</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/approver/orders/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="98326ba6-32fe-0cb2-3474-8ff68f79cc3d">
+            <Properties>
+              <Name>ПолучитьЗаказЛабораторииУтверждающегоHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьЗаказЛабораторииУтверждающегоHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="6599e1b5-1f45-999d-8488-fd0a90093722">
+        <Properties>
+          <Name>ЛабИсторияЛаборанта</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/technician/samples/{id}/history</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="d8d5cdfc-b415-e6c9-c85e-8874acaa1c01">
+            <Properties>
+              <Name>ПолучитьИсториюЛабораторииЛаборантаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьИсториюЛабораторииЛаборантаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="766c9631-030c-4b85-97ff-848f36e21022">
+        <Properties>
+          <Name>ЛабИсторияМоей</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/my/samples/{id}/history</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="e1846869-fd2f-abaa-3852-0b24559d4aea">
+            <Properties>
+              <Name>ПолучитьИсториюЛабораторииМоейHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьИсториюЛабораторииМоейHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="95453610-61f7-e462-bfd2-24f3ddb367cb">
+        <Properties>
+          <Name>ЛабИсторияУтверждающего</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/approver/samples/{id}/history</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="84c41acc-0e59-1755-fad5-d6a02be7b0cc">
+            <Properties>
+              <Name>ПолучитьИсториюЛабораторииУтверждающегоHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьИсториюЛабораторииУтверждающегоHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="3ec8f317-b3b8-0257-88d1-747cbad67b54">
+        <Properties>
+          <Name>ЛабЛаборанты</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/technician/technicians</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="72f20495-3aba-53e3-acc4-4a8764be6726">
+            <Properties>
+              <Name>ПолучитьЛаборантовЛабораторииHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьЛаборантовЛабораторииHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="01edb14c-2683-c4c4-b384-4acdfbae0b63">
+        <Properties>
+          <Name>ЛабМоиЗаказы</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/my/orders</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="d941d156-0354-b5fb-1433-2756c5e17428">
+            <Properties>
+              <Name>ПолучитьМоиЗаказыЛабораторииHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьМоиЗаказыЛабораторииHTTP</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="f057e805-e973-fb85-1c92-d827d2bf93b3">
+            <Properties>
+              <Name>СоздатьЗаказЛабораторииHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьЗаказЛабораторииHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="fa755243-1b1d-ab75-f815-6623d0ce5ab2">
+        <Properties>
+          <Name>ЛабМоиПробы</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/my/samples</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="bb658d59-fcba-55e9-3b2f-6effb90af70e">
+            <Properties>
+              <Name>ПолучитьМоиПробыЛабораторииHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьМоиПробыЛабораторииHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="92b82589-ca86-f478-2347-56b44df52dfa">
+        <Properties>
+          <Name>ЛабОчередьЛаборанта</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/technician/queue</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="3fdcd2de-69bb-e299-b5f5-8a1efb76eb58">
+            <Properties>
+              <Name>ПолучитьОчередьЛабораторииЛаборантаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьОчередьЛабораторииЛаборантаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="c3404ecc-0c02-f2db-ca4b-f2483f55f4f1">
+        <Properties>
+          <Name>ЛабОчередьУтверждающего</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/approver/queue</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="b1d07f72-b8b9-cf81-bf6f-f546222a4855">
+            <Properties>
+              <Name>ПолучитьОчередьЛабораторииУтверждающегоHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьОчередьЛабораторииУтверждающегоHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="8dc9b87f-7c1b-cce2-6e45-11f4adc762c4">
+        <Properties>
+          <Name>ЛабПробаАрхивировать</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/technician/samples/{id}/actions/archive</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="1dd8f9b0-1d4b-398e-4ff1-031b2c551cd1">
+            <Properties>
+              <Name>АрхивироватьПробуЛабораторииHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>АрхивироватьПробуЛабораторииHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="28aea6f4-c9c3-b240-3037-21db2dcb5698">
+        <Properties>
+          <Name>ЛабПробаЗапроситьСведения</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/technician/samples/{id}/actions/ask-info</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="568bb375-fdc8-e999-6daf-cb92f23d4f82">
+            <Properties>
+              <Name>ЗапроситьСведенияПробуЛабораторииHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ЗапроситьСведенияПробуЛабораторииHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="de59cb19-b9de-dfb7-0f8a-d816df595d5f">
+        <Properties>
+          <Name>ЛабПробаЗарегистрировать</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/technician/samples/{id}/actions/register</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="d3655995-5d3f-39fe-a257-69db194110bc">
+            <Properties>
+              <Name>ЗарегистрироватьПробуЛабораторииHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ЗарегистрироватьПробуЛабораторииHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="1068d415-82cf-ad0c-26f7-b9901981fb68">
+        <Properties>
+          <Name>ЛабПробаИсправить</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/technician/samples/{id}/actions/correct</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="00a79ee4-c540-f835-978e-0bc86d77fe60">
+            <Properties>
+              <Name>ИсправитьПробуЛабораторииHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ИсправитьПробуЛабораторииHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="b52df9ee-05da-a4dd-72cf-088cd3ed63cb">
+        <Properties>
+          <Name>ЛабПробаЛаборанта</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/technician/samples/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="c5afda57-694d-ff54-3c80-76f0b5b14ec0">
+            <Properties>
+              <Name>ПолучитьПробуЛабораторииЛаборантаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьПробуЛабораторииЛаборантаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="e77bec00-e162-6d4d-bbd4-6862d533ce53">
+        <Properties>
+          <Name>ЛабПробаМоей</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/my/samples/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="b494d744-90a6-2541-bba3-b821623fc5f4">
+            <Properties>
+              <Name>ПолучитьПробуЛабораторииМоейHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьПробуЛабораторииМоейHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="e634360d-7f91-4043-5afe-f5e87c791437">
+        <Properties>
+          <Name>ЛабПробаНазначить</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/technician/samples/{id}/actions/assign</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="45f33498-b399-10f1-c098-db1d54310740">
+            <Properties>
+              <Name>НазначитьПробуЛабораторииHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>НазначитьПробуЛабораторииHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="26ee8a50-e5c2-132d-b578-d83e45ef1f6f">
+        <Properties>
+          <Name>ЛабПробаНачатьАнализ</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/technician/samples/{id}/actions/start-analysis</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="48b8294c-2946-556f-07c0-ef261c22e512">
+            <Properties>
+              <Name>НачатьАнализПробуЛабораторииHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>НачатьАнализПробуЛабораторииHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="89977d8f-64e5-982f-0aa3-d6f9dcd4bb5e">
+        <Properties>
+          <Name>ЛабПробаОтветить</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/my/samples/{id}/actions/answer</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="5c775f69-f504-7798-9728-b9be3d8202f7">
+            <Properties>
+              <Name>ОтветитьПробуЛабораторииHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ОтветитьПробуЛабораторииHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="87b2b26d-c459-c523-4987-d098aebfd8e3">
+        <Properties>
+          <Name>ЛабПробаОтклонить</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/technician/samples/{id}/actions/reject</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="064bfeea-c172-272c-17d9-de92f7029d97">
+            <Properties>
+              <Name>ОтклонитьПробуЛабораторииHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ОтклонитьПробуЛабораторииHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="72b01e8d-1c2b-e5ba-3db8-3393db30c58b">
+        <Properties>
+          <Name>ЛабПробаУтверждающего</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/approver/samples/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="c29e1ce9-4bf2-61ce-2d72-470f1d457ce1">
+            <Properties>
+              <Name>ПолучитьПробуЛабораторииУтверждающегоHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьПробуЛабораторииУтверждающегоHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="f01f0169-9a19-67ee-63fb-717e82e69c84">
+        <Properties>
+          <Name>ЛабПротоколВернуть</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/approver/samples/{id}/actions/rework</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="23cd673b-f8d6-2667-a98a-ff686a69398b">
+            <Properties>
+              <Name>ВернутьПротоколЛабораторииHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ВернутьПротоколЛабораторииHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="637a1295-4c05-cb3b-9549-bb45aea63c02">
+        <Properties>
+          <Name>ЛабПротоколЛаборанта</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/technician/samples/{id}/protocol</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="224f0cd0-c39a-d0ee-f9c2-797422a17a74">
+            <Properties>
+              <Name>ПолучитьПротоколЛабораторииЛаборантаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьПротоколЛабораторииЛаборантаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="afc019f6-482f-d11b-6021-7bbb24d5b716">
+        <Properties>
+          <Name>ЛабПротоколЛаборантаCSV</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/technician/samples/{id}/protocol.csv</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="1feb0065-4e6f-1736-68be-0b43e8b19d66">
+            <Properties>
+              <Name>ПолучитьПротоколЛабораторииЛаборантаCSVHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьПротоколЛабораторииЛаборантаCSVHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="e03d5f93-1ae0-3f4d-3a55-ae7d93e6aa7f">
+        <Properties>
+          <Name>ЛабПротоколЛаборантаPDF</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/technician/samples/{id}/protocol.pdf</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="3748d950-1396-f3b1-3b17-442477b3807b">
+            <Properties>
+              <Name>ПолучитьПротоколЛабораторииЛаборантаPDFHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьПротоколЛабораторииЛаборантаPDFHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="87f50b16-6562-4fa9-a492-79fdbbb445e3">
+        <Properties>
+          <Name>ЛабПротоколМоей</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/my/samples/{id}/protocol</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="36a53e3a-170b-67ff-bc85-cdd2a4875396">
+            <Properties>
+              <Name>ПолучитьПротоколЛабораторииМоейHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьПротоколЛабораторииМоейHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="9b0ab538-8add-28e0-6c93-4c8e21f4c257">
+        <Properties>
+          <Name>ЛабПротоколМоейCSV</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/my/samples/{id}/protocol.csv</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="74dc727f-67d7-6b8e-748c-bf27b552ccfa">
+            <Properties>
+              <Name>ПолучитьПротоколЛабораторииМоейCSVHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьПротоколЛабораторииМоейCSVHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="d9098560-ad3c-2788-6b52-40566a4ec34c">
+        <Properties>
+          <Name>ЛабПротоколМоейPDF</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/my/samples/{id}/protocol.pdf</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="f58fae06-e9fe-86da-f650-4fb12fc56544">
+            <Properties>
+              <Name>ПолучитьПротоколЛабораторииМоейPDFHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьПротоколЛабораторииМоейPDFHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="3b9372ed-859c-8198-ddec-f0d408bb62f6">
+        <Properties>
+          <Name>ЛабПротоколПубличной</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/public/samples/{id}/protocol</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="468e45fe-3365-d5cb-a310-1f0bca745c62">
+            <Properties>
+              <Name>ПолучитьПротоколЛабораторииПубличнойHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьПротоколЛабораторииПубличнойHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="f1f8cc28-40e7-9508-257b-a0ef8a130f74">
+        <Properties>
+          <Name>ЛабПротоколПубличнойCSV</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/public/samples/{id}/protocol.csv</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="afe1424d-1301-6d2e-8d6f-7f81fa693bde">
+            <Properties>
+              <Name>ПолучитьПротоколЛабораторииПубличнойCSVHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьПротоколЛабораторииПубличнойCSVHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="8552bc9b-1f3f-ef39-c2f9-cf642281e216">
+        <Properties>
+          <Name>ЛабПротоколПубличнойPDF</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/public/samples/{id}/protocol.pdf</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="61454109-40c7-dedd-6179-92a632fb924b">
+            <Properties>
+              <Name>ПолучитьПротоколЛабораторииПубличнойPDFHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьПротоколЛабораторииПубличнойPDFHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="ba8c4d78-8a4c-1e42-78c8-0365275004d7">
+        <Properties>
+          <Name>ЛабПротоколУтвердить</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/approver/samples/{id}/actions/approve</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="9538f9c5-7fa2-5e7c-289c-a6a1ba39e8ca">
+            <Properties>
+              <Name>УтвердитьПротоколЛабораторииHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>УтвердитьПротоколЛабораторииHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="ba571ded-b2d1-d1da-dd26-dee93413b359">
+        <Properties>
+          <Name>ЛабПротоколУтверждающего</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/approver/samples/{id}/protocol</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="cb8cd635-82e9-79d4-7ace-2a6ab8f21f5a">
+            <Properties>
+              <Name>ПолучитьПротоколЛабораторииУтверждающегоHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьПротоколЛабораторииУтверждающегоHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="fbf60b23-63b9-c883-8bf4-50b7b016ff01">
+        <Properties>
+          <Name>ЛабПротоколУтверждающегоCSV</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/approver/samples/{id}/protocol.csv</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="bfc7b73a-f401-fee2-3506-8d1a6c6fdf2d">
+            <Properties>
+              <Name>ПолучитьПротоколЛабораторииУтверждающегоCSVHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьПротоколЛабораторииУтверждающегоCSVHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="b993ebba-758e-db1d-b5fa-3256fd225d2d">
+        <Properties>
+          <Name>ЛабПротоколУтверждающегоPDF</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/approver/samples/{id}/protocol.pdf</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="517c7c23-110d-18b9-89bd-ec7256bb66ce">
+            <Properties>
+              <Name>ПолучитьПротоколЛабораторииУтверждающегоPDFHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьПротоколЛабораторииУтверждающегоPDFHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="cb64bf1d-0931-1e58-c77b-e1db8d2933c3">
+        <Properties>
+          <Name>ЛабПубличнаяСводка</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/public/summary</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="a7aac209-8742-cfda-85f5-8cbfcf63c945">
+            <Properties>
+              <Name>ПолучитьПубличнуюСводкуЛабораторииHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьПубличнуюСводкуЛабораторииHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="5eef5f22-6ed0-d615-e065-cf6dbc1571c0">
+        <Properties>
+          <Name>ЛабПубличныеПротоколы</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/public/protocols</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="053347e7-9623-d547-7064-93a45f29202c">
+            <Properties>
+              <Name>ПолучитьПубличныеПротоколыЛабораторииHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьПубличныеПротоколыЛабораторииHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="742ff7e9-457f-005e-fe16-ca9930a5f31e">
+        <Properties>
+          <Name>ЛабРезультаты</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/technician/samples/{id}/results</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="06e29ec0-1c99-add8-6d71-29d94a881c43">
+            <Properties>
+              <Name>ПодатьРезультатыЛабораторииHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ПодатьРезультатыЛабораторииHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="f0a93314-f6f3-0a4c-27fc-d4b2614c47df">
+        <Properties>
+          <Name>ЛабСправочники</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/reference</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="4ac5ed48-3137-af87-1ef7-1239824f2bad">
+            <Properties>
+              <Name>ПолучитьСправочникиЛабораторииHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСправочникиЛабораторииHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="2b703c70-f66e-f156-5f37-15493f1bb487">
+        <Properties>
+          <Name>ЛабЧастноеЗаключение</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/lab/my/samples/{id}/private-conclusion</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="14be0a80-427e-d5d8-d54b-02ba1e2e9220">
+            <Properties>
+              <Name>ПолучитьЧастноеЗаключениеЛабораторииHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьЧастноеЗаключениеЛабораторииHTTP</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="942a13b1-761b-fd26-4ecb-48d34e3d1230">
+            <Properties>
+              <Name>СохранитьЧастноеЗаключениеЛабораторииHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СохранитьЧастноеЗаключениеЛабораторииHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="06ce0dec-502e-e267-1ff9-cfc8b8b2ec60">
+        <Properties>
+          <Name>МатериалыЗаявка</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work-materials/requests</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="a3746262-bb72-420d-4a87-b09affee3f23">
+            <Properties>
+              <Name>СоздатьЗаявкуНарядаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьЗаявкуНарядаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="78ad1bab-4549-cabd-7e73-ff767c261f5d">
+        <Properties>
+          <Name>МатериалыИсправление</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work-materials/corrections</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="6a0f823d-b8c7-9657-1b96-1c7fb5120ad0">
+            <Properties>
+              <Name>ИсправитьСписаниеНарядаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ИсправитьСписаниеНарядаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="4bea34ec-ba83-e8b8-602f-57b8bd5b92d5">
+        <Properties>
+          <Name>МатериалыНаряда</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work-materials/orders/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="a91522a7-dbdc-7265-c8d8-6b476b347126">
+            <Properties>
+              <Name>МатериалыНарядаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>МатериалыНарядаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="72b7703b-6033-de3b-fbb1-09d928b61f09">
+        <Properties>
+          <Name>МатериалыРасход</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work-materials/consumption</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="759f42cf-fcf0-9995-cd7b-8bf252b082ac">
+            <Properties>
+              <Name>СписатьМатериалыНарядаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СписатьМатериалыНарядаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="00c9b10f-7f10-1005-f01f-c8f93ccab9b1">
+        <Properties>
+          <Name>МатериальныеНаряды</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work-materials/orders</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="05aff5b3-ad7e-6406-c309-57664a1d2bc3">
+            <Properties>
+              <Name>МатериальныеНарядыHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>МатериальныеНарядыHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="894740c6-43ea-9c7a-2897-426107746cfe">
+        <Properties>
+          <Name>МоеФотоГостяP0HTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/my/requests/{id}/guest-photo</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="c289c80e-89d1-56d9-dacf-2e14869c7907">
+            <Properties>
+              <Name>МоеФотоГостяP0HTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>МоеФотоГостяP0HTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="ec1dc7f2-c15f-3c7b-e792-d1d695ab431c">
+        <Properties>
+          <Name>МоиДоставкиВодыHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/water/my-deliveries</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="da2389ef-9dac-410d-25db-c581fdf6db02">
+            <Properties>
+              <Name>МоиДоставкиВодыHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>МоиДоставкиВодыHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="e070de71-2086-7e4e-7e3c-c0b9b4198ad7">
+        <Properties>
+          <Name>МоиЛицевыеСчетаСтраницаHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/account/personal-accounts</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="55370846-d23a-8db4-85a4-b8c7b1612f5c">
+            <Properties>
+              <Name>МоиЛицевыеСчетаСтраницаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>МоиЛицевыеСчетаСтраницаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="18211853-eba0-fa94-7e08-515fb281dc2b">
+        <Properties>
+          <Name>МояИсторияОбращенияP0HTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/my/requests/{id}/timeline</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="9c2ca1a7-322e-498a-e276-33ce8541b14e">
+            <Properties>
+              <Name>МояИсторияОбращенияP0HTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>МояИсторияОбращенияP0HTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="cce4335a-4bcb-b9c2-a25c-e43c9f544882">
+        <Properties>
+          <Name>НастроитьЯщикКабинетаHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/account/mailbox/actions/configure</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="91546b85-3ca8-962a-d530-dd4ea21fcd42">
+            <Properties>
+              <Name>НастроитьЯщикКабинетаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>НастроитьЯщикКабинетаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="4aff9b2b-045f-7881-3139-975fcb296de4">
+        <Properties>
+          <Name>НастройкиВодыСтраницаHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/water/setup/{kind}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="ae979e0e-3a7b-a83d-92c6-1202c4bdbbfd">
+            <Properties>
+              <Name>НастройкиВодыСтраницаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>НастройкиВодыСтраницаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="37cd0fad-3ebb-e2ec-e61f-eccc5edbd8ea">
+        <Properties>
+          <Name>ОбъектИнцидентаP0HTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/incidents/{id}/network-asset</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="5f208cf8-e472-1700-16ab-7717029c8c48">
+            <Properties>
+              <Name>ОбъектИнцидентаP0HTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ОбъектИнцидентаP0HTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="2d698da6-ac03-d25f-3f13-f440c2dcc1f8">
+        <Properties>
+          <Name>ОпубликоватьОтключениеP0HTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/outages/{id}/publish</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="ac9f97fa-b0f2-8c72-124c-743a0bfa83fd">
+            <Properties>
+              <Name>ОпубликоватьОтключениеP0HTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ОпубликоватьОтключениеP0HTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="c785c69a-4aca-59a8-ccf5-96a2c6aebc73">
+        <Properties>
+          <Name>ОтклонитьПередачуВладенияHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/ownership-transfers/{id}/actions/decline</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="f3da4be4-bf0c-3cd1-d313-43624888cee2">
+            <Properties>
+              <Name>ОтклонитьПередачуВладенияHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ОтклонитьПередачуВладенияHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="12129c0f-4b11-e41f-6b2b-512e19b191d5">
+        <Properties>
+          <Name>ОтозватьПередачуВладенияHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/ownership-transfers/{id}/actions/revoke</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="941d2eee-5cb1-86ca-b883-a59022660cae">
+            <Properties>
+              <Name>ОтозватьПередачуВладенияHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ОтозватьПередачуВладенияHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="3bc836eb-5b90-6e98-c7ab-03b148b4f4f3">
+        <Properties>
+          <Name>ПередатьДокументHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/documents/{id}/actions/submit</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="38ae50fd-b1fd-5675-2b08-e5c10ff831cc">
+            <Properties>
+              <Name>ПередатьДокументHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ПередатьДокументHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="d5432736-a767-8c0a-56d5-9540836a0cb5">
+        <Properties>
+          <Name>ПередачиВладенияСписокHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/ownership-transfers</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="bcf64834-ffab-eaf3-75a3-e63c8dd43c37">
+            <Properties>
+              <Name>ПередачиВладенияСписокHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПередачиВладенияСписокHTTP</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="7f1baa01-7473-b689-026f-9608c940a69c">
+            <Properties>
+              <Name>ПредложитьПередачуВладенияHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ПредложитьПередачуВладенияHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="325bbacf-438c-fe1f-1113-e9f2e52dbe76">
+        <Properties>
+          <Name>ПечатныйНаряд</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work/orders/{id}/print/{kind}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="8bae6dba-5452-c88e-d6df-8ea3c6961d08">
+            <Properties>
+              <Name>ПечатныйНарядHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПечатныйНарядHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="0a23ff14-5408-2262-0a6b-b4c9b1500e88">
+        <Properties>
+          <Name>ПовторитьДоставкуУведомленияHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/notifications/deliveries/{id}/retry</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="8ffbe079-be94-0d10-f611-7d86b0441010">
+            <Properties>
+              <Name>ПовторитьДоставкуУведомленияHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ПовторитьДоставкуУведомленияHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="b1bbfd87-812a-6a3b-ba98-8b815de99ea7">
+        <Properties>
+          <Name>ПовторитьЗаданиеЭксплуатацииHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/admin/jobs/{id}/retry</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="8dd2b598-4014-5faa-5c80-5afc801d1809">
+            <Properties>
+              <Name>ПовторитьЗаданиеЭксплуатацииHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ПовторитьЗаданиеЭксплуатацииHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="0d20f9a4-ef2e-c0e6-5af9-8788258fe347">
+        <Properties>
+          <Name>ПодпискаОтключенияP0HTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/my/outage-subscriptions</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="f4a0d9af-c494-e6d4-6df7-ef54154d21fb">
+            <Properties>
+              <Name>ПодпискаОтключенияP0HTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ПодпискаОтключенияP0HTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="2a8b9416-8623-4519-f45e-4e05c70d6a2c">
+        <Properties>
+          <Name>ПодтвердитьКонтактКабинетаHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/account/contact/actions/confirm</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="7276d763-85ae-5078-a6e4-1b11d47f8d14">
+            <Properties>
+              <Name>ПодтвердитьКонтактКабинетаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ПодтвердитьКонтактКабинетаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="6b7dd454-6c71-cec3-e219-2e7d830222f0">
+        <Properties>
+          <Name>ПолномочияРабочейОбластиHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/workspaces/{id}/authority</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="809af76e-d997-3c77-e359-0214e6b1b003">
+            <Properties>
+              <Name>ПолномочияРабочейОбластиHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолномочияРабочейОбластиHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="7f1d43c9-cd66-7cfc-5a98-d0012715edd8">
+        <Properties>
+          <Name>ПолучитьДоставкиУведомленийHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/notifications/deliveries</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="8df53796-97ba-d853-7747-3506aabb39a4">
+            <Properties>
+              <Name>ПолучитьДоставкиУведомленийHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьДоставкиУведомленийHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="5b905195-c18e-9446-baef-8ac467ab413d">
+        <Properties>
+          <Name>ПолучитьЗаданияЭксплуатацииHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/admin/jobs</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="a7e9caa6-8713-fe78-d68b-87f3a04917ce">
+            <Properties>
+              <Name>ПолучитьЗаданияЭксплуатацииHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьЗаданияЭксплуатацииHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="649caa0c-ff6b-c010-5706-3d529ce1c1a1">
+        <Properties>
+          <Name>ПолучитьНастройкиУведомленийHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/notifications/settings</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="b97de765-b8fd-0ff1-6d91-3790e97661c7">
+            <Properties>
+              <Name>ПолучитьНастройкиУведомленийHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьНастройкиУведомленийHTTP</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="1d2fa3ce-825c-64d0-2f47-eea1cf24a321">
+            <Properties>
+              <Name>ИзменитьНастройкиУведомленийHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ИзменитьНастройкиУведомленийHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="126b03c6-53e0-4363-3473-41df363756c6">
+        <Properties>
+          <Name>ПолучитьНастройкиЭксплуатацииHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/admin/settings</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="dc3f444d-e3c7-7e5c-3afb-dcc0f016063a">
+            <Properties>
+              <Name>ПолучитьНастройкиЭксплуатацииHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьНастройкиЭксплуатацииHTTP</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="8ceb3e97-b626-508c-3e4f-c1306cffdcde">
+            <Properties>
+              <Name>ИзменитьНастройкиЭксплуатацииHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ИзменитьНастройкиЭксплуатацииHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="a90b2c55-9eb1-8e43-7415-6a99d3a4be0b">
+        <Properties>
+          <Name>ПолучитьУведомленияHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/notifications</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="0f39c41e-1fa8-91b7-70d4-53681a772477">
+            <Properties>
+              <Name>ПолучитьУведомленияHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьУведомленияHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="b5577c49-23f0-8a49-3357-5092c4148823">
+        <Properties>
+          <Name>ПочтовыйЯщикКабинетаHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/account/mailbox</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="b457c4f7-d7a8-fb37-3c03-ad254b5b5b20">
+            <Properties>
+              <Name>ПочтовыйЯщикКабинетаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПочтовыйЯщикКабинетаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="5063be53-5d67-dfcd-0269-eb8c2a0b0090">
+        <Properties>
+          <Name>ПринятыйРядПоказанийHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/meter-installations/{id}/accepted-series</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="9f6d9af8-c0e8-1cde-c153-f8761e7bab3d">
+            <Properties>
+              <Name>ПринятыйРядПоказанийHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПринятыйРядПоказанийHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="f4070f1d-5f6c-c08d-a02e-73a09dfcdf86">
+        <Properties>
+          <Name>ПринятьПередачуВладенияHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/ownership-transfers/{id}/actions/accept</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="cb89f2ed-4d2b-77cf-d5e0-79c7ddff67ef">
+            <Properties>
+              <Name>ПринятьПередачуВладенияHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ПринятьПередачуВладенияHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="3445894b-f8a1-e284-0d7b-05e6c8f3bf87">
+        <Properties>
+          <Name>ПрисоединитьКвитанциюP0HTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/my/receipts/{id}/claim</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="067b293f-b376-d141-7408-99c9533f04ea">
+            <Properties>
+              <Name>ПрисоединитьКвитанциюP0HTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ПрисоединитьКвитанциюP0HTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="2584c601-62c4-a590-71da-1f8da6dc184d">
+        <Properties>
+          <Name>ПрофильБригадыP0HTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work/crews/{id}/profile</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="2f8e1947-565f-1bf9-39ca-fb443bcbf098">
+            <Properties>
+              <Name>ПрофильБригадыP0HTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПрофильБригадыP0HTTP</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="4160d95b-c580-e426-cef2-6e78a46a0f87">
+            <Properties>
+              <Name>ЗаписатьПрофильБригадыP0HTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ЗаписатьПрофильБригадыP0HTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="5ab45b9d-eacf-2a7c-e7ff-53084350a99b">
+        <Properties>
+          <Name>ПрочитатьУведомлениеHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/notifications/{id}/read</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="570c7496-431f-c8a0-531b-29018bb98304">
+            <Properties>
+              <Name>ПрочитатьУведомлениеHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ПрочитатьУведомлениеHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="449b16b8-6115-79ba-0f76-a929691059f9">
+        <Properties>
+          <Name>ПубликацииПорталаАрхивHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/admin/publications/{id}/actions/archive</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="34a152fc-0345-7f9d-eac1-4258fce9eab0">
+            <Properties>
+              <Name>ПубликацииПорталаАрхивHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ПубликацииПорталаАрхивHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="558728f6-aa97-68bf-691c-b835539f80f2">
+        <Properties>
+          <Name>ПубликацииПорталаОпубликоватьHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/admin/publications/{id}/actions/publish</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="7e2c2563-888a-c6c1-0475-03c0e2093dc7">
+            <Properties>
+              <Name>ПубликацииПорталаОпубликоватьHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ПубликацииПорталаОпубликоватьHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="47b89c82-a0f3-231a-ff79-2206faf7508a">
+        <Properties>
+          <Name>ПубликацииПорталаСписокHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/admin/publications</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="e85f7672-9256-cb96-ba4b-5092602b4753">
+            <Properties>
+              <Name>ПубликацииПорталаСписокHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПубликацииПорталаСписокHTTP</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="5992d1f8-0abb-b56f-b0f3-18a0860d1c57">
+            <Properties>
+              <Name>ПубликацииПорталаСохранитьHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ПубликацииПорталаСохранитьHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="808e3579-4632-f5ee-2373-0406aa7bc194">
+        <Properties>
+          <Name>РассмотретьПоказаниеHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/meter-readings/{id}/review</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="77fcf6f4-6b50-e155-ffeb-4a386202e969">
+            <Properties>
+              <Name>РассмотретьПоказаниеHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>РассмотретьПоказаниеHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="a46f678c-66cd-bfea-2f2f-6a16fc64187f">
+        <Properties>
+          <Name>РедакцияИсполненияНаряда</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work/orders/{id}/execution/versions/{version}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="cf1f296a-7682-d291-d567-66fad0ec49ca">
+            <Properties>
+              <Name>ПолучитьРедакциюИсполненияНарядаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьРедакциюИсполненияНарядаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="916773c8-48f5-0fc2-6783-15b7cd6f7218">
+        <Properties>
+          <Name>РешенияПроверкиПоказанийHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/meter-installations/{id}/review-decisions</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="4456af10-24ce-075f-9185-74790073eda3">
+            <Properties>
+              <Name>РешенияПроверкиПоказанийHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>РешенияПроверкиПоказанийHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="44289b99-1df3-d048-3c77-a9bd4481a4c3">
+        <Properties>
+          <Name>СкачатьДокументHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/documents/{id}/download</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="59692a39-0e5e-758a-7437-4dabfd095b84">
+            <Properties>
+              <Name>СкачатьДокументHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>СкачатьДокументHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="c6063e97-c21a-f70f-69bc-a28e35087f83">
+        <Properties>
+          <Name>СкачатьФотоПоказанияHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/meter-readings/{id}/photo/download</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="96a98ece-34e4-9d58-8cd4-0f98b424a076">
+            <Properties>
+              <Name>СкачатьФотоПоказанияHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>СкачатьФотоПоказанияHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="b8a06989-16f4-1db1-e09f-14fba53292d6">
+        <Properties>
+          <Name>СкачатьЭкспортДокументаHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/exports/{id}/download</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="9b0f857e-e80b-57bc-7165-2b4337ed1e38">
+            <Properties>
+              <Name>СкачатьЭкспортДокументаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>СкачатьЭкспортДокументаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="52e115c9-34e1-69d3-73b5-e579b4076268">
+        <Properties>
+          <Name>СкладДокумент</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/inventory/documents/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="0f79c746-035d-8fd2-a3e2-e087e7619433">
+            <Properties>
+              <Name>ПолучитьДвижениеМатериаловHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьДвижениеМатериаловHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="2551ce0f-909a-f055-af55-ac5d3c9d6558">
+        <Properties>
+          <Name>СкладДокументы</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/inventory/documents</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="91dc0a5b-2ef8-0189-697e-48bfb8f0914c">
+            <Properties>
+              <Name>ДвиженияМатериаловHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ДвиженияМатериаловHTTP</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="5a95e834-ee35-f967-4b43-1c16a015ed35">
+            <Properties>
+              <Name>СоздатьДвижениеМатериаловHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьДвижениеМатериаловHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="0678e2ef-5498-1071-9972-46297728bbdc">
+        <Properties>
+          <Name>СкладЕдиница</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/inventory/setup/Unit</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="deb47cf0-e2f9-137b-9416-0e37a519a732">
+            <Properties>
+              <Name>СоздатьЕдиницуСкладаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьЕдиницуСкладаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="abdf016a-d5f9-a127-2377-55bd0b8fa60f">
+        <Properties>
+          <Name>СкладЗаявки</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/inventory/requests</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="fde535a2-f32a-fc75-1a5d-71b809ca3498">
+            <Properties>
+              <Name>ЗаявкиМатериаловHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ЗаявкиМатериаловHTTP</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="36370f82-0348-5969-0743-0703fb6ad0ce">
+            <Properties>
+              <Name>СоздатьЗаявкуМатериаловHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьЗаявкуМатериаловHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="3b85161d-cad4-8f2e-47b8-988345f1e3f1">
+        <Properties>
+          <Name>СкладМатериал</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/inventory/setup/Material</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="21291439-2451-923e-b62f-74cc2b6bb4f3">
+            <Properties>
+              <Name>СоздатьМатериалСкладаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьМатериалСкладаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="573c068c-6bea-16a6-da92-223a96d673da">
+        <Properties>
+          <Name>СкладНаряды</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/inventory/work-orders</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="3c37adda-3133-a39b-37f5-384fed3198eb">
+            <Properties>
+              <Name>НарядыСкладаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>НарядыСкладаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="55b20d25-cfce-cfae-d831-c705829e46f5">
+        <Properties>
+          <Name>СкладНастройки</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/inventory/setup</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="fd9e5a4b-f937-ab6b-9a65-8da7fb150e28">
+            <Properties>
+              <Name>НастройкиСкладаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>НастройкиСкладаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="7eaebf75-1445-f701-41f4-0432d0f0dd0d">
+        <Properties>
+          <Name>СкладОстатки</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/inventory/stock</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="d0042988-e32b-0a17-2b8f-01c37028333e">
+            <Properties>
+              <Name>ОстаткиСкладаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ОстаткиСкладаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="c80d190d-ce26-5bba-09f2-371a9803673d">
+        <Properties>
+          <Name>СкладПомещение</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/inventory/setup/Warehouse</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="42a83377-c2eb-fd2c-77cd-20a2ba2a67e0">
+            <Properties>
+              <Name>СоздатьСкладHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьСкладHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="d88c985b-9abe-3df6-e50e-be19ef9138d6">
+        <Properties>
+          <Name>СкладЯчейка</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/inventory/setup/Cell</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="32336310-d770-5db8-038e-2ba3e1935fd9">
+            <Properties>
+              <Name>СоздатьЯчейкуСкладаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьЯчейкуСкладаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="3da1cf7e-ed6f-c8bf-548b-43860e15faeb">
+        <Properties>
+          <Name>СлужебноеФотоГостяP0HTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/requests/{id}/guest-photo</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="2ee1cf03-a3a2-123b-764d-af58f099384f">
+            <Properties>
+              <Name>СлужебноеФотоГостяP0HTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>СлужебноеФотоГостяP0HTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="cf21c03e-e66a-c33a-a7b5-fccfd5c32331">
+        <Properties>
+          <Name>СодержимоеФотографииНаряда</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work/photos/{id}/content</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="78402e1a-1b6e-9593-65af-50f45dbb32bf">
+            <Properties>
+              <Name>СкачатьФотографиюНарядаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>СкачатьФотографиюНарядаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="8d7501b8-0fa3-5ca9-4bb6-97cd279e4425">
+        <Properties>
+          <Name>СоздатьДоставкуВодыHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/water/deliveries</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="6022e450-5bfb-ea68-72d4-a60620978082">
+            <Properties>
+              <Name>СоздатьДоставкуВодыHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьДоставкуВодыHTTP</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="c2e8176c-b7a4-eea9-a312-135dc10ec3d9">
+            <Properties>
+              <Name>СписокДоставокВодыHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>СписокДоставокВодыHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="5429f8b4-8a7b-6540-b25e-8f4e74cb6d20">
+        <Properties>
+          <Name>СоздатьОбъектСетиP0HTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/network-assets</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="f5685736-4e91-1d99-8899-bbb9b4f7cf1e">
+            <Properties>
+              <Name>СоздатьОбъектСетиP0HTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьОбъектСетиP0HTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="c6bcac27-11fc-4fb6-b88f-9762f79a1cc3">
+        <Properties>
+          <Name>СоздатьОтключениеP0HTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/outages</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="7b4474ae-b306-6af5-ad91-48bb0bff4f1c">
+            <Properties>
+              <Name>СоздатьОтключениеP0HTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьОтключениеP0HTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="e9330181-1785-ca4e-d23e-afe43fa95663">
+        <Properties>
+          <Name>СоздатьСвязьСетиP0HTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/network-links</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="35612f8f-d532-b7c3-dc7c-3c9376791d76">
+            <Properties>
+              <Name>СоздатьСвязьСетиP0HTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьСвязьСетиP0HTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="78fc9ee5-95a8-68b1-00e3-dfd18e679f7e">
+        <Properties>
+          <Name>СоздатьЭкспортДокументаHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/exports</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="81e248cd-e225-3f8b-90bf-2a0fd788148d">
+            <Properties>
+              <Name>СоздатьЭкспортДокументаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьЭкспортДокументаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="7591fe9b-de23-02c9-9646-5b9a5cdd64c8">
+        <Properties>
+          <Name>СписокДокументовHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/documents</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="29e43a0a-6e28-d392-ea01-b065a5ded866">
+            <Properties>
+              <Name>СписокДокументовHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>СписокДокументовHTTP</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="6542aeb1-8db9-486c-1c29-89a91fa182b9">
+            <Properties>
+              <Name>ЗагрузитьДокументHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ЗагрузитьДокументHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="9bdbf074-8031-51dc-5e40-2f9c7417f7cc">
+        <Properties>
+          <Name>СтраницаДиспетчерскойP0HTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/pages/{kind}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="d8129d0f-ff07-f987-5f79-3374f63e5a65">
+            <Properties>
+              <Name>СтраницаДиспетчерскойP0HTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>СтраницаДиспетчерскойP0HTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="bb2b5daf-17d1-011f-5752-79bc2b7319ee">
+        <Properties>
+          <Name>СтраницаДокументовМатериаловНарядаHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work-materials/orders/{id}/documents</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="7a36f54c-5140-2cba-8ce1-0b6c71675491">
+            <Properties>
+              <Name>СтраницаДокументовМатериаловНарядаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>СтраницаДокументовМатериаловНарядаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="ba96b1c7-6e18-5636-1820-f19f1b383621">
+        <Properties>
+          <Name>СтраницаЗаявокМатериаловНарядаHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work-materials/orders/{id}/requests</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="41ecc021-356f-5f53-43c2-126dff00af99">
+            <Properties>
+              <Name>СтраницаЗаявокМатериаловНарядаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>СтраницаЗаявокМатериаловНарядаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="26bb06e3-bbf7-223f-52e3-f903c18b7edb">
+        <Properties>
+          <Name>УдалитьЧерновикДокументаHTTPМаршрут</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/documents/{id}/actions/delete</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="9da8ee98-dda6-47d2-e5d9-ebe0dbe277f2">
+            <Properties>
+              <Name>УдалитьЧерновикДокументаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>УдалитьЧерновикДокументаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="3d27aa04-9f3b-f017-c029-533bfee1d67c">
+        <Properties>
+          <Name>УчастникиНарядов</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work/people</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="b89507da-4885-e3f0-2078-86a5fc6c8686">
+            <Properties>
+              <Name>ПолучитьУчастниковНарядовHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьУчастниковНарядовHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="5a3515ac-ef3d-42c7-bc6f-19b92b09cb51">
+        <Properties>
+          <Name>ФотографииНаряда</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work/orders/{id}/photos</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="c65aca99-3bf1-c442-663a-c4a8aa457efb">
+            <Properties>
+              <Name>ПолучитьФотографииНарядаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьФотографииНарядаHTTP</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="6be32412-a01b-daf3-24c1-0bb29b7481c5">
+            <Properties>
+              <Name>ЗагрузитьФотографиюНарядаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ЗагрузитьФотографиюНарядаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="988d6e11-9dd5-7eb6-1c48-af2e337eff1e">
+        <Properties>
+          <Name>ЭкспортВерсииПриложенияНаряда</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work/orders/{id}/appendix-versions/{version}/export</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="af8c2281-3e62-d872-8d83-6b483d3004f6">
+            <Properties>
+              <Name>ЭкспортВерсииПриложенияНарядаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ЭкспортВерсииПриложенияНарядаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="cb784bd8-b5d1-6244-2f2e-9a6439da056f">
+        <Properties>
+          <Name>ЭкспортПриложенияНаряда</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work/orders/{id}/appendix/export</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="3d07a92e-9f65-2789-24cf-5ee5959b62bf">
+            <Properties>
+              <Name>ЭкспортПриложенияНарядаHTTP</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ЭкспортПриложенияНарядаHTTP</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="770a22e8-6188-2512-78fe-3b6e6cef7ced">
+        <Properties>
+          <Name>МаршрутГотовностиПриложения</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/health</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="e902277c-58f2-1ff4-0833-d911aee86c22">
+            <Properties>
+              <Name>ГотовностьПриложения</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ГотовностьПриложения</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="dab8cb58-7ba6-f3d3-bd09-879e1f46a70c">
+        <Properties>
+          <Name>ГотовностьПриложения</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/system/readiness</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="5abdba24-6ba4-350f-b123-d0c078a845e5">
+            <Properties>
+              <Name>ГотовностьПриложения</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ГотовностьПриложения</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="fcc69abd-ede4-b96e-158e-371e78c3e9fa">
+        <Properties>
+          <Name>МаршрутСеансаАвторизации</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/auth/session</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="ca49e8e5-be37-c851-06f4-7293e5992a29">
+            <Properties>
+              <Name>Войти</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>Войти</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="e4cf972a-4416-a36f-087e-f0fa8c99a8f2">
+            <Properties>
+              <Name>Выйти</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>DELETE</HTTPMethod>
+              <Handler>Выйти</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="46fe24bd-ce7c-8b60-1b27-199fa295e9ac">
+        <Properties>
+          <Name>МаршрутПрекращенияДоговора</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/contracts/{id}/actions/terminate</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="980c40cc-ebdd-e3d9-2b74-5eb887d07882">
+            <Properties>
+              <Name>ПрекратитьДоговор</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ПрекратитьДоговор</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="4b622e9e-375c-892a-2d80-e015b6d146cb">
+        <Properties>
+          <Name>МаршрутРешенияПоДоступуКСчету</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/account-link-requests/{id}/actions/{action}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="2652b1f2-9ade-3db7-ca09-0df75c49059c">
+            <Properties>
+              <Name>ОбработатьЗаявкуДоступаКСчету</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ОбработатьЗаявкуДоступаКСчету</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="0a503da6-6b08-f006-c27a-47480d136356">
+        <Properties>
+          <Name>МаршрутЗаявокДоступаКСчетам</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/account-link-requests</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="d47d103e-34fb-ab88-8789-0d113699a78b">
+            <Properties>
+              <Name>ПолучитьСобственныеЗаявкиДоступаКСчетам</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСобственныеЗаявкиДоступаКСчетам</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="bb028afe-3b63-bc7a-148a-5cb67755b83d">
+            <Properties>
+              <Name>ЗапроситьДоступКСчету</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ЗапроситьДоступКСчету</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="19f99549-1584-79e4-550b-8e7c9f9cfba8">
+        <Properties>
+          <Name>МаршрутОтзываДоступаКСчету</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/personal-account-links/{id}/actions/revoke</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="6105522b-e8bd-2f55-e2e8-bb13ae716f1e">
+            <Properties>
+              <Name>ОтозватьДоступКЛицевомуСчету</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ОтозватьДоступКЛицевомуСчету</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="db756a27-5212-6455-4141-a18c072978e8">
+        <Properties>
+          <Name>МаршрутОжидающихЗаявокДоступа</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/account-link-requests/pending</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="28d59060-e3b7-b4ba-1eca-8b352d2d8789">
+            <Properties>
+              <Name>ПолучитьОжидающиеЗаявкиДоступаКСчетам</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьОжидающиеЗаявкиДоступаКСчетам</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="3739d7d2-8c30-b82c-41cd-8ce698b4ebeb">
+        <Properties>
+          <Name>МаршрутСобственногоЛицевогоСчета</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/my/personal-accounts/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="95a74079-ca4b-42a5-460a-1971f11a4a16">
+            <Properties>
+              <Name>ПолучитьСобственныйЛицевойСчет</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСобственныйЛицевойСчет</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="7cebe715-de09-dae4-38e5-4e6387c50291">
+        <Properties>
+          <Name>МаршрутСобственныхЛицевыхСчетов</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/my/personal-accounts</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="5ca28cb8-81e8-ad9f-7ae7-11e8937de5cf">
+            <Properties>
+              <Name>ПолучитьСобственныеЛицевыеСчета</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСобственныеЛицевыеСчета</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="ac7f6b98-7dc6-3b4a-af9c-8a138af554a5">
+        <Properties>
+          <Name>ОбзорКабинета</Name>
+          <Synonym />
+          <Comment />
+          <Template>/dashboard</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="2ee915b2-20ae-4137-b5e9-eb0b4c5a88e1">
+            <Properties>
+              <Name>ОбзорКабинета</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ОбзорКабинета</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="fe0e44ca-2249-7492-2d44-de238fdd0ea2">
+        <Properties>
+          <Name>МаршрутИнцидентаДиспетчерской</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/incidents/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="e3efa306-d768-b367-fbcb-b3880e6058c7">
+            <Properties>
+              <Name>ПолучитьИнцидентДиспетчерской</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьИнцидентДиспетчерской</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="09b3be60-093a-b822-f506-93d814ef53d1">
+        <Properties>
+          <Name>МаршрутСвязиОбращенияСИнцидентом</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/requests/{id}/incidents/{incidentId}/actions/link</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="12af06e3-32a7-7f85-15c9-ad101b2c1506">
+            <Properties>
+              <Name>СвязатьОбращениеСИнцидентом</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СвязатьОбращениеСИнцидентом</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="ed7c40c1-0798-91b3-f367-baef2f663008">
+        <Properties>
+          <Name>МаршрутЗавершенияИнцидента</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/incidents/{id}/actions/resolve</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="3600c356-ad85-b4c1-61a0-bfa2da40d980">
+            <Properties>
+              <Name>ЗавершитьИнцидентДиспетчерской</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ЗавершитьИнцидентДиспетчерской</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="501b2f56-5fa6-401a-d3ec-0a58a3e6631d">
+        <Properties>
+          <Name>ИнцидентыДиспетчерской</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/incidents</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="0bb7a12d-6f07-8ed8-e7e4-af54caecf5a1">
+            <Properties>
+              <Name>ПолучитьСписокИнцидентовДиспетчерской</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСписокИнцидентовДиспетчерской</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="a93fc6d6-8cdb-cd70-a2a1-30a5d71af3fd">
+            <Properties>
+              <Name>СоздатьИнцидентДиспетчерской</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьИнцидентДиспетчерской</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="ce804e6d-7457-d18c-73f8-4f53ce6a8325">
+        <Properties>
+          <Name>МаршрутОтменыСвязиСИнцидентом</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/requests/{id}/incidents/{incidentId}/actions/unlink</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="76f52a99-78c0-1ee2-006b-2a2a64ce4b71">
+            <Properties>
+              <Name>ОтменитьСвязьОбращенияСИнцидентом</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ОтменитьСвязьОбращенияСИнцидентом</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="2de71af1-5209-5c60-90de-22bf143f405f">
+        <Properties>
+          <Name>МаршрутИзмененияИнцидента</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/incidents/{id}/actions/update</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="246c850c-baf8-5118-f0f3-cb9d8dd30b5b">
+            <Properties>
+              <Name>ИзменитьИнцидентДиспетчерской</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ИзменитьИнцидентДиспетчерской</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="1deb40e9-8653-8cd4-005e-60d52a5b54f0">
+        <Properties>
+          <Name>МаршрутНастройкиПриемной</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/intakes/{id}/actions/configure</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="89538ee4-b91b-014f-9633-12a96025e26e">
+            <Properties>
+              <Name>НастроитьПриемнуюДиспетчерской</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>НастроитьПриемнуюДиспетчерской</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="5f2ad992-ac3c-1d27-294c-0c6f881f64a8">
+        <Properties>
+          <Name>МаршрутПриемныхДиспетчерской</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/intakes</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="4d8449bb-5357-2f4e-75e9-fedd69088c58">
+            <Properties>
+              <Name>ПолучитьСписокПриемныхДиспетчерской</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСписокПриемныхДиспетчерской</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="31bd0614-07b3-b858-15b2-ba4143e1debc">
+            <Properties>
+              <Name>СоздатьПриемнуюДиспетчерской</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьПриемнуюДиспетчерской</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="43ac98c2-f906-85f1-9698-84894d011f79">
+        <Properties>
+          <Name>МаршрутОпубликованныхПриемных</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/public-intakes</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="c5bb45ff-a836-387f-a98f-e33796dc0c48">
+            <Properties>
+              <Name>ПолучитьОпубликованныеПриемные</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьОпубликованныеПриемные</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="5187e412-ff1a-6baa-3107-e544d6ae514b">
+        <Properties>
+          <Name>ПроверкаРаботоспособности</Name>
+          <Synonym />
+          <Comment />
+          <Template>/health</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="b40b8413-6016-5a9e-23c9-29fcffa6d854">
+            <Properties>
+              <Name>ПроверкаРаботоспособности</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПроверкаРаботоспособности</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="569e864c-718a-64e7-b414-bca4d88dc292">
+        <Properties>
+          <Name>ТекущийПользователь</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/me</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="1201279b-1669-1cbf-63a4-5a8d4f9a1ef1">
+            <Properties>
+              <Name>ТекущийПользователь</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ТекущийПользователь</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="89c4e7b0-86f1-bd14-c2bd-1015b1785022">
+        <Properties>
+          <Name>МаршрутКорректировкиПоказания</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/meter-readings/{id}/correction-requests</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="26a7cbbb-7f3f-6a6d-9ad1-baf7753f6f1f">
+            <Properties>
+              <Name>ЗапроситьКорректировкуПоказания</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ЗапроситьКорректировкуПоказания</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="cce22cea-5d54-4aa1-2960-96138018f53c">
+        <Properties>
+          <Name>УстановкаПрибора</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/meter-installations/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="498d6c70-e328-ef67-8a19-31d2d8a0d5ed">
+            <Properties>
+              <Name>ПолучитьУстановкуПрибора</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьУстановкуПрибора</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="ea7c51ea-4a02-f649-5355-6427e0ba6f0c">
+        <Properties>
+          <Name>УстановкиПриборов</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/meter-installations</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="e7d772fa-be1b-1994-d572-e9149a7ee3ba">
+            <Properties>
+              <Name>ПолучитьСписокУстановокПриборов</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСписокУстановокПриборов</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="50b01f54-db41-813b-a639-cf4b35569e22">
+            <Properties>
+              <Name>СоздатьУстановкуПрибора</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьУстановкуПрибора</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="7a39f632-d5c8-6474-7a55-e2ef1da250dc">
+        <Properties>
+          <Name>МаршрутИзмеренийПриборов</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/meter-readings</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="83bdae61-a107-9b23-1555-ae918d1aea28">
+            <Properties>
+              <Name>ПолучитьСписокИзмеренийПриборов</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСписокИзмеренийПриборов</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="2f68c43d-70f6-8c0b-d1cc-c237452ed068">
+            <Properties>
+              <Name>ПодатьИзмерениеПрибора</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ПодатьИзмерениеПрибора</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="71eadad7-3116-5a1e-522d-7eb6ceb598b0">
+        <Properties>
+          <Name>ПаспортаПриборов</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/meter-passports</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="067c2f50-daf4-e0df-216a-3a054ddc86aa">
+            <Properties>
+              <Name>ПолучитьСписокПаспортовПриборов</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСписокПаспортовПриборов</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="1c07afbc-7e9c-245d-5815-6c58d1dd6c40">
+            <Properties>
+              <Name>СоздатьПаспортПрибора</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьПаспортПрибора</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="65b46b62-267f-f21f-9af5-c333372254ae">
+        <Properties>
+          <Name>ПриборыУчета</Name>
+          <Synonym />
+          <Comment />
+          <Template>/meters</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="937c6a2c-ca18-9fb2-20b0-8ea90c0221d9">
+            <Properties>
+              <Name>ПолучитьСписокПриборовУчета</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСписокПриборовУчета</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="4c11aa2b-16e2-9eba-4b4b-dd53e4b95fe7">
+            <Properties>
+              <Name>СоздатьПриборУчета</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьПриборУчета</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="fa265721-2bb6-2f85-ff5e-5b3a40c30abd">
+        <Properties>
+          <Name>МаршрутИсторииСобственногоОбращения</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/my/requests/{id}/history</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="0db00c41-de45-e189-6fc9-666f9132057d">
+            <Properties>
+              <Name>ПолучитьИсториюСобственногоОбращения</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьИсториюСобственногоОбращения</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="c16ef7e7-0cc7-479c-1ca7-f24030f64a73">
+        <Properties>
+          <Name>МаршрутСообщенияСобственногоОбращения</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/my/requests/{id}/messages</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="acd77b68-0a70-b4ab-3bfa-259b0f4ca80d">
+            <Properties>
+              <Name>ОтветитьПоСобственномуОбращению</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ОтветитьПоСобственномуОбращению</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="9dcd6144-9245-edd0-5f79-3834dfe634f4">
+        <Properties>
+          <Name>МаршрутВозобновленияСобственногоОбращения</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/my/requests/{id}/actions/reopen</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="d043843d-a35a-98bc-9fa4-a69b38293a2c">
+            <Properties>
+              <Name>ВозобновитьСобственноеОбращение</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ВозобновитьСобственноеОбращение</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="0ff61af9-ef7f-017d-b7d7-dc322aad8e68">
+        <Properties>
+          <Name>МаршрутСобственногоОбращения</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/my/requests/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="881718f6-7d48-677a-d5de-f6209bf5ba70">
+            <Properties>
+              <Name>ПолучитьСобственноеОбращение</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСобственноеОбращение</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="6095cbe9-dd19-615d-7027-22a07bdb90d0">
+        <Properties>
+          <Name>МаршрутСобственныхОбращений</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/my/requests</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="77c02b18-f763-e32c-bde6-fe75798c919e">
+            <Properties>
+              <Name>ПолучитьСписокСобственныхОбращений</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСписокСобственныхОбращений</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="6988bd47-6e73-008f-adb3-1eb7046941cb">
+            <Properties>
+              <Name>СоздатьСобственноеОбращение</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьСобственноеОбращение</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="66108fe0-2e41-28c9-7cea-13d413179dfa">
+        <Properties>
+          <Name>МаршрутФайлаСобственногоОбращения</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/my/request-files/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="0fa89aac-af28-937a-89ec-1d9bfbba0d1a">
+            <Properties>
+              <Name>ПолучитьФайлСобственногоОбращения</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьФайлСобственногоОбращения</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="1163cbfd-9df5-4041-bb47-edc83ef99eb2">
+        <Properties>
+          <Name>МаршрутПредпросмотраФайлаСобственногоОбращения</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/my/request-files/{id}/preview</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="9e0a51ee-9855-4130-a0d5-f8f23ab9caae">
+            <Properties>
+              <Name>ПредпросмотрФайлаСобственногоОбращения</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПредпросмотрФайлаСобственногоОбращения</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="d7fbe119-4912-d45b-509b-d59abe0c5f8e">
+        <Properties>
+          <Name>МаршрутСодержимогоФайлаСобственногоОбращения</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/my/request-files/{id}/content</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="1b3616f7-adfb-383c-284b-104728bf005c">
+            <Properties>
+              <Name>СкачатьФайлСобственногоОбращения</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>СкачатьФайлСобственногоОбращения</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="99203be2-54c9-08d8-be8a-c771a4a30816">
+        <Properties>
+          <Name>МаршрутФайловСобственногоОбращения</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/my/requests/{id}/files</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="f40db46b-c8db-6bcc-494f-3602d253d807">
+            <Properties>
+              <Name>ПолучитьФайлыСобственногоОбращения</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьФайлыСобственногоОбращения</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="810b1969-2661-4904-e202-f3b8de9a2eb2">
+            <Properties>
+              <Name>ЗагрузитьФайлСобственногоОбращения</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ЗагрузитьФайлСобственногоОбращения</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="53917273-3043-051f-3032-fc83721d2d19">
+        <Properties>
+          <Name>МаршрутСодержимогоВерсииФайлаСобственногоОбращения</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/my/request-files/{id}/versions/{version}/content</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="078a4c1b-f911-7efa-a41d-1523279554ca">
+            <Properties>
+              <Name>СкачатьВерсиюФайлаСобственногоОбращения</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>СкачатьВерсиюФайлаСобственногоОбращения</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="37f3ff02-6152-1542-f88c-d8da82caa4d5">
+        <Properties>
+          <Name>МаршрутВерсийФайлаСобственногоОбращения</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/my/request-files/{id}/versions</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="76b47540-1343-f9c8-0f10-c3f7ff97a070">
+            <Properties>
+              <Name>ЗаменитьФайлСобственногоОбращения</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ЗаменитьФайлСобственногоОбращения</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="e76a48d8-6ff6-08c8-10a6-57818ce450eb">
+        <Properties>
+          <Name>МаршрутЗакрытияЛицевогоСчета</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/personal-accounts/{id}/actions/close</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="acbc7743-e3b6-7917-e2cd-9e861c46e86d">
+            <Properties>
+              <Name>ЗакрытьЛицевойСчет</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ЗакрытьЛицевойСчет</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="9e611a46-efdd-6a49-9978-41be1027e838">
+        <Properties>
+          <Name>МаршрутОбластиКабинета</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/areas/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="215265cc-bcf3-47e1-723b-5cbed01071f5">
+            <Properties>
+              <Name>ПолучитьОбласть</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьОбласть</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="82408336-01fb-f476-6e14-e700ea89723e">
+        <Properties>
+          <Name>МаршрутОбластейКабинета</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/areas</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="77c86768-6156-e87a-2aad-d04aacd7af41">
+            <Properties>
+              <Name>ПолучитьСписокОбластей</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСписокОбластей</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="7e31f577-b327-e3ec-33ae-68b95b30d58e">
+            <Properties>
+              <Name>СоздатьОбласть</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьОбласть</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="f62d8c77-34a8-0913-5c1e-ae90d6911a5e">
+        <Properties>
+          <Name>МаршрутДействияПриглашенияКабинета</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/invitations/{id}/actions/{action}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="bc679342-3dad-949d-57d6-d88dc2aeb05b">
+            <Properties>
+              <Name>ОбработатьПриглашение</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ОбработатьПриглашение</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="358fc611-5d1c-731e-04f6-e538f1447760">
+        <Properties>
+          <Name>МаршрутПриглашенийКабинета</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/invitations</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="25d466f9-a39d-5e86-fb74-20001537d8d1">
+            <Properties>
+              <Name>ПолучитьСписокПриглашений</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСписокПриглашений</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="830fd283-1b8b-a7f9-1de6-354f85ef8b4d">
+            <Properties>
+              <Name>СоздатьПриглашение</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьПриглашение</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="7095b236-e33b-68d0-0f51-380a46bb810d">
+        <Properties>
+          <Name>МаршрутОтключенияУчастияКабинета</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/memberships/{id}/actions/deactivate</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="1909215d-7efb-c533-8bd4-a87e5a07fe1b">
+            <Properties>
+              <Name>ОтключитьУчастие</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ОтключитьУчастие</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="2c5452b0-7e1e-2298-d71c-3306c1bceba0">
+        <Properties>
+          <Name>МаршрутУчастийКабинета</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/memberships</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="da6b49bd-f4f3-edfc-1c36-ebcfcca3a9cc">
+            <Properties>
+              <Name>ПолучитьСписокУчастий</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСписокУчастий</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="79b0072b-09a9-d6b2-591c-30d2a89afe19">
+            <Properties>
+              <Name>НазначитьЛокальнуюРоль</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>НазначитьЛокальнуюРоль</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="eea1e5c1-37ee-f52a-13f7-f129084ccacc">
+        <Properties>
+          <Name>МаршрутПароляКабинета</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/account/password</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="97951ee1-0ca0-212c-d14e-94da9e2dd9b2">
+            <Properties>
+              <Name>ИзменитьСобственныйПароль</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ИзменитьСобственныйПароль</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="6bd9033b-0dc2-6621-8a5c-7f4e873d412f">
+        <Properties>
+          <Name>МаршрутОтзываСеансаКабинета</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/account/sessions/{id}/actions/revoke</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="4ff231c7-0994-a109-520f-4aeb005db9b1">
+            <Properties>
+              <Name>ОтозватьСобственныйСеанс</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ОтозватьСобственныйСеанс</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="a15913fc-bb52-a9da-f0df-807e6c137c55">
+        <Properties>
+          <Name>СеансыКабинета</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/account/sessions</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="6bb87f0f-9d83-df26-a308-b1efcd771292">
+            <Properties>
+              <Name>ПолучитьСобственныеСеансы</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСобственныеСеансы</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="a052cb96-031d-aef6-5c19-9f52b3d5eeaf">
+        <Properties>
+          <Name>МаршрутОтзываВсехСеансовКабинета</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/account/sessions/actions/revoke-all</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="c9bb3d86-a51a-298d-0533-5a784a34d38b">
+            <Properties>
+              <Name>ОтозватьВсеСобственныеСеансы</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ОтозватьВсеСобственныеСеансы</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="e9b05939-0e60-1ef5-821d-25b4fa7589a3">
+        <Properties>
+          <Name>МаршрутРабочихПространствКабинета</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/workspaces</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="061ff9b7-0fd0-67ce-c6c3-118a68ecc882">
+            <Properties>
+              <Name>ПолучитьСписокРабочихПространств</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСписокРабочихПространств</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="fdb4b28c-d309-f6d5-5247-29cd7f314b12">
+            <Properties>
+              <Name>СоздатьРабочееПространство</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьРабочееПространство</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="8bab3513-100e-3eb9-04ba-b19d6328d1f8">
+        <Properties>
+          <Name>МаршрутИзмененияОбъектаНедвижимости</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/properties/{id}/actions/update-details</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="04e8996a-2b0f-8930-19c5-a4ad9f8fae47">
+            <Properties>
+              <Name>ИзменитьРеквизитыОбъектаНедвижимости</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ИзменитьРеквизитыОбъектаНедвижимости</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="e5897e5c-9a04-3d0d-16ef-f55831d9a1fb">
+        <Properties>
+          <Name>МаршрутПоказаний</Name>
+          <Synonym />
+          <Comment />
+          <Template>/readings</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="ac18e919-67be-fb25-752f-024d8d81ab3c">
+            <Properties>
+              <Name>ПолучитьСписокПоказаний</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСписокПоказаний</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="e5b55332-186f-dd19-1519-526b58ec6998">
+            <Properties>
+              <Name>СоздатьПоказание</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьПоказание</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="6232a5c8-1717-253f-1f9e-c026131b68f9">
+        <Properties>
+          <Name>МаршрутДоговораРеестра</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/contracts/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="40a04dfc-d797-1de0-fbb7-b4264511cc58">
+            <Properties>
+              <Name>ПолучитьДоговорРеестра</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьДоговорРеестра</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="fcef8aea-9aa1-5ec2-accb-b13e9f46d18b">
+        <Properties>
+          <Name>МаршрутДоговоровРеестра</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/contracts</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="64b154e1-96af-d796-8abd-353f3106c92c">
+            <Properties>
+              <Name>ПолучитьДоговорыРеестра</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьДоговорыРеестра</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="23750faa-28d4-4073-22b1-3050704055b7">
+            <Properties>
+              <Name>СоздатьДоговорРеестра</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьДоговорРеестра</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="b077189d-a85c-d5ec-1275-341eb7403b3e">
+        <Properties>
+          <Name>МаршрутВыгрузкиРеестра</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/registry-exports/{resource}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="82888eb4-33af-c9f5-9238-2370143550f4">
+            <Properties>
+              <Name>ВыгрузитьРеестр</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ВыгрузитьРеестр</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="f0e35b69-e2fe-dc84-1263-71954bf55fd9">
+        <Properties>
+          <Name>МаршрутИсторииРеестра</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/registry-history/{resource}/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="0aa90e66-64af-1009-347f-1f0c3bca7f27">
+            <Properties>
+              <Name>ПолучитьИсториюРеестра</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьИсториюРеестра</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="903b1cba-0024-7b44-d4b3-bdc75c182471">
+        <Properties>
+          <Name>МаршрутЛицевогоСчетаРеестра</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/personal-accounts/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="73f70aab-2722-5325-ad3b-f1ba9e5c4c25">
+            <Properties>
+              <Name>ПолучитьЛицевойСчетРеестра</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьЛицевойСчетРеестра</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="cfb9471e-3e40-4a0b-edcb-af634da423b1">
+        <Properties>
+          <Name>МаршрутЛицевыхСчетовРеестра</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/personal-accounts</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="85907e29-cd48-db8d-de64-537c8369a31c">
+            <Properties>
+              <Name>ПолучитьЛицевыеСчетаРеестра</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьЛицевыеСчетаРеестра</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="2281e459-0826-8741-cba5-50497254a405">
+            <Properties>
+              <Name>СоздатьЛицевойСчетРеестра</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьЛицевойСчетРеестра</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="4d223fff-4780-51f6-3a24-05eccae068c4">
+        <Properties>
+          <Name>МаршрутОбъектовНедвижимостиРеестра</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/properties</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="b72ad534-efc2-b181-6877-410d89e9f706">
+            <Properties>
+              <Name>ПолучитьОбъектыНедвижимостиРеестра</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьОбъектыНедвижимостиРеестра</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="5de0091d-23f0-353d-29fc-a2fe6189cc64">
+            <Properties>
+              <Name>СоздатьОбъектНедвижимостиРеестра</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьОбъектНедвижимостиРеестра</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="3492748f-83f8-4b06-5fd7-39f233d7aac5">
+        <Properties>
+          <Name>МаршрутОбъектаНедвижимостиРеестра</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/properties/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="26783c53-c2c0-5cfd-a9ec-ce25a0d0a292">
+            <Properties>
+              <Name>ПолучитьОбъектНедвижимостиРеестра</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьОбъектНедвижимостиРеестра</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="cc3de5e1-2dcb-b1b0-e452-b2a4e9200c2d">
+        <Properties>
+          <Name>МаршрутТочкиОбслуживанияРеестра</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/service-points/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="c9ffd1f7-ff5f-d652-9c97-b39b7ccdb4f3">
+            <Properties>
+              <Name>ПолучитьТочкуОбслуживанияРеестра</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьТочкуОбслуживанияРеестра</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="d38ae1c9-3a6a-7c04-7d5f-5b28a3b07e92">
+        <Properties>
+          <Name>МаршрутТочекОбслуживанияРеестра</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/service-points</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="c7521aed-f4cc-5ade-8587-6d27d60593dc">
+            <Properties>
+              <Name>ПолучитьТочкиОбслуживанияРеестра</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьТочкиОбслуживанияРеестра</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="f0eb13fb-09ca-2f42-faf2-af2660f4667c">
+            <Properties>
+              <Name>СоздатьТочкуОбслуживанияРеестра</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьТочкуОбслуживанияРеестра</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="73141fb8-c568-2180-807c-c1f5c8b7d7b4">
+        <Properties>
+          <Name>МаршрутАбонентаРеестра</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/subscribers/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="e5ab9834-c1c4-e394-438e-6af8c3e08ec0">
+            <Properties>
+              <Name>ПолучитьАбонентаРеестра</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьАбонентаРеестра</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="2359567c-864c-d630-fda9-9748b73683ee">
+        <Properties>
+          <Name>МаршрутАбонентовРеестра</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/subscribers</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="9c1fd22e-21f7-9302-04e6-be19e6155663">
+            <Properties>
+              <Name>ПолучитьАбонентовРеестра</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьАбонентовРеестра</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="0180e9dd-9cd2-2bcf-d1e8-eec120a29fcf">
+            <Properties>
+              <Name>СоздатьАбонентаРеестра</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьАбонентаРеестра</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="d79ba32a-9504-bc56-8023-e5b420cd75ff">
+        <Properties>
+          <Name>МаршрутЗаявок</Name>
+          <Synonym />
+          <Comment />
+          <Template>/requests</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="e813e7f2-a9d5-cf18-ee41-fba771baaafb">
+            <Properties>
+              <Name>ПолучитьСписокЗаявок</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСписокЗаявок</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="c9328afe-6303-599b-56e8-b9039c673efa">
+            <Properties>
+              <Name>СоздатьЗаявку</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьЗаявку</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="8a3616d3-7647-0d4a-8736-48db575a6ba3">
+        <Properties>
+          <Name>МаршрутСлужебнойИсторииОбращения</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/requests/{id}/history</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="22b5aab7-9065-535f-ccf2-8a054ee5f419">
+            <Properties>
+              <Name>ПолучитьСлужебнуюИсториюОбращения</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСлужебнуюИсториюОбращения</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="877238fd-ac93-4ca8-e098-951617295f22">
+        <Properties>
+          <Name>МаршрутСлужебногоСообщенияОбращения</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/requests/{id}/messages</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="dffb2a08-2ceb-7354-95cf-c7c3d8ba8338">
+            <Properties>
+              <Name>ОтветитьПоСлужебномуОбращению</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ОтветитьПоСлужебномуОбращению</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="0a3c3073-bca6-6fb2-be6d-be95309997d5">
+        <Properties>
+          <Name>МаршрутВнутреннейЗаметкиОбращения</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/requests/{id}/internal-notes</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="a8dbf228-ad92-da3b-e434-7f2f1f17d273">
+            <Properties>
+              <Name>ДобавитьВнутреннююЗаметкуОбращения</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ДобавитьВнутреннююЗаметкуОбращения</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="6402cbda-c7ea-8278-369e-1fba10bd8ab4">
+        <Properties>
+          <Name>МаршрутСлужебногоОбращения</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/requests/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="61029ac2-8f7c-ea4c-f965-fdf76886d60f">
+            <Properties>
+              <Name>ПолучитьСлужебноеОбращение</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСлужебноеОбращение</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="904347f6-1904-606a-75e4-f7d788605ee7">
+        <Properties>
+          <Name>МаршрутСлужебныхОбращений</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/requests</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="ed672f50-3362-04a6-f207-9941656b6b07">
+            <Properties>
+              <Name>ПолучитьСписокСлужебныхОбращений</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСписокСлужебныхОбращений</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="3a193479-10a0-6da4-8206-457113bc564b">
+        <Properties>
+          <Name>МаршрутПереходаСлужебногоОбращения</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/requests/{id}/actions/{action}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="a216dbc8-4c96-bc38-5899-2a39f8d570bc">
+            <Properties>
+              <Name>МаршрутПереходаСлужебногоОбращения</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>МаршрутПереходаСлужебногоОбращения</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="0de8abe1-5e83-5669-5d35-7f83cd4e0fbe">
+        <Properties>
+          <Name>МаршрутПриоритетаИСрокаОбращения</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/requests/{id}/triage</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="fdc665d9-b664-a786-bc4b-eae5e7bd7e10">
+            <Properties>
+              <Name>ИзменитьПриоритетИСрокОбращения</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ИзменитьПриоритетИСрокОбращения</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="8762af24-cf5d-5465-24c4-b3e93b45a47d">
+        <Properties>
+          <Name>МаршрутСлужебногоФайлаОбращения</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/request-files/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="8a54a54b-ce33-1759-d832-1acac9abb653">
+            <Properties>
+              <Name>ПолучитьСлужебныйФайлОбращения</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСлужебныйФайлОбращения</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="f640960d-766f-e955-47ee-4d8fcd8f713c">
+        <Properties>
+          <Name>МаршрутСодержимогоСлужебногоФайлаОбращения</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/request-files/{id}/content</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="685f464e-7eb9-04be-d934-07c81f474b2b">
+            <Properties>
+              <Name>СкачатьСлужебныйФайлОбращения</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>СкачатьСлужебныйФайлОбращения</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="533096cb-3f2b-ca97-c816-ef073c7ae0e0">
+        <Properties>
+          <Name>МаршрутСлужебныхФайловОбращения</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/requests/{id}/files</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="196933e6-53e0-f985-a1b4-06d670906e13">
+            <Properties>
+              <Name>ПолучитьСлужебныеФайлыОбращения</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСлужебныеФайлыОбращения</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="ab80d2a3-6ece-bcd8-2019-25334628f992">
+            <Properties>
+              <Name>ЗагрузитьСлужебныйФайлОбращения</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ЗагрузитьСлужебныйФайлОбращения</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="32093873-d632-00d3-9c3f-a5884246c9df">
+        <Properties>
+          <Name>МаршрутСодержимогоВерсииСлужебногоФайлаОбращения</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/request-files/{id}/versions/{version}/content</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="12a18cfa-14be-584a-0bc7-071b571cc449">
+            <Properties>
+              <Name>СкачатьВерсиюСлужебногоФайлаОбращения</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>СкачатьВерсиюСлужебногоФайлаОбращения</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="301808c0-0a73-5a89-3dd3-54c0246bce66">
+        <Properties>
+          <Name>МаршрутВерсийСлужебногоФайлаОбращения</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/dispatch/request-files/{id}/versions</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="330f0269-7d35-4b07-6832-cab5b7d78bbc">
+            <Properties>
+              <Name>ЗаменитьСлужебныйФайлОбращения</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ЗаменитьСлужебныйФайлОбращения</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="8e32bcd4-78e0-274b-b0db-28956167fc22">
+        <Properties>
+          <Name>МаршрутИзмененияКонтактовАбонента</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/subscribers/{id}/actions/update-contacts</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="5974ec72-b51e-bbf2-2661-4a648b52657b">
+            <Properties>
+              <Name>ИзменитьКонтактыАбонента</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ИзменитьКонтактыАбонента</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="981c094a-dcb7-aa37-d0c1-bb61e1477143">
+        <Properties>
+          <Name>Абоненты</Name>
+          <Synonym />
+          <Comment />
+          <Template>/subscribers</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="f01ec193-e61e-d9b2-1d8c-a1e9002af5f9">
+            <Properties>
+              <Name>ПолучитьСписокАбонентов</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСписокАбонентов</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="4ffeb312-c14d-578c-8d51-abc3471e8988">
+            <Properties>
+              <Name>СоздатьАбонента</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьАбонента</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="e771ce63-f562-a8a1-0c70-c9a0b51874d7">
+        <Properties>
+          <Name>МаршрутОстатковВоды</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/water/balances</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="7a5b152a-3bf6-3efc-8847-2cead2bcdd59">
+            <Properties>
+              <Name>ПолучитьОстаткиВоды</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьОстаткиВоды</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="f1d3c928-b8e1-799b-db97-dcf3bb2f24ff">
+        <Properties>
+          <Name>МаршрутДвиженийВоды</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/water/movements</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="47643cd6-fe52-dac0-17fb-479e913222bd">
+            <Properties>
+              <Name>ПолучитьСписокДвиженийВоды</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСписокДвиженийВоды</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="8fdf4eae-175e-13a3-cac9-1800a86b6349">
+        <Properties>
+          <Name>ЗаказВоды</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/water/orders/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="13f3cbd2-f5bd-d9b6-862d-9d68f7afd855">
+            <Properties>
+              <Name>ПолучитьЗаказВоды</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьЗаказВоды</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="7e22d1ff-1ce5-665f-4391-8456529bf205">
+        <Properties>
+          <Name>МаршрутДействияЗаказаВоды</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/water/orders/{id}/actions/{action}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="20d95405-feff-c320-b7e2-d19c05260170">
+            <Properties>
+              <Name>МаршрутДействияЗаказаВоды</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>МаршрутДействияЗаказаВоды</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="d5b57559-0088-af2e-7a0b-80739b0b7a4a">
+        <Properties>
+          <Name>ЗаказыВоды</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/water/orders</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="e2c55204-8a48-a4da-1115-3b72e3070690">
+            <Properties>
+              <Name>ПолучитьСписокЗаказовВоды</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСписокЗаказовВоды</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="a5a7ccef-8600-6e63-5257-763d2d399179">
+            <Properties>
+              <Name>СоздатьЗаказВоды</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьЗаказВоды</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="312f9006-bd01-c346-73ae-2437328187c9">
+        <Properties>
+          <Name>ПунктыВыдачиВоды</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/water/points</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="6fb4d8ff-966c-630d-23f0-a85da4654a46">
+            <Properties>
+              <Name>СоздатьПунктВыдачиВоды</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьПунктВыдачиВоды</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="5fd4ce38-24eb-a863-69b6-d32efdb25bf0">
+        <Properties>
+          <Name>МаршрутПриходаВоды</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/water/receipts</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="67479194-3a13-a856-0990-e53605fca47f">
+            <Properties>
+              <Name>ОприходоватьЗапасВоды</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ОприходоватьЗапасВоды</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="294b0c70-a27b-96d4-fbf1-2a3d856b1455">
+        <Properties>
+          <Name>ПолучателиВоды</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/water/recipients</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="ae056679-ff19-75c5-f055-ca45046cd1f8">
+            <Properties>
+              <Name>СоздатьПолучателяВоды</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьПолучателяВоды</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="2b113d98-35b8-2d74-d4e8-c669e664becc">
+        <Properties>
+          <Name>МаршрутНачальногоЗапасаВоды</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/water/stock/seed</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="bb84af8e-7196-2cab-376a-8e3606f14862">
+            <Properties>
+              <Name>СоздатьНачальныйЗапасВоды</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьНачальныйЗапасВоды</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="939c6237-fcd6-4f12-bdaa-327e45b7f370">
+        <Properties>
+          <Name>МаршрутНастроекВодоснабжения</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/water/setup</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="c3c3b334-1202-ee41-60c7-4fbcc3bb1796">
+            <Properties>
+              <Name>ПолучитьНастройкиВодоснабжения</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьНастройкиВодоснабжения</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="3931dec3-4dbb-f881-4676-976a9654910e">
+        <Properties>
+          <Name>ИсточникиВоды</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/water/sources</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="7d3084cb-3376-cd4b-4943-3a6154efdb3c">
+            <Properties>
+              <Name>СоздатьИсточникВоды</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьИсточникВоды</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="3326bf93-1a86-3f99-97a2-a2bd323bbd4e">
+        <Properties>
+          <Name>МаршрутПриложенияНаряда</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work/orders/{id}/appendix</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="ea817bc1-8676-315e-3098-7c09bb7ad01f">
+            <Properties>
+              <Name>ПолучитьПриложениеНаряда</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьПриложениеНаряда</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="cfb7bf8b-9f50-eca0-61f4-c9e133493096">
+        <Properties>
+          <Name>МаршрутСозданияПриложенияНаряда</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work/orders/{id}/appendix-versions</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="51100857-24d5-51db-4c38-08e7e8d41710">
+            <Properties>
+              <Name>СоздатьПриложениеНаряда</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьПриложениеНаряда</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="8ecc2bcd-f114-76ad-573b-4a176e09b8cc">
+        <Properties>
+          <Name>МаршрутВерсииПриложенияНаряда</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work/orders/{id}/appendix-versions/{version}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="2d833c38-ec03-915d-d709-d13ec2b0e845">
+            <Properties>
+              <Name>ПолучитьВерсиюПриложенияНаряда</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьВерсиюПриложенияНаряда</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="d9b4c9fc-af6a-259f-ca04-046ea6e44e73">
+        <Properties>
+          <Name>МаршрутНазначенияНаряда</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work/orders/{id}/actions/assign</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="6a39604b-2726-ab65-24e5-016b7cbd6c67">
+            <Properties>
+              <Name>НазначитьНаряд</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>НазначитьНаряд</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="b3c28bc7-af3e-b44b-a749-51a9bb2a049f">
+        <Properties>
+          <Name>УчастникиРабочихБригад</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work/crews/{id}/members</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="55cb8413-e978-c66e-f999-a3193feb8f89">
+            <Properties>
+              <Name>ИзменитьУчастникаРабочейБригады</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ИзменитьУчастникаРабочейБригады</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="640ce4f7-f69c-64c4-364a-8991599e522b">
+        <Properties>
+          <Name>РабочиеБригады</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work/crews</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="c9385d8b-5a74-2413-8c99-0d3852e78d7a">
+            <Properties>
+              <Name>СоздатьРабочуюБригаду</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьРабочуюБригаду</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="0ebd8ffd-b0b2-4ad9-6298-399565492cbf">
+        <Properties>
+          <Name>ИсторияНарядов</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work/orders/{id}/history</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="8cecad5c-0f37-faae-0614-e195ecc78d90">
+            <Properties>
+              <Name>ПолучитьИсториюНаряда</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьИсториюНаряда</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="0a7a31a3-452a-63ab-2fd8-657e79b78625">
+        <Properties>
+          <Name>МаршрутДействияРуководителяБригады</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work/orders/{id}/leader-actions/{action}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="568f1bc4-d281-a2b5-318b-76e4732678f5">
+            <Properties>
+              <Name>ВыполнитьПереходРуководителяБригады</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ВыполнитьПереходРуководителяБригады</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="c4db2426-147f-34b3-dd82-2571452b3558">
+        <Properties>
+          <Name>Наряд</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work/orders/{id}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="cce29ef2-d904-5976-eb2b-653416193b85">
+            <Properties>
+              <Name>ПолучитьНаряд</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьНаряд</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="5827ffd4-6b92-c699-92fc-cc61a168b35c">
+        <Properties>
+          <Name>Наряды</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work/orders</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="3c5702f2-c70c-c723-985b-728c21f90741">
+            <Properties>
+              <Name>ПолучитьСписокНарядов</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСписокНарядов</Handler>
+            </Properties>
+          </Method>
+          <Method uuid="3a2bff7b-39a1-0dee-c51d-f59f7c536b61">
+            <Properties>
+              <Name>СоздатьНаряд</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьНаряд</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="22f26962-9c0d-b526-8bc8-9d1a7070be85">
+        <Properties>
+          <Name>МаршрутПриглашенияРазрешенияНаряда</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work/orders/{id}/permits</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="0ab0f1ce-288b-e8f2-a273-956ca604f7c7">
+            <Properties>
+              <Name>ПригласитьПолучателяРазрешенияНаряда</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ПригласитьПолучателяРазрешенияНаряда</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="e376b00d-5d7d-82b5-2c25-0bfd922f202e">
+        <Properties>
+          <Name>МаршрутОтветаНаРазрешениеНаряда</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work/permits/{id}/responses/{action}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="534fa7de-3dbd-243d-d31c-6729496d09d4">
+            <Properties>
+              <Name>ОтветитьНаРазрешениеНаряда</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ОтветитьНаРазрешениеНаряда</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="85cfb231-697f-6a9c-84b1-b6cb44f1d637">
+        <Properties>
+          <Name>МаршрутОтзываРазрешенияНаряда</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work/permits/{id}/actions/revoke</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="23b64bf6-7b1d-0114-21c7-7446274a80c3">
+            <Properties>
+              <Name>ОтозватьРазрешениеНаряда</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ОтозватьРазрешениеНаряда</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="0d9fe188-702a-e7ac-39a1-17cebaded44a">
+        <Properties>
+          <Name>РазрешенияНарядов</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work/permits</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="739a4be7-1c5b-8984-3eac-d84d6a3d85f4">
+            <Properties>
+              <Name>ПолучитьСобственныеРазрешенияНарядов</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьСобственныеРазрешенияНарядов</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="063c6b36-90a1-2de1-df02-6e7461a4c0bf">
+        <Properties>
+          <Name>РесурсыНарядов</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work/resources</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="672abc61-7fc5-8b23-712a-37ee8f16143f">
+            <Properties>
+              <Name>СоздатьРесурсНаряда</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>СоздатьРесурсНаряда</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="4669fb79-009c-7523-d143-2408c7a7cfde">
+        <Properties>
+          <Name>МаршрутПроверкиНаряда</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work/orders/{id}/review-actions/{action}</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="e543214e-5191-7e4c-7fe1-cdd8d3b08125">
+            <Properties>
+              <Name>ПроверитьНаряд</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ПроверитьНаряд</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="9bcde7a1-5266-3318-b693-0b501e111d76">
+        <Properties>
+          <Name>МаршрутНастроекНарядов</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/work/setup</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="1d8c6f5c-10e2-7f27-bbcd-65703a9763c7">
+            <Properties>
+              <Name>ПолучитьНастройкиНарядов</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>ПолучитьНастройкиНарядов</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+    </ChildObjects>
+  </HTTPService>
+</MetaDataObject>

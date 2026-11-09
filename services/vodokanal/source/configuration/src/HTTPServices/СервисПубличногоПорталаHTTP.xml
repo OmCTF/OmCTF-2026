@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+  <HTTPService uuid="25ee4ac0-d6f1-7788-5c44-deb1fb397a6e">
+    <Properties>
+      <Name>СервисПубличногоПорталаHTTP</Name>
+      <Synonym>
+        <v8:item>
+          <v8:lang>ru</v8:lang>
+          <v8:content>СервисПубличногоПорталаHTTP</v8:content>
+        </v8:item>
+      </Synonym>
+      <Comment />
+      <RootURL>portal</RootURL>
+      <ReuseSessions>DontUse</ReuseSessions>
+      <SessionMaxAge>20</SessionMaxAge>
+    </Properties>
+    <ChildObjects>
+      <URLTemplate uuid="7792abfa-8f36-5344-ed41-35abfef1f37b">
+        <Properties>
+          <Name>Сводка</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/summary</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="b1dcff05-9852-06c7-2339-8870a425dbd9">
+            <Properties>
+              <Name>Сводка</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>Сводка</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="7d3c06ed-c849-80a1-dbe7-81f78aff9467">
+        <Properties>
+          <Name>Услуги</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/services</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="5f69e2ec-6c96-0870-71ea-3d02c4f36fd9">
+            <Properties>
+              <Name>Услуги</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>Услуги</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="a10bb21d-c31c-94d3-df9f-8e484d3ecbbf">
+        <Properties>
+          <Name>Публикации</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/content</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="970c34f5-20e1-3188-e10c-4d78bb63e61e">
+            <Properties>
+              <Name>Публикации</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>Публикации</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="4fb69f3e-175e-32d0-110f-607fb4aff974">
+        <Properties>
+          <Name>Вопросы</Name>
+          <Synonym />
+          <Comment />
+          <Template>/v1/faq</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="aabcceba-a53a-0d9c-8d46-838bba74a446">
+            <Properties>
+              <Name>Вопросы</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>GET</HTTPMethod>
+              <Handler>Вопросы</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+    </ChildObjects>
+  </HTTPService>
+</MetaDataObject>

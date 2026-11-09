@@ -1,0 +1,24 @@
+.documents-ui { color: var(--text, #172b46); padding: 1rem; max-width: 76rem; margin-inline: auto; }
+.documents-ui h2 { margin-top: 0; font-size: 1.5rem; }
+.documents-ui h3 { margin: 0 0 .5rem; font-size: 1.08rem; overflow-wrap: anywhere; }
+.documents-ui p { line-height: 1.5; }
+.doc-muted { color: var(--muted, #526173); }
+.doc-filters, .doc-upload-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); gap: .85rem; align-items: end; padding: 1rem; background: #f3f6f9; border: 1px solid #ccd5df; }
+.documents-ui label { display: grid; gap: .4rem; font-weight: 600; min-width: 0; }
+.documents-ui input, .documents-ui select { box-sizing: border-box; width: 100%; min-width: 0; padding: .7rem; border: 1px solid #7d8c9c; border-radius: 3px; background: white; color: inherit; font: inherit; }
+.documents-ui button { min-height: 2.75rem; padding: .65rem .9rem; border: 1px solid #335574; border-radius: 3px; background: white; color: #17436d; font: inherit; font-weight: 600; cursor: pointer; }
+.documents-ui button:hover:not(:disabled) { background: #e8eff6; }
+.documents-ui :focus-visible { outline: 3px solid #b6750d; outline-offset: 3px; }
+.documents-ui button:disabled { opacity: .55; cursor: default; }
+.doc-actions { display: flex; flex-wrap: wrap; gap: .5rem; margin: .8rem 0; }
+.doc-list { display: grid; gap: .8rem; margin-block: 1rem; }
+.doc-row, .doc-version { padding: 1rem; border: 1px solid #c9d3de; border-left: 4px solid #315e83; background: white; }
+.doc-id { font-family: ui-monospace, monospace; font-size: .85rem; overflow-wrap: anywhere; }
+.doc-detail:not(:empty), .doc-upload:not(:empty) { margin-block: 1rem; }
+.doc-detail { padding-block: 1rem; }
+.doc-upload-form > h3, .doc-upload-form > p { grid-column: 1 / -1; }
+.doc-status { padding: .8rem; border-left: 4px solid #315e83; background: #edf3f8; }
+.doc-status.doc-error, .doc-command:not(:empty) { color: #762d15; border-left: 4px solid #a24220; background: #fff4eb; padding: .8rem; }
+.doc-command:empty { display: none; }
+@media (max-width: 30rem) { .documents-ui { padding: .4rem; } .doc-filters, .doc-upload-form, .doc-row, .doc-version { padding: .5rem; } .documents-ui button { width: 100%; } }
+@media print { .doc-filters, .doc-actions, .doc-upload, .doc-command, .documents-ui button { display: none; } .doc-row { break-inside: avoid; } }

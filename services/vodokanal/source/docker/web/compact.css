@@ -1,0 +1,53 @@
+
+@media (min-width:641px) {
+  html { font-size:87.5%; }
+  html body { font-size:1rem; }
+  html body.public-page .public-header-inner { padding-block:.75rem; }
+  html body.public-page .public-brand { font-size:1.5rem; }
+  html body.public-page .public-account a,
+  html body.public-page .public-navigation a { min-block-size:34px; }
+  html body.public-page .public-navigation { gap:.5rem 1.5rem; padding-block:0 .25rem; }
+  html body.public-page .public-main { padding-block:1.25rem 2rem; }
+  html body.public-page .pub-section { padding-block:1.25rem; margin-block-start:1.25rem; }
+  html body.public-page .landing-hero { padding:1rem 0 1.5rem; }
+  html body.public-page .landing-hero h1 { font-size:clamp(1.75rem,2.7vw,2.5rem); margin-block:.5rem .875rem; }
+  html body.public-page .landing-description { font-size:1.0715rem; line-height:1.55; }
+  html body.public-page .landing-actions { margin-block-start:1.25rem; }
+  html body.public-page .pub-fields { gap:.875rem; margin-block:.75rem; }
+  html body.public-page .pub-status { padding:.5rem .75rem; margin-block:.75rem; }
+  html body.public-page .pub-record { padding-block:.875rem; }
+  html body .login-main { padding:2rem; gap:1.5rem; }
+  html body .login-card { max-inline-size:25rem; }
+  html body .login-card h2 { font-size:1.75rem; margin-block-end:.75rem; }
+  html body .login-screen .story-content h1 { font-size:2rem; }
+  html body .login-story .story-content { padding-block-start:1.5rem; }
+  html body .login-public-links { gap:.375rem; margin-block:1rem; }
+  html body .identity-auth { margin-block:1rem; padding-block-start:.75rem; }
+  html body .identity-panel { padding-block:.75rem; }
+  html body .identity-field { margin-block:.625rem; }
+  html body .dashboard { padding:1.5rem 2rem; }
+  html body .card { padding:1.25rem; }
+  html body .card-heading { margin-block-end:1rem; }
+  html body .topbar { min-block-size:3.5rem; padding-block:.5rem; }
+  html body .service-context { padding:.625rem 2rem; gap:.375rem 1rem; }
+  html body .pub-meta, html body .record-meta,
+  html body .login-status, html body .security-note,
+  html body .login-main .login-bottom { font-size:.929rem; }
+}
+
+@media (min-width:641px) and (pointer:fine) {
+  html body :is(button,.button,input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),select),
+  html #application :is(button,.button,input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),select),
+  html #login-screen :is(button,.button,input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),select) {
+    font-size:1rem; line-height:1.4; min-height:36px; min-block-size:36px;
+    height:auto; block-size:auto; padding:.4rem .75rem;
+  }
+  html body .landing-actions a { min-block-size:36px; }
+  html body.public-page .landing-primary { padding:.5rem 1rem; }
+  html body .pub-quick a, html body .service-context a,
+  html body .sidebar .nav-item { min-block-size:36px; }
+}
+
+@media (max-width:640px), (pointer:coarse) {
+  html body :is(button,.button,.landing-actions a) { min-block-size:44px; }
+}

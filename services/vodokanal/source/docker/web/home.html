@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Городской водоканал. Показания, обращения, отключения и исследования воды.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' blob:; base-uri 'none'; object-src 'none'; form-action 'self'">
+  <title>Омский Водоканал | Портал города Омска</title>
+  <link rel="stylesheet" href="public-portal.css">
+  <link rel="stylesheet" href="compact.css">
+  <link rel="stylesheet" href="landing.css">
+  <script src="landing-route.js" defer></script>
+  <script src="landing.js" defer></script>
+</head>
+<body class="public-page rv-landing">
+  <a class="public-skip" href="#main">Перейти к содержимому</a>
+  <svg class="rv-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="rv-user" viewBox="0 0 48 48"><circle cx="24" cy="15" r="8"/><path d="M8 43v-6a16 16 0 0 1 32 0v6M16 29l8 8 8-8"/></symbol>
+    <symbol id="rv-meter" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20"/><path d="M11 31a15 15 0 1 1 26 0M24 10v4M10 24h4M34 24h4M24 24l8-9M16 35h16"/><circle cx="24" cy="24" r="2"/></symbol>
+    <symbol id="rv-message" viewBox="0 0 48 48"><path d="M5 7h38v27H22L12 43v-9H5zM13 16h22M13 24h15"/></symbol>
+    <symbol id="rv-water" viewBox="0 0 48 48"><path d="M24 3S8 22 8 31a16 16 0 0 0 32 0C40 22 24 3 24 3zM15 31a9 9 0 0 0 9 9"/></symbol>
+    <symbol id="rv-lab" viewBox="0 0 48 48"><path d="M16 4h16M19 4v14L7 38a4 4 0 0 0 4 6h26a4 4 0 0 0 4-6L29 18V4M13 29h22M18 36h2M27 36h2"/></symbol>
+    <symbol id="rv-outage" viewBox="0 0 48 48"><path d="M20 7h8l18 31-4 6H6l-4-6zM24 17v12M24 35v2"/></symbol>
+    <symbol id="rv-arrow" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol>
+  </defs></svg>
+  <header class="rv-header">
+    <div class="rv-utility"><div class="rv-wrap"><span>Для жителей и организаций Омска</span><a href="/services#archive">Документы и справочная информация</a></div></div>
+    <div class="rv-wrap rv-header-main">
+      <a class="rv-brand" href="/" aria-label="Омский Водоканал, главная"><svg viewBox="0 0 48 58" width="42" height="50" aria-hidden="true"><path d="M24 2C18 13 3 28 3 37a21 21 0 0 0 42 0C45 28 30 13 24 2z" fill="#087bbd"/><path d="M10 34c8-8 17 9 28-1M10 42c8-8 17 9 28-1" fill="none" stroke="#fff" stroke-width="3.2"/></svg><span>ОМСКИЙ ВОДОКАНАЛ<small>Портал города Омска</small></span></a>
+      <a class="rv-header-account" href="/login"><span class="rv-account-icon"><svg aria-hidden="true"><use href="#rv-user"/></svg></span>Личный кабинет</a>
+      <div class="rv-phone"><span>Контакт-центр</span><strong title="Тестовый номер. Для связи используйте обращение через кабинет.">8 (000) 000-00-00</strong></div>
+      <a class="rv-header-request" href="/login?service=request">Написать обращение <svg aria-hidden="true"><use href="#rv-arrow"/></svg></a>
+    </div>
+    <nav class="rv-nav rv-wrap" aria-label="Основные разделы"><a href="#services">Абонентам</a><a href="/services#services">Услуги</a><a href="/services#outages">Отключения</a><span class="rv-nav-divider" aria-hidden="true"></span><a href="/lakes.html">Качество воды</a><a href="/rivers.html">Уровни рек</a><a href="#news">Объявления</a><a href="#contacts">Контакты</a></nav>
+  </header>
+  <main id="main" tabindex="-1">
+    <section class="landing-hero rv-hero" aria-labelledby="landing-heading">
+      <img class="rv-hero-photo" src="landing-city.png" alt="" width="1526" height="520" fetchpriority="high">
+      <div class="rv-wrap rv-hero-inner">
+        <div class="rv-hero-top"><a class="rv-pill" href="/login?service=meter&amp;applicant=resident">Передать показания</a><a class="rv-hazard" href="/services#hazard"><svg aria-hidden="true"><use href="#rv-outage"/></svg><span>Увидели открытый люк?<strong>Сообщите нам</strong></span></a></div>
+        <div class="rv-hero-copy"><p class="rv-eyebrow">Омский Водоканал</p><h1 id="landing-heading">Решайте вопросы<br>водоснабжения онлайн</h1><p>Показания, обращения и документы.<br>Всё необходимое для жителей и организаций Омска.</p><a class="landing-primary rv-button rv-button-white" href="/login">Войти в личный кабинет <svg aria-hidden="true"><use href="#rv-arrow"/></svg></a></div>
+      </div>
+    </section>
+    <section id="services" class="rv-wrap rv-services" aria-labelledby="services-heading">
+      <h2 id="services-heading" class="rv-visually-hidden">Популярные сервисы</h2>
+      <div class="rv-service-grid">
+        <a class="rv-service rv-service-account" href="/login"><svg aria-hidden="true"><use href="#rv-user"/></svg><h3>Личный кабинет</h3><p>Ваши лицевые счета,<br>заявки и документы</p><span class="rv-card-link">Войти <svg aria-hidden="true"><use href="#rv-arrow"/></svg></span></a>
+        <a class="rv-service rv-service-meter" href="/login?service=meter&amp;applicant=resident"><svg aria-hidden="true"><use href="#rv-meter"/></svg><h3>Передать показания</h3><p>Показания приборов<br>и история измерений</p><span class="rv-card-link">Передать <svg aria-hidden="true"><use href="#rv-arrow"/></svg></span></a>
+        <a class="rv-service rv-service-message" href="/login?service=request&amp;applicant=resident"><svg aria-hidden="true"><use href="#rv-message"/></svg><h3>Обратиться в водоканал</h3><p>Сообщить о проблеме<br>и получить ответ</p><span class="rv-card-link">Написать <svg aria-hidden="true"><use href="#rv-arrow"/></svg></span></a>
+        <a class="rv-service rv-service-outage" href="/services#outages"><svg aria-hidden="true"><use href="#rv-outage"/></svg><h3>Отключения воды</h3><p>Плановые работы<br>и информация по адресу</p><span class="rv-card-link">Проверить адрес <svg aria-hidden="true"><use href="#rv-arrow"/></svg></span></a>
+        <a class="rv-service rv-service-lab" href="/login?service=lab&amp;applicant=resident"><svg aria-hidden="true"><use href="#rv-lab"/></svg><h3>Исследования воды</h3><p>Заказ анализа<br>и результаты лаборатории</p><span class="rv-card-link">Заказать анализ <svg aria-hidden="true"><use href="#rv-arrow"/></svg></span></a>
+        <a class="rv-service rv-service-water" href="/login?service=water&amp;applicant=resident"><svg aria-hidden="true"><use href="#rv-water"/></svg><h3>Заказать воду</h3><p>Заявка на воду<br>и отслеживание заказа</p><span class="rv-card-link">Оформить заказ <svg aria-hidden="true"><use href="#rv-arrow"/></svg></span></a>
+      </div>
+    </section>
+    <section class="rv-wrap rv-notice-strip" aria-label="Информация об отключениях"><span class="rv-notice-icon"><svg aria-hidden="true"><use href="#rv-outage"/></svg></span><div><h2>Нет воды? Проверьте свой адрес</h2><p>Сведения об отключениях, сроках работ и точках подвоза воды.</p></div><a class="rv-text-link" href="/services#outages">Открыть реестр <svg aria-hidden="true"><use href="#rv-arrow"/></svg></a></section>
+    <section id="news" class="rv-wrap rv-section" aria-labelledby="news-heading">
+      <div class="rv-section-heading"><div><p class="rv-section-label">Информация для абонентов</p><h2 id="news-heading">Объявления водоканала</h2></div><a class="rv-text-link" href="/services#archive">Все объявления <svg aria-hidden="true"><use href="#rv-arrow"/></svg></a></div>
+      <div id="landing-news" class="rv-news" aria-live="polite"><p class="rv-empty">Загружаем опубликованные объявления…</p></div>
+    </section>
+    <section class="rv-help-band" aria-labelledby="help-heading"><div class="rv-wrap rv-help-inner"><div><p class="rv-section-label">Просто и без очередей</p><h2 id="help-heading">Начните с личного кабинета</h2><p>Создайте учётную запись, подключите лицевой счёт<br>и пользуйтесь сервисами в удобное время.</p><a class="rv-button" href="/login?auth=register">Зарегистрироваться <svg aria-hidden="true"><use href="#rv-arrow"/></svg></a></div><ol class="rv-steps"><li><span>01</span><div><h3>Зарегистрируйтесь</h3><p>Укажите имя пользователя и подтвердите контакт.</p></div></li><li><span>02</span><div><h3>Подключите лицевой счёт</h3><p>Подайте запрос на доступ. Его проверит сотрудник.</p></div></li><li><span>03</span><div><h3>Пользуйтесь сервисами</h3><p>Передавайте показания и следите за своими обращениями.</p></div></li></ol></div></section>
+    <section class="rv-wrap rv-section" aria-labelledby="water-heading"><div class="rv-section-heading"><div><p class="rv-section-label">Открытая информация</p><h2 id="water-heading">Вода нашего региона</h2></div></div><div class="rv-info-grid"><a class="rv-info-card" href="/lakes.html"><svg aria-hidden="true"><use href="#rv-lab"/></svg><div><h3>Исследования озёр</h3><p>Опубликованные протоколы, показатели и сводки по выбранному периоду.</p><span>Посмотреть результаты →</span></div></a><a class="rv-info-card" href="/rivers.html"><svg aria-hidden="true"><use href="#rv-water"/></svg><div><h3>Уровни Иртыша и Оми</h3><p>Гидрологические посты, измерения и динамика уровня воды.</p><span>Открыть наблюдения →</span></div></a></div></section>
+    <section id="contacts" class="rv-contact-band" aria-labelledby="contacts-heading"><div class="rv-wrap rv-contact-inner"><div><p class="rv-section-label">Мы на связи</p><h2 id="contacts-heading">Есть вопрос?<br>Напишите нам</h2><p>Ответ и статус обработки будут доступны<br>в карточке вашего обращения.</p></div><div class="rv-contact-actions"><a class="rv-button" href="/login?service=request">Отправить обращение <svg aria-hidden="true"><use href="#rv-arrow"/></svg></a><p>Электронная почта: <span>support@vodokanal.test</span></p><small>Телефон и почта тестовые.<br>Для связи используйте обращение через кабинет.</small></div></div></section>
+    <noscript><div class="rv-wrap rv-empty">Для загрузки объявлений нужен JavaScript. Ссылки на сервисы и вход в кабинет доступны без него.</div></noscript>
+  </main>
+  <footer class="rv-footer"><div class="rv-wrap rv-footer-grid"><div class="rv-footer-brand"><a href="/">ОМСКИЙ ВОДОКАНАЛ</a><p>Портал города Омска</p><span>© Омский Водоканал, 2026</span></div><div><h2>Абонентам</h2><a href="/login">Личный кабинет</a><a href="/login?service=meter">Передать показания</a><a href="/login?service=request">Написать обращение</a></div><div><h2>Информация</h2><a href="/services#outages">Отключения</a><a href="/lakes.html">Качество воды</a><a href="/services#archive">Объявления и документы</a></div><div><h2>Помощь</h2><a href="/login?auth=register">Регистрация</a><a href="/login?auth=recovery">Восстановление доступа</a><a href="#contacts">Связаться с нами</a></div></div></footer>
+</body>
+</html>

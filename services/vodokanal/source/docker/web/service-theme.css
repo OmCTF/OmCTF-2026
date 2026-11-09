@@ -1,0 +1,154 @@
+
+body.service-site{--rv-navy:#233f70;--rv-blue:#087bbd;--rv-ink:#23364d;--rv-muted:#63758a;--rv-line:#e1e8ee;--pub-blue:#087bbd;--pub-ink:#23364d;--pub-muted:#63758a;--pub-line:#dce5ed;--water:#087bbd;--water-dark:#075e93;--ink:#23364d;--muted:#63758a;margin:0;background:#f4f7fa;color:#23364d;font-family:"Segoe UI",Arial,sans-serif;font-size:1rem;line-height:1.55}
+.service-site *{box-sizing:border-box}
+.service-site [hidden]{display:none!important}
+.service-site a{color:#087bbd;text-underline-offset:3px}
+.service-site :focus-visible{outline:3px solid #d59e2f;outline-offset:3px}
+.service-site .site-chrome{background:#fff;border-bottom:1px solid #e1e8ee;color:#23364d;font-family:"Segoe UI",Arial,sans-serif}
+.service-site .rv-utility{display:none}
+.service-site .rv-header-main{min-height:80px}
+.service-site .rv-nav{min-height:46px}
+.service-site .rv-nav a[aria-current="page"]{color:#087bbd;box-shadow:inset 0 -3px #087bbd}
+.service-site .rv-header-account[aria-current="page"]{color:#087bbd!important}
+.service-site .skip-link{position:absolute;left:1rem;top:.5rem;z-index:1000;transform:translateY(-200%);background:#fff;padding:.65rem 1rem;border:1px solid #087bbd;border-radius:3px}
+.service-site .skip-link:focus{transform:none}
+.service-site-footer{background:#fff;border-top:1px solid #e1e8ee;color:#63758a;margin-top:30px}
+.service-site-footer>div{width:min(1120px,calc(100% - 48px));margin:auto;min-height:76px;display:flex;align-items:center;flex-wrap:wrap;gap:10px 22px;font-size:12px;padding-block:18px}
+.service-site-footer a{text-decoration:none}
+.service-footer-brand{font-size:15px;font-weight:650;letter-spacing:.04em;color:#233f70!important}
+.service-site-footer nav{display:flex;flex-wrap:wrap;gap:10px 22px;margin-left:auto}
+.service-site-footer nav a{min-height:36px;display:inline-flex;align-items:center}
+
+
+@media(min-width:641px){:root{font-size:87.5%}}
+@media(max-width:640px){:root{font-size:100%}}
+body.service-site .login-screen{width:min(1000px,calc(100% - 48px));margin:32px auto;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr);min-height:550px;border:1px solid #dfe7ee;border-radius:6px;overflow:hidden;background:#fff;box-shadow:0 8px 30px #233f7008}
+body.service-site .login-screen .login-story{display:flex;flex-direction:column;background:linear-gradient(125deg,#173b60e8,#173b60bd),url(landing-city.png) 40% center/cover;padding:38px 34px;min-height:0;min-block-size:0;color:#fff}
+body.service-site .login-story>.brand{display:none}
+body.service-site .login-story .story-content{margin:auto 0;padding:0;max-width:none}
+body.service-site .login-screen .story-content h1{font-size:2rem;line-height:1.2;font-weight:500;color:#fff;letter-spacing:-.02em;margin:12px 0 20px}
+body.service-site .login-story .eyebrow{font-size:.8rem;letter-spacing:.08em;color:#bed7eb}
+body.service-site .login-story .story-description{font-size:1rem;line-height:1.65;color:#e1edf7;max-width:none;margin:0}
+body.service-site .login-public-links{gap:.4rem;margin-block:25px 0}
+body.service-site .login-public-links a{font-size:.93rem;color:#fff;min-height:30px;text-decoration:underline}
+body.service-site .login-main{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;padding:34px 38px;min-height:0;min-block-size:0;gap:22px;background:#fff}
+body.service-site .login-card{margin:0;max-width:none;max-inline-size:none;width:100%;min-width:0}
+body.service-site .login-card .section-marker{font-size:.8rem;color:#087bbd;letter-spacing:.08em;margin:0 0 10px}
+body.service-site .login-card h2{font-size:1.85rem;color:#233f70;font-weight:500;line-height:1.25;margin:0 0 12px}
+body.service-site .login-card .login-intro{color:#63758a;font-size:1rem;line-height:1.6;margin:0 0 21px}
+body.service-site .login-card label{font-size:1rem;color:#354b64;font-weight:500;margin-bottom:6px}
+body.service-site .login-card input{border-color:#c9d6e1;border-radius:3px;box-shadow:none;margin-bottom:15px}
+body.service-site .login-card input::placeholder{color:#7b8b9b;font-size:.93rem}
+body.service-site .login-main .login-bottom{position:static;display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:space-between;margin-top:auto;padding:0;font-size:.86rem;color:#7b8b9b;line-height:1.5}
+body.service-site .login-status{font-size:.93rem;line-height:1.5;color:#63758a;margin-block:12px}
+body.service-site .security-note{color:#63758a;font-size:.86rem;line-height:1.5;border-color:#e5ecf2;padding-block:12px}
+body.service-site .identity-auth{border-color:#e1e8ee;margin-top:16px;padding-top:16px}
+body.service-site .identity-panel h3{font-size:1.55rem;color:#233f70;font-weight:500;line-height:1.3}
+body.service-site .identity-note,body.service-site .identity-key-confirm{background:#f1f6fa;border-left-color:#087bbd;color:#354b64;border-radius:3px;font-size:.93rem}
+body.service-site .identity-actions{gap:8px}
+body.service-site .login-card label.identity-checkbox{display:flex;align-items:center;gap:10px;min-height:32px;line-height:1.5;margin-block:16px}
+body.service-site .login-card .identity-checkbox input{flex:0 0 18px;inline-size:18px;block-size:18px;width:18px;height:18px;min-height:0;min-block-size:0;margin:0;padding:0;accent-color:#087bbd}
+@media(max-width:640px){body.service-site .login-card label.identity-checkbox{min-height:44px}}
+
+
+body.service-site .public-main{width:min(1120px,calc(100% - 48px));max-inline-size:none;padding:28px 0 0;margin:auto}
+html body.service-site .landing-hero{max-inline-size:none;padding:0 0 24px;margin:0;background:none}
+html body.service-site .landing-hero h1{font-size:2rem;color:#233f70;font-weight:500;line-height:1.2;margin:12px 0}
+html body.service-site .landing-description{font-size:1rem;color:#63758a;line-height:1.6;max-width:750px}
+.service-site .landing-eyebrow{font-size:.86rem;color:#63758a;margin:0}
+.service-site .landing-actions{margin-top:18px;gap:18px}
+.service-site .pub-section{background:#fff;border:1px solid #dfe7ee;border-radius:5px;padding:24px!important;margin-block:20px!important;scroll-margin-top:20px}
+.service-site .pub-section>h2{font-size:1.5rem;color:#233f70;font-weight:500;margin:0 0 10px}
+.service-site .pub-section>.pub-intro{font-size:.93rem;color:#63758a;line-height:1.6;max-width:820px;margin-bottom:18px}
+.service-site .pub-quick{display:flex;flex-wrap:wrap;gap:8px;border:0;margin-block:16px;padding:0}
+.service-site .pub-quick li{flex:1 1 200px}
+.service-site .pub-quick a{background:#fff;border:1px solid #dce5ed;border-radius:3px;min-height:42px;padding:8px 14px;font-size:.93rem;font-weight:500;text-decoration:none}
+.service-site .pub-quick a:hover{border-color:#79b5d8;color:#087bbd}
+.service-site .pub-fields{gap:14px;margin-block:14px}
+.service-site .pub-field label{font-size:.93rem;color:#354b64;font-weight:500}
+.service-site .pub-status{border-left:2px solid #87b8d7;background:#f2f7fb;color:#536b81;border-radius:2px;font-size:.93rem}
+.service-site .pub-status.error{background:#fff3f2;color:#9d342d;border-color:#c55c54}
+.service-site .pub-meta{font-size:.86rem;color:#63758a}
+.service-site .pub-record{padding-block:18px;border-color:#e1e8ee}
+.service-site .pub-definition{font-size:.93rem}
+.service-site .pub-wizard{background:#f8fbfd;border-color:#c8dce9;border-radius:4px}
+.service-site .pub-table th,.service-site .pub-table td{font-size:.93rem;padding:10px 12px;border-color:#e1e8ee}
+body.service-site #hydrology-app,body.service-site #lakes-app{width:min(1120px,calc(100% - 48px));max-width:none;max-inline-size:none;margin:28px auto 0;padding:24px 26px;background:#fff;border:1px solid #dfe7ee;border-radius:5px;color:#23364d}
+.service-site #hydrology-app .hyd-app{padding:0;font:inherit;color:inherit;background:transparent}
+.service-site #hydrology-app h1,.service-site #lakes-app h1{font-size:2rem;line-height:1.2;font-weight:500;letter-spacing:-.015em;color:#233f70;margin:0 0 15px}
+.service-site #hydrology-app h2,.service-site #lakes-app h2{font-size:1.45rem;font-weight:500;color:#233f70;line-height:1.3}
+.service-site #hydrology-app .hyd-grid>button{justify-self:start;min-inline-size:160px}
+@media(min-width:1001px){.service-site #hydrology-app form.hyd-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.service-site #hydrology-app form.hyd-grid>button{grid-column:1/-1}}
+.service-site #lakes-app>.intro{font-size:1rem;line-height:1.65;color:#63758a;max-width:820px}
+.service-site :is(.hyd-fields,.hyd-scope,.fields){gap:14px}
+.service-site :is(.hyd-muted,.muted,.meta){color:#63758a}
+.service-site :is(.hyd-status,.notice){border-color:#a7c7dd;background:#f3f8fc;color:#3d5b75;border-radius:3px}
+.service-site :is(.hyd-chart,.hyd-table-wrap,.table-wrap){border-color:#dfe7ee}
+.service-site #lakes-app nav{gap:8px;padding-block:8px 18px}
+.service-site #lakes-app .record-list>li{border-color:#dfe7ee;border-radius:3px}
+
+
+body.service-site #application:not([hidden]){display:grid;grid-template-columns:224px minmax(0,1fr);align-items:start;gap:22px;width:min(1400px,calc(100% - 40px));margin:24px auto;min-height:600px}
+body.service-site .sidebar{position:sticky;top:16px;inset-inline-start:auto;align-self:start;width:auto;height:auto;max-height:calc(100vh - 32px);overflow:auto;background:#fff;border:1px solid #dfe7ee;border-radius:5px;padding:18px 12px;color:#233f70;box-shadow:none}
+body.service-site .sidebar>.brand{display:none}
+body.service-site .sidebar .nav-caption{color:#7a8a9c;font-size:.8rem;letter-spacing:.08em;margin:0 12px 10px}
+body.service-site .sidebar .navigation{margin-top:0;gap:3px}
+body.service-site .sidebar .nav-item{color:#354b64;background:transparent;font-size:.93rem;line-height:1.45;min-height:36px;min-block-size:36px;padding:9px 12px;border-radius:3px;border-left:3px solid transparent}
+body.service-site .sidebar .nav-item:hover{background:#f3f7fa;color:#087bbd}
+body.service-site .sidebar .nav-item.selected,body.service-site .sidebar .nav-item[aria-current="page"]{background:#eaf4fb;border-left-color:#087bbd;color:#087bbd;font-weight:600}
+body.service-site .sidebar .nav-icon{display:none}
+body.service-site .sidebar .nav-section{font-size:.75rem;color:#8190a1;letter-spacing:.06em;padding:15px 12px 5px}
+body.service-site .sidebar-bottom,body.service-site .sidebar-bottom small{color:#63758a;border-color:#e1e8ee;font-size:.86rem}
+body.service-site .service-navigation>summary{color:#233f70;font-size:1rem;padding:7px 10px}
+body.service-site .app-content{width:auto;min-width:0;margin:0}
+body.service-site .topbar{min-height:54px;height:auto;padding:12px 18px;background:#fff;border:1px solid #dfe7ee;border-radius:5px;gap:12px}
+body.service-site .breadcrumb{font-size:.86rem;color:#63758a}
+body.service-site .service-context{padding:12px 18px;border:1px solid #dfe7ee;border-top:0;border-radius:0 0 4px 4px;background:#fbfcfe;gap:6px 16px}
+body.service-site .service-context p{font-size:.93rem;color:#354b64}
+body.service-site .service-context-help{font-size:.86rem!important;color:#63758a!important}
+body.service-site .dashboard{padding:22px 0 0;min-width:0}
+body.service-site .page-heading{margin-bottom:20px}
+body.service-site .page-heading h1{font-size:1.9rem;color:#233f70;font-weight:500;letter-spacing:-.02em}
+body.service-site .card{border:1px solid #dfe7ee;border-radius:5px;box-shadow:none;padding:22px;background:#fff;color:#23364d;margin-bottom:20px}
+body.service-site .card h2{font-size:1.4rem;font-weight:500;color:#233f70;line-height:1.3}
+body.service-site .card h3{font-size:1.08rem;color:#354b64;font-weight:600;line-height:1.4}
+body.service-site .card-heading{margin-bottom:18px;gap:14px}
+body.service-site .card-number{background:#f2f6fa;color:#8096aa;border-color:#e1e8ee;font-size:.86rem}
+body.service-site .profile-card{background:#23466f;border-color:#23466f;border-radius:5px;padding:25px;color:#fff}
+body.service-site .profile-card h2{color:#fff;font-weight:500}
+body.service-site .profile-card p,body.service-site .profile-card .overline,body.service-site .profile-status{color:#d9e8f5;font-size:.93rem}
+body.service-site .record{border:1px solid #dfe7ee;border-radius:4px;padding:15px;box-shadow:none}
+body.service-site .record-title{font-size:1rem;color:#233f70;font-weight:600}
+body.service-site .record-meta{font-size:.86rem;color:#63758a;line-height:1.65}
+body.service-site :is(.management-form,.role-assignment form){gap:14px}
+body.service-site :is(.management-form label,.separated-form>label,.password-form label){font-size:.93rem;color:#354b64;font-weight:500}
+body.service-site .table-scroll{overflow-x:auto;max-width:100%;margin-inline:0}
+body.service-site .table-scroll th,body.service-site .table-scroll td{font-size:.93rem;line-height:1.5;padding:12px;border-color:#e1e8ee}
+body.service-site .table-scroll th{background:#f5f8fb;color:#63758a;font-size:.8rem;letter-spacing:.03em}
+body.service-site .dashboard-footer{padding-top:6px;font-size:.86rem;color:#63758a}
+body.service-site :is(.lab-content,.hyd-app,.inv-shell,.wo-app,.wm-app,.doc-shell,.operations-ui){font-family:inherit;color:#23364d}
+body.service-site :is(.lab-grid,.inv-grid,.doc-grid,.wo-grid,.wm-grid){gap:18px}
+body.service-site :is(.lab-toolbar,.lab-tabs,.inv-tabs,.doc-actions,.wo-nav,.dispatch-tabs,.operations-nav){gap:8px;flex-wrap:wrap}
+body.service-site :is(.lab-meta,.inv-meta,.doc-muted,.wo-muted,.wm-meta,.dispatch-hint){color:#63758a;font-size:.93rem}
+
+
+body.service-site :is(button,.button),body.service-site #application :is(button,.button){font-family:inherit;font-weight:500;border-radius:3px;border-color:#c9d8e4;background:#fff;color:#233f70;box-shadow:none}
+body.service-site :is(button,.button):hover:not(:disabled),body.service-site #application :is(button,.button):hover:not(:disabled){background:#edf5fb;border-color:#8db9d5;color:#075e93}
+body.service-site :is(.primary,.lab-primary,.inv-primary,.pub-primary,.hyd-primary,button[type="submit"]),body.service-site #application :is(.primary,.lab-primary,.inv-primary,.pub-primary,.hyd-primary,button[type="submit"]){background:#087bbd;color:#fff;border-color:#087bbd}
+body.service-site :is(button,.button)[aria-pressed="true"],body.service-site :is(button,.button)[aria-selected="true"]{background:#e4f2fb;border-color:#087bbd;color:#075e93}
+body.service-site :is(button,.button):disabled,body.service-site #application :is(button,.button):disabled{color:#8293a4;background:#f3f6f9;border-color:#dfe7ee;cursor:not-allowed}
+body.service-site :is(input:not([type="checkbox"]):not([type="radio"]),select,textarea){font-family:inherit;border-color:#c9d6e1;border-radius:3px;background:#fff;color:#23364d;box-shadow:none}
+body.service-site :is(input,select,textarea):focus{border-color:#087bbd}
+body.service-site [aria-invalid="true"]{border-color:#b54940}
+body.service-site :is(.lab-error,.inv-error,.doc-error,.hyd-error,.dispatch-error){background:#fff3f2;color:#9d342d;border-color:#c55c54}
+body.service-site :is(.lab-warning,.hyd-warning,.inv-warning,.wm-warning){background:#fff8e8;color:#805a17;border-color:#e0bd78}
+body.service-site .notice.error{background:#fff3f2;color:#9d342d;border-color:#c55c54}
+body.service-site .notice.warning{background:#fff8e8;color:#805a17;border-color:#e0bd78}
+body.service-site .notice.success{background:#eef8f1;color:#246442;border-color:#9dc8ad}
+body.service-site .button.danger,body.service-site #application .button.danger{background:#fff;color:#a43d35;border-color:#dcaaa5}
+body.service-site .button.danger:hover:not(:disabled),body.service-site #application .button.danger:hover:not(:disabled){background:#fff3f2;border-color:#bc625b;color:#8e2c25}
+body.service-site :is(.primary,.lab-primary,.inv-primary,.pub-primary,.hyd-primary,button[type="submit"]):hover:not(:disabled),body.service-site #application :is(.primary,.lab-primary,.inv-primary,.pub-primary,.hyd-primary,button[type="submit"]):hover:not(:disabled){background:#075e93;border-color:#075e93;color:#fff}
+
+@media(max-width:1050px){body.service-site #application:not([hidden]){grid-template-columns:190px minmax(0,1fr);gap:16px;width:calc(100% - 32px)}body.service-site .sidebar{padding:14px 8px}body.service-site .card{padding:18px}body.service-site .workspace-grid{grid-template-columns:1fr}}
+@media(max-width:760px){.service-site .rv-header-main{min-height:72px}.service-site .rv-nav{min-height:72px}.service-site-footer>div{width:calc(100% - 32px);gap:8px 14px}.service-site-footer nav{width:100%;margin-left:0;gap:8px 18px}body.service-site .login-screen{width:calc(100% - 32px);grid-template-columns:1fr;margin-block:22px;min-height:0}body.service-site .login-screen .login-story{padding:22px 25px}body.service-site .login-screen .story-content h1{font-size:1.75rem;margin:6px 0 10px}body.service-site .login-story .story-description{font-size:.93rem;max-width:550px}body.service-site .login-public-links{display:none}body.service-site .login-main{padding:25px;gap:22px}body.service-site .public-main{width:calc(100% - 32px);padding-top:22px}.service-site .pub-section{padding:18px!important}.service-site .pub-columns{grid-template-columns:1fr}.service-site .pub-detail{border-left:0;border-top:1px solid #dfe7ee;padding:18px 0 0}body.service-site #hydrology-app,body.service-site #lakes-app{width:calc(100% - 32px);margin-top:22px;padding:20px}.service-site #hydrology-app h1,.service-site #lakes-app h1{font-size:1.75rem}}
+@media(max-width:640px){body.service-site #application:not([hidden]){display:block;width:calc(100% - 24px);margin-block:14px}body.service-site .sidebar{position:static;max-height:none;padding:10px;margin-bottom:14px}body.service-site .sidebar .nav-caption,body.service-site .sidebar-bottom{display:none}body.service-site .sidebar .navigation{flex-direction:column;gap:4px}body.service-site .sidebar .nav-item{min-height:44px;min-block-size:44px;font-size:1rem;padding:10px 12px}body.service-site .service-navigation>summary{min-height:44px}body.service-site .topbar{padding:12px}body.service-site .service-context{padding:12px}body.service-site .dashboard{padding-top:18px}body.service-site .card{padding:18px;margin-bottom:16px}body.service-site .card h2{font-size:1.3rem}body.service-site .page-heading h1{font-size:1.7rem}body.service-site .login-main{padding:22px}body.service-site .login-card h2{font-size:1.65rem}body.service-site .login-card input{font-size:1rem}body.service-site #hydrology-app,body.service-site #lakes-app{padding:18px 14px;width:calc(100% - 24px)}body.service-site .public-main{width:calc(100% - 24px)}.service-site .pub-section{padding:16px!important}.service-site .pub-section>h2{font-size:1.35rem}.service-site .pub-quick li{flex-basis:100%}.service-site .pub-fields,.service-site .pub-fields.two{grid-template-columns:minmax(0,1fr)}}

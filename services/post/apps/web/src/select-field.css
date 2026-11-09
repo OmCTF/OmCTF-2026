@@ -1,0 +1,160 @@
+.select-field {
+  display: block;
+  min-width: 0;
+  width: 100%;
+  height: 40px;
+}
+.identity .select-field > button[role="combobox"] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  height: 40px;
+  min-height: 40px;
+  margin: 0;
+  padding: 0 12px;
+  border: 1px solid #ffffff10;
+  border-radius: 8px;
+  background: #202024;
+  color: #f2f2f3;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  text-align: left;
+}
+.select-field > button > span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.select-field > button > svg {
+  flex: none;
+  color: #d1d1d6;
+  transition: transform 100ms ease;
+}
+.select-field > button[aria-expanded="true"] > svg {
+  transform: rotate(180deg);
+}
+.identity .select-field > button[aria-expanded="true"] {
+  outline: 2px solid #5865f2;
+  outline-offset: -1px;
+}
+.select-field-popup {
+  position: fixed;
+  inset: auto;
+  z-index: 2000;
+  box-sizing: border-box;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 4px;
+  border: 1px solid oklab(0.678923 0.00325415 -0.0111644 / 0.121569);
+  border-radius: 8px;
+  background: oklab(0.278878 0.00249207 -0.00875986);
+  color: #f2f2f3;
+  box-shadow: 0 2px 8px #00000029;
+  overflow: hidden;
+  animation: select-field-in 90ms ease-out;
+}
+.select-field-popup::backdrop {
+  background: transparent;
+  pointer-events: none;
+}
+.select-field-options {
+  position: relative;
+  height: 100%;
+  overflow: hidden scroll;
+  scrollbar-gutter: stable;
+  scrollbar-color: #1a1a1e transparent;
+  scrollbar-width: auto;
+}
+.select-field-options::-webkit-scrollbar {
+  width: 16px;
+}
+.select-field-options::-webkit-scrollbar-thumb {
+  min-height: 40px;
+  border: 4px solid transparent;
+  border-radius: 8px;
+  background: #1a1a1e;
+  background-clip: padding-box;
+}
+@supports selector(::-webkit-scrollbar) {
+  .select-field-options {
+    scrollbar-color: auto;
+  }
+}
+.select-field-options [role="option"] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  height: 40px;
+  padding: 0 4px 0 8px;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.select-field-options [role="option"] > span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.select-field-options [role="option"] > svg {
+  flex: none;
+}
+.select-label {
+  display: block;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+.select-label-text {
+  display: block;
+  position: relative;
+  inset-inline-start: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.select-label[data-active="true"][data-overflow="true"] > .select-label-text {
+  width: max-content;
+  overflow: visible;
+  inset-inline-start: calc(-1 * var(--select-label-overflow));
+  transition: inset-inline-start var(--select-label-duration) linear;
+}
+.select-field-options [role="option"][data-active="true"] {
+  background: #97979f29;
+}
+.select-field-options [aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+@keyframes select-field-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .select-field-popup,
+  .select-field > button > svg,
+  .select-label[data-active="true"][data-overflow="true"] > .select-label-text {
+    animation: none;
+    transition: none;
+  }
+}
+[data-motion="reduced"] .select-field-popup,
+[data-motion="reduced"] .select-field > button > svg,
+[data-motion="reduced"]
+  .select-label[data-active="true"][data-overflow="true"]
+  > .select-label-text {
+  animation: none;
+  transition: none;
+}

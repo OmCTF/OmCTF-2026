@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+  <Configuration uuid="9508fb1b-3c91-2a23-7bad-1176238fb92d">
+    <InternalInfo>
+      <xr:ContainedObject>
+        <xr:ClassId>9cd510cd-abfc-11d4-9434-004095e12fc7</xr:ClassId>
+        <xr:ObjectId>341e7621-c11e-573d-cca8-5904fcbd8a6b</xr:ObjectId>
+      </xr:ContainedObject>
+      <xr:ContainedObject>
+        <xr:ClassId>9fcd25a0-4822-11d4-9414-008048da11f9</xr:ClassId>
+        <xr:ObjectId>4b717389-8203-8642-ae15-8301b23bbcc9</xr:ObjectId>
+      </xr:ContainedObject>
+      <xr:ContainedObject>
+        <xr:ClassId>e3687481-0a87-462c-a166-9f34594f9bba</xr:ClassId>
+        <xr:ObjectId>8982cd5a-797b-35e2-dccd-4b7e1713b054</xr:ObjectId>
+      </xr:ContainedObject>
+      <xr:ContainedObject>
+        <xr:ClassId>9de14907-ec23-4a07-96f0-85521cb6b53b</xr:ClassId>
+        <xr:ObjectId>7fc8ad20-b0b7-42fe-edd7-ee1687614ad8</xr:ObjectId>
+      </xr:ContainedObject>
+      <xr:ContainedObject>
+        <xr:ClassId>51f2d5d8-ea4d-4064-8892-82951750031e</xr:ClassId>
+        <xr:ObjectId>61c5aa65-3cd9-6fe3-cba5-d29e8f505ef7</xr:ObjectId>
+      </xr:ContainedObject>
+      <xr:ContainedObject>
+        <xr:ClassId>e68182ea-4237-4383-967f-90c1e3370bc7</xr:ClassId>
+        <xr:ObjectId>f761da97-c195-9062-ab91-5480b3c8ef1c</xr:ObjectId>
+      </xr:ContainedObject>
+      <xr:ContainedObject>
+        <xr:ClassId>fb282519-d103-4dd3-bc12-cb271d631dfc</xr:ClassId>
+        <xr:ObjectId>b3eacc35-2a2e-4c19-e64f-a703bd18d192</xr:ObjectId>
+      </xr:ContainedObject>
+    </InternalInfo>
+    <Properties>
+      <Name>ОмскВодоканал</Name>
+      <Synonym>
+        <v8:item>
+          <v8:lang>ru</v8:lang>
+          <v8:content>ОмскВодоканал</v8:content>
+        </v8:item>
+      </Synonym>
+      <Comment />
+      <NamePrefix />
+      <ConfigurationExtensionCompatibilityMode>Version8_5_1</ConfigurationExtensionCompatibilityMode>
+      <DefaultRunMode>ManagedApplication</DefaultRunMode>
+      <UsePurposes>
+        <v8:Value xsi:type="app:ApplicationUsePurpose">PlatformApplication</v8:Value>
+      </UsePurposes>
+      <ScriptVariant>Russian</ScriptVariant>
+      <DefaultRoles />
+      <Vendor>Vodokanal Lab</Vendor>
+      <Version>1.0</Version>
+      <UpdateCatalogAddress />
+      <IncludeHelpInContents>false</IncludeHelpInContents>
+      <UseManagedFormInOrdinaryApplication>false</UseManagedFormInOrdinaryApplication>
+      <UseOrdinaryFormInManagedApplication>false</UseOrdinaryFormInManagedApplication>
+      <AdditionalFullTextSearchDictionaries />
+      <CommonSettingsStorage />
+      <ReportsUserSettingsStorage />
+      <ReportsVariantsStorage />
+      <FormDataSettingsStorage />
+      <DynamicListsUserSettingsStorage />
+      <URLExternalDataStorage />
+      <Content />
+      <DefaultReportForm />
+      <DefaultReportVariantForm />
+      <DefaultReportSettingsForm />
+      <DefaultReportAppearanceTemplate />
+      <DefaultDynamicListSettingsForm />
+      <DefaultSearchForm />
+      <DefaultDataHistoryChangeHistoryForm />
+      <DefaultDataHistoryVersionDataForm />
+      <DefaultDataHistoryVersionDifferencesForm />
+      <DefaultCollaborationSystemUsersChoiceForm />
+      <AuxiliaryReportForm />
+      <AuxiliaryReportVariantForm />
+      <AuxiliaryReportSettingsForm />
+      <AuxiliaryDynamicListSettingsForm />
+      <AuxiliaryDataHistoryChangeHistoryForm />
+      <AuxiliaryDataHistoryVersionDataForm />
+      <AuxiliaryDataHistoryVersionDifferencesForm />
+      <AuxiliaryCollaborationSystemUsersChoiceForm />
+      <RequiredMobileApplicationPermissions />
+      <UsedMobileApplicationFunctionalities>
+        <app:functionality>
+          <app:functionality>Biometrics</app:functionality>
+          <app:use>true</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>Location</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>BackgroundLocation</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>BluetoothPrinters</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>WiFiPrinters</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>Contacts</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>Calendars</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>PushNotifications</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>LocalNotifications</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>InAppPurchases</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>PersonalComputerFileExchange</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>Ads</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>NumberDialing</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>CallProcessing</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>CallLog</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>AutoSendSMS</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>ReceiveSMS</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>SMSLog</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>Camera</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>Microphone</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>MusicLibrary</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>PictureAndVideoLibraries</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>AudioPlaybackAndVibration</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>BackgroundAudioPlaybackAndVibration</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>InstallPackages</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>OSBackup</app:functionality>
+          <app:use>true</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>ApplicationUsageStatistics</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>BarcodeScanning</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>BackgroundAudioRecording</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>AllFilesAccess</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>Videoconferences</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>NFC</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>DocumentScanning</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>SpeechToText</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>Geofences</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>IncomingShareRequests</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>AllIncomingShareRequestsTypesProcessing</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+        <app:functionality>
+          <app:functionality>TextToSpeech</app:functionality>
+          <app:use>false</app:use>
+        </app:functionality>
+      </UsedMobileApplicationFunctionalities>
+      <StandaloneConfigurationRestrictionRoles />
+      <MobileApplicationURLs />
+      <AllowedIncomingShareRequestTypes />
+      <MainClientApplicationWindowInterfaceVariant>NavigationLeft</MainClientApplicationWindowInterfaceVariant>
+      <ClientApplicationTheme>Auto</ClientApplicationTheme>
+      <MainClientApplicationWindowMode>Normal</MainClientApplicationWindowMode>
+      <ClientApplicationWindowsOpenVariant>OpenDataInDialogs</ClientApplicationWindowsOpenVariant>
+      <DefaultInterface />
+      <Caption />
+      <ShortCaption />
+      <DefaultStyle />
+      <DefaultLanguage>Language.Русский</DefaultLanguage>
+      <BriefInformation />
+      <DetailedInformation />
+      <Copyright />
+      <VendorInformationAddress />
+      <ConfigurationInformationAddress />
+      <DataLockControlMode>Managed</DataLockControlMode>
+      <ObjectAutonumerationMode>NotAutoFree</ObjectAutonumerationMode>
+      <ModalityUseMode>DontUse</ModalityUseMode>
+      <SynchronousPlatformExtensionAndAddInCallUseMode>DontUse</SynchronousPlatformExtensionAndAddInCallUseMode>
+      <InterfaceCompatibilityMode>Taxi</InterfaceCompatibilityMode>
+      <Version85InterfaceMigrationMode>DontUse</Version85InterfaceMigrationMode>
+      <DatabaseTablespacesUseMode>DontUse</DatabaseTablespacesUseMode>
+      <CompatibilityMode>Version8_5_1</CompatibilityMode>
+      <DefaultConstantsForm />
+    </Properties>
+    <ChildObjects>
+      <Language>Русский</Language>
+      <Role>Администратор</Role>
+      <Role>Диспетчер</Role>
+      <Role>APIКабинета</Role>
+      <HTTPService>СервисAPI</HTTPService>
+      <SessionParameter>ЭкземплярСеансаКабинета</SessionParameter>
+      <CommonModule>СервисГидрологии</CommonModule>
+      <CommonModule>ПубличнаяГидрология</CommonModule>
+      <CommonModule>APIВодоканала</CommonModule>
+      <CommonModule>APIКабинета</CommonModule>
+      <CommonModule>ПолитикаДоступа</CommonModule>
+      <CommonModule>СеансыКабинета</CommonModule>
+      <CommonModule>УчастиеВПространствах</CommonModule>
+      <CommonModule>БезопасностьУчетныхЗаписей1С</CommonModule>
+      <CommonModule>НастройкаОператоров1С</CommonModule>
+      <CommonModule>РеестрАбонентов</CommonModule>
+      <CommonModule>ДоступКЛицевымСчетам</CommonModule>
+      <CommonModule>СервисУчетаПоказаний</CommonModule>
+      <CommonModule>ЖизненныйЦиклАбонентов</CommonModule>
+      <CommonModule>СервисВодоснабжения</CommonModule>
+      <CommonModule>СервисДиспетчерской</CommonModule>
+      <CommonModule>СервисНарядов</CommonModule>
+      <CommonModule>СервисФайлов</CommonModule>
+      <CommonModule>СервисЛаборатории</CommonModule>
+      <CommonModule>СервисСклада</CommonModule>
+      <CommonModule>ОграниченияЗапросовAPI</CommonModule>
+      <CommonModule>ПередачаВладенияПространством</CommonModule>
+      <CommonModule>СаморегистрацияКабинета</CommonModule>
+      <CommonModule>УзкийКонтурИдентичности1С</CommonModule>
+      <CommonModule>СервисАбонентовКабинета</CommonModule>
+      <CommonModule>СервисДокументов</CommonModule>
+      <CommonModule>СервисПриватныхСводок</CommonModule>
+      <CommonModule>СервисУведомлений</CommonModule>
+      <CommonModule>СервисЭксплуатации</CommonModule>
+      <CommonModule>ОператорЭксплуатации</CommonModule>
+      <CommonModule>ПубличныйПортал</CommonModule>
+      <CommonModule>СервисПубличногоПортала</CommonModule>
+      <CommonModule>НастройкаПубличногоПортала</CommonModule>
+      <CommonModule>МаршрутизацияКабинета</CommonModule>
+      <CommonModule>ШлюзГостевыхОбращений</CommonModule>
+      <CommonModule>УзкийКонтурГостевыхОбращений</CommonModule>
+      <CommonModule>НастройкаГостевогоШлюза</CommonModule>
+      <CommonModule>НастройкаШлюзаИдентичности</CommonModule>
+      <CommonModule>ОграниченияТяжелыхЗаданий</CommonModule>
+      <CommonModule>ОграниченияОбъектовОбластей</CommonModule>
+      <Subsystem>Абоненты</Subsystem>
+      <Subsystem>Диспетчерская</Subsystem>
+      <Enum>СостоянияОбращений</Enum>
+      <Enum>КатегорииОбращений</Enum>
+      <Catalog>Гидропосты</Catalog>
+      <Catalog>Абоненты</Catalog>
+      <Catalog>ПриборыУчета</Catalog>
+      <Catalog>Бригады</Catalog>
+      <Catalog>УчетныеЗаписи</Catalog>
+      <Catalog>РабочиеПространства</Catalog>
+      <Catalog>Области</Catalog>
+      <Catalog>Участия</Catalog>
+      <Catalog>ПриглашенияВПространства</Catalog>
+      <Catalog>СобытияАудита</Catalog>
+      <Catalog>ОбъектыНедвижимости</Catalog>
+      <Catalog>ТочкиОбслуживания</Catalog>
+      <Catalog>Договоры</Catalog>
+      <Catalog>ЛицевыеСчета</Catalog>
+      <Catalog>ЗаявкиДоступаКСчетам</Catalog>
+      <Catalog>СвязиДоступаКЛицевымСчетам</Catalog>
+      <Catalog>ПаспортаПриборов</Catalog>
+      <Catalog>УстановкиПриборов</Catalog>
+      <Catalog>ЗаявкиКорректировкиПоказаний</Catalog>
+      <Catalog>ИсточникиВоды</Catalog>
+      <Catalog>ПунктыВыдачиВоды</Catalog>
+      <Catalog>ПолучателиВоды</Catalog>
+      <Catalog>ЗаказыВоды</Catalog>
+      <Catalog>ПубличныеПриемные</Catalog>
+      <Catalog>ОбращенияДиспетчерской</Catalog>
+      <Catalog>СообщенияОбращений</Catalog>
+      <Catalog>ИнцидентыДиспетчерской</Catalog>
+      <Catalog>РабочиеБригады</Catalog>
+      <Catalog>УчастникиРабочихБригад</Catalog>
+      <Catalog>РесурсыНарядов</Catalog>
+      <Catalog>ЗаказыУслуг</Catalog>
+      <Catalog>Наряды</Catalog>
+      <Catalog>БронированияРесурсовНарядов</Catalog>
+      <Catalog>РазрешенияНарядов</Catalog>
+      <Catalog>ВерсииПриложенийНарядов</Catalog>
+      <Catalog>ФайлыОбращений</Catalog>
+      <Catalog>ВерсииФайловОбращений</Catalog>
+      <Catalog>ЗаказыЛаборатории</Catalog>
+      <Catalog>ПробыЛаборатории</Catalog>
+      <Catalog>РедакцииЛабораторныхПротоколов</Catalog>
+      <Catalog>ЧастныеЗаключенияПроб</Catalog>
+      <Catalog>ЕдиницыМатериалов</Catalog>
+      <Catalog>Материалы</Catalog>
+      <Catalog>СкладыМатериалов</Catalog>
+      <Catalog>ЯчейкиМатериалов</Catalog>
+      <Catalog>ЗаявкиМатериалов</Catalog>
+      <Catalog>ОтчетыВыполненияНарядов</Catalog>
+      <Catalog>ФотографииНарядов</Catalog>
+      <Catalog>ПередачиВладенияПространством</Catalog>
+      <Catalog>ФотографииПоказаний</Catalog>
+      <Catalog>ДоставкиВоды</Catalog>
+      <Catalog>РешенияПроверкиПоказаний</Catalog>
+      <Catalog>ДокументыКабинета</Catalog>
+      <Catalog>ВерсииДокументовКабинета</Catalog>
+      <Catalog>СохраненныеЭкспорты</Catalog>
+      <Catalog>ПриватныеСводки</Catalog>
+      <Catalog>УведомленияКабинета</Catalog>
+      <Catalog>ОчередьУведомлений</Catalog>
+      <Catalog>ИсторияНастроекЭксплуатации</Catalog>
+      <Catalog>ЗаданияЭксплуатации</Catalog>
+      <Catalog>ПубликацииПортала</Catalog>
+      <Catalog>ОбъектыУчебнойСети</Catalog>
+      <Catalog>СвязиУчебнойСети</Catalog>
+      <Catalog>ОтключенияВодоснабжения</Catalog>
+      <Document>ЗаявкаНаОбслуживание</Document>
+      <Document>ПоказаниеПрибора</Document>
+      <Document>Наряд</Document>
+      <Document>ИзмерениеПрибора</Document>
+      <Document>ДвижениеВоды</Document>
+      <Document>ДвижениеМатериалов</Document>
+      <InformationRegister>РедакцииИзмеренийГидрологии</InformationRegister>
+      <InformationRegister>ТекущиеИзмеренияГидрологии</InformationRegister>
+      <InformationRegister>КомандыГидрологии</InformationRegister>
+      <InformationRegister>ИсторияГидропостов</InformationRegister>
+      <InformationRegister>КвотыГидрологии</InformationRegister>
+      <InformationRegister>ПривязкиПриглашений</InformationRegister>
+      <InformationRegister>ПривязкиПользователей1С</InformationRegister>
+      <InformationRegister>ПривязкиЛогинов</InformationRegister>
+      <InformationRegister>ТекущиеПакетыСводок</InformationRegister>
+      <InformationRegister>ПривязкиУчастий</InformationRegister>
+      <InformationRegister>СеансыКабинета</InformationRegister>
+      <InformationRegister>ПривязкиНомеровЛицевыхСчетов</InformationRegister>
+      <InformationRegister>ПривязкиДоступаКЛицевымСчетам</InformationRegister>
+      <InformationRegister>ПривязкиЗаявокДоступаКСчетам</InformationRegister>
+      <InformationRegister>ПривязкиСерийныхНомеровПриборов</InformationRegister>
+      <InformationRegister>ДействующиеУстановкиПриборов</InformationRegister>
+      <InformationRegister>ПоследниеПринятыеПоказания</InformationRegister>
+      <InformationRegister>ПривязкиКомандУчетаПоказаний</InformationRegister>
+      <InformationRegister>ИсторияИзмененийРеестра</InformationRegister>
+      <InformationRegister>ПривязкиКомандЖизненногоЦиклаРеестра</InformationRegister>
+      <InformationRegister>ПривязкиКомандВодоснабжения</InformationRegister>
+      <InformationRegister>КвотыВодоснабженияПространств</InformationRegister>
+      <InformationRegister>ПривязкиКомандДиспетчерской</InformationRegister>
+      <InformationRegister>ИсторияДиспетчерской</InformationRegister>
+      <InformationRegister>КвотыОбращенийПользователей</InformationRegister>
+      <InformationRegister>КвотыОбращенийПространств</InformationRegister>
+      <InformationRegister>КвотыОбластейДействияНарядов</InformationRegister>
+      <InformationRegister>ПривязкиРазрешенийНарядов</InformationRegister>
+      <InformationRegister>ТекущиеВерсииПриложенийНарядов</InformationRegister>
+      <InformationRegister>ПривязкиКомандНарядов</InformationRegister>
+      <InformationRegister>ИсторияНарядов</InformationRegister>
+      <InformationRegister>ТекущиеВерсииФайловОбращений</InformationRegister>
+      <InformationRegister>КвотыФайловОбращений</InformationRegister>
+      <InformationRegister>КомандыФайловОбращений</InformationRegister>
+      <InformationRegister>ИзмеренияРедакцийПротоколов</InformationRegister>
+      <InformationRegister>ТекущиеЧастныеЗаключенияПроб</InformationRegister>
+      <InformationRegister>КомандыЛаборатории</InformationRegister>
+      <InformationRegister>КвотыЛаборатории</InformationRegister>
+      <InformationRegister>ИсторияЛаборатории</InformationRegister>
+      <InformationRegister>ПривязкиКомандСклада</InformationRegister>
+      <InformationRegister>ИсторияСклада</InformationRegister>
+      <InformationRegister>ОбратныеДвиженияМатериалов</InformationRegister>
+      <InformationRegister>КвотыСклада</InformationRegister>
+      <InformationRegister>ЛимитыЗапросовAPI</InformationRegister>
+      <InformationRegister>СчетчикиЧтенийAPI</InformationRegister>
+      <InformationRegister>ПривязкиПередачВладения</InformationRegister>
+      <InformationRegister>РегистрацииКабинета</InformationRegister>
+      <InformationRegister>ПочтовыеЯщикиКабинета</InformationRegister>
+      <InformationRegister>ПисьмаИдентичности</InformationRegister>
+      <InformationRegister>ЛимитыИдентичности</InformationRegister>
+      <InformationRegister>ДействующиеКорректировкиПоказаний</InformationRegister>
+      <InformationRegister>КомандыДокументовКабинета</InformationRegister>
+      <InformationRegister>ПривязкиУведомлений</InformationRegister>
+      <InformationRegister>КаналыУведомлений</InformationRegister>
+      <InformationRegister>НастройкиЭксплуатации</InformationRegister>
+      <InformationRegister>КвитанцииДоставкиУведомлений</InformationRegister>
+      <InformationRegister>ПривязкиЗаданийЭксплуатации</InformationRegister>
+      <InformationRegister>КвитанцииГостевыхОбращений</InformationRegister>
+      <InformationRegister>ЛимитыГостевыхОбращений</InformationRegister>
+      <InformationRegister>ПодпискиОтключений</InformationRegister>
+      <InformationRegister>СекретГостевогоШлюза</InformationRegister>
+      <InformationRegister>ЛимитыПубличногоШлюза</InformationRegister>
+      <InformationRegister>КомандыПубликацийПортала</InformationRegister>
+      <InformationRegister>КвотыКорневыхОбъектов</InformationRegister>
+      <InformationRegister>АктивныеТяжелыеЗадания</InformationRegister>
+      <InformationRegister>ОбластиСохраненныхЭкспортов</InformationRegister>
+      <AccumulationRegister>ЗапасыВоды</AccumulationRegister>
+      <AccumulationRegister>РезервыВоды</AccumulationRegister>
+      <AccumulationRegister>ЗапасыМатериалов</AccumulationRegister>
+      <AccumulationRegister>РезервыМатериалов</AccumulationRegister>
+      <ScheduledJob>ОбслуживаниеКабинета</ScheduledJob>
+      <CommonModule>ПубличнаяЛаборатория</CommonModule>
+      <HTTPService>СервисПубличнойЛаборатории</HTTPService>
+      <Role>ПубличноеЧтениеЛаборатории</Role>
+      <HTTPService>СервисПубличнойГидрологии</HTTPService>
+      <Role>ПубличноеЧтениеГидрологии</Role>
+      <HTTPService>СервисСаморегистрации</HTTPService>
+      <Role>ШлюзРегистрации</Role>
+      <HTTPService>СервисПубличногоПорталаHTTP</HTTPService>
+      <Role>ПубличноеЧтениеПортала</Role>
+      <HTTPService>СервисГостевыхОбращений</HTTPService>
+      <Role>ШлюзГостевыхОбращений</Role>
+    </ChildObjects>
+  </Configuration>
+</MetaDataObject>

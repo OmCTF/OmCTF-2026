@@ -1,0 +1,226 @@
+.voice-panel .soundboard-panel {
+  position: absolute;
+  z-index: 30;
+  right: max(16px, calc((100% - 540px) / 2));
+  bottom: 78px;
+  width: min(500px, calc(100vw - 32px));
+  max-height: min(540px, 72dvh);
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  padding: 12px;
+  border: 1px solid #3b3d45;
+  border-radius: 14px;
+  background: #202127;
+  color: #f2f3f5;
+  box-shadow: 0 20px 60px #0009;
+}
+.voice-soundboard-now {
+  position: absolute;
+  z-index: 6;
+  left: 50%;
+  bottom: 86px;
+  translate: -50% 0;
+  padding: 8px 12px;
+  border: 1px solid #ffffff25;
+  border-radius: 8px;
+  background: #202127ed;
+  color: #f2f3f5;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.soundboard-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #ffffff16;
+}
+.soundboard-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+  height: 38px;
+  padding: 0 10px;
+  border: 1px solid #5962ab;
+  border-radius: 8px;
+  background: #121318;
+  color: #a8acba;
+}
+.voice-panel .soundboard-search {
+  display: flex;
+  align-items: center;
+}
+.soundboard-search:focus-within {
+  border-color: #8993ff;
+}
+.soundboard-search input,
+.soundboard-upload input:not([type="file"]) {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #f2f3f5;
+}
+.voice-panel .soundboard-search input {
+  height: 100%;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+}
+.voice-panel .soundboard-search input:focus-visible {
+  outline: 0;
+  box-shadow: none;
+}
+.soundboard-volume {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.soundboard-volume input {
+  width: 64px;
+  accent-color: #8b92ff;
+}
+.soundboard-scroll {
+  overflow: auto;
+  padding: 10px 2px 2px;
+}
+.soundboard-group {
+  margin: 0 0 16px;
+}
+.soundboard-group h3 {
+  margin: 2px 0 10px;
+  color: #c8cad4;
+  font-size: 12px;
+  font-weight: 700;
+}
+.soundboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.voice-panel .soundboard-tile,
+.voice-panel .soundboard-add {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  justify-content: flex-start;
+  min-width: 0;
+  height: 42px;
+  padding: 0 10px;
+  border: 1px solid #373942;
+  border-radius: 8px;
+  background: #303139;
+  color: #ededf2;
+  font-size: 12px;
+  text-align: left;
+}
+.soundboard-tile > span:last-child {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.voice-panel .soundboard-tile:hover,
+.voice-panel .soundboard-add:hover {
+  background: #41434e;
+  border-color: #646979;
+}
+.voice-panel .soundboard-add {
+  width: 100%;
+  justify-content: center;
+  border-style: dashed;
+}
+.soundboard-empty {
+  margin: 22px 8px;
+  color: #aeb0bc;
+  text-align: center;
+  font-size: 13px;
+}
+.soundboard-upload {
+  display: grid;
+  gap: 14px;
+  padding: 12px 4px 4px;
+}
+.soundboard-upload-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.soundboard-upload-title strong {
+  font-size: 16px;
+}
+.voice-panel .soundboard-upload-title button {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  background: transparent;
+}
+.soundboard-upload label {
+  display: grid;
+  gap: 6px;
+  color: #c8cad4;
+  font-size: 12px;
+}
+.soundboard-upload input[type="file"] {
+  width: 100%;
+  color: #c8cad4;
+  font-size: 12px;
+}
+.soundboard-upload-fields {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 10px;
+}
+.soundboard-upload-fields input {
+  height: 36px;
+  padding: 0 10px;
+  border: 1px solid #454754 !important;
+  border-radius: 7px;
+  background: #111217 !important;
+}
+.soundboard-hint {
+  margin: 0;
+  color: #9295a3;
+  font-size: 11px;
+}
+.soundboard-error {
+  margin: 0;
+  color: #ff999f;
+  font-size: 12px;
+}
+.voice-lobby-center .voice-join-listen {
+  margin-top: 10px;
+  border: 0;
+  background: transparent;
+  color: #b8bbe0;
+  font-size: 12px;
+}
+.voice-lobby-center .voice-join-listen:hover {
+  color: #fff;
+  background: transparent;
+}
+.voice-panel .soundboard-submit {
+  height: 38px;
+  border-color: #6e78dc;
+  background: #5965ce;
+}
+.voice-panel .soundboard-submit:hover {
+  background: #6a75e1;
+}
+@media (max-width: 600px) {
+  .voice-panel .soundboard-panel {
+    left: 8px;
+    right: 8px;
+    width: auto;
+    bottom: 72px;
+    max-height: max(80px, calc(100dvh - 220px));
+  }
+  .soundboard-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

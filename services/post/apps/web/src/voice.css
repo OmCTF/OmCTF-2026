@@ -1,0 +1,149 @@
+.voice-panel {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 25;
+  width: min(480px, calc(100vw - 32px));
+  max-height: 78vh;
+  overflow: auto;
+  border: 1px solid #9186b6;
+  border-radius: 16px;
+  background: #171523;
+  color: #f5f3ff;
+  box-shadow: 0 12px 50px #0008;
+  padding: 18px;
+  font:
+    14px/1.5 system-ui,
+    sans-serif;
+}
+.voice-panel header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.voice-panel h2 {
+  font-size: 19px;
+  margin: 3px 0;
+  overflow-wrap: anywhere;
+}
+.voice-panel button,
+.voice-panel select {
+  border: 1px solid #73658f;
+  border-radius: 8px;
+  padding: 9px 12px;
+  background: #292338;
+  color: #fff;
+  cursor: pointer;
+}
+.voice-panel button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.voice-panel button[aria-pressed="true"] {
+  background: #594282;
+  border-color: #b0a1e5;
+}
+.voice-controls,
+.voice-devices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 14px 0;
+}
+.voice-devices label {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+.voice-devices select {
+  width: 100%;
+}
+.voice-members {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+.voice-members li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.voice-members small,
+.voice-quality,
+.voice-hint {
+  color: #c3bbd5;
+}
+.voice-error {
+  color: #ffb8ae;
+  background: #432634;
+  padding: 10px;
+  border-radius: 8px;
+}
+.voice-media figure {
+  margin: 8px 0;
+}
+.voice-audio {
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+.voice-video {
+  width: 100%;
+  border-radius: 8px;
+  background: #000;
+}
+.voice-panel summary {
+  cursor: pointer;
+}
+.voice-panel.is-stage {
+  overflow: visible;
+}
+@media (max-width: 600px) {
+  .voice-panel.is-stage > .voice-controls.voice-controls {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    gap: 4px;
+    padding-inline: 4px;
+  }
+  .voice-panel.is-stage > .voice-controls .voice-control-group {
+    min-width: 0;
+    gap: 2px;
+    padding: 2px;
+  }
+  .voice-panel.is-stage > .voice-controls .voice-control-group > button,
+  .voice-panel.is-stage > .voice-controls .voice-split-control > button,
+  .voice-panel.is-stage > .voice-controls .voice-control-group > .voice-device-menu > summary,
+  .voice-panel.is-stage > .voice-controls .voice-split-control > .voice-device-menu > summary {
+    width: 32px;
+    min-height: 32px;
+    padding: 6px;
+  }
+  .voice-panel.is-stage > .voice-controls .voice-split-control .voice-device-menu > summary {
+    width: 14px;
+    padding: 0;
+  }
+  .voice-panel.is-stage > .voice-controls > .voice-hangup {
+    flex: 0 0 42px;
+    width: 42px;
+  }
+}
+@media (max-height: 560px) {
+  .voice-panel.is-stage > .voice-grid.voice-grid {
+    top: 50px;
+    bottom: 66px;
+    align-content: flex-start;
+  }
+}
+@media (max-width: 520px) {
+  .voice-panel {
+    bottom: 8px;
+    right: 8px;
+    width: calc(100vw - 16px);
+    padding: 12px;
+    max-height: 68vh;
+    box-sizing: border-box;
+  }
+}

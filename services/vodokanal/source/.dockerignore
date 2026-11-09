@@ -1,0 +1,10 @@
+**
+!docker/
+!docker/**
+!vendor/
+!vendor/onec/
+!vendor/onec/setup-full-8.5.1.1522-x86_64.run.zst.part*
+!vendor/onec/setup-full-8.5.1.1522-x86_64.run.sha256
+!vendor/gui/
+!vendor/gui/noVNC-1.7.0.tar.gz
+!vendor/gui/noVNC-1.7.0.tar.gz.sha256

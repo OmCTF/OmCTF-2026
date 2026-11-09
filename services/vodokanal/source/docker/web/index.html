@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Личный кабинет Омского Водоканала: показания, лицевые счета, обращения и документы.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' blob:; base-uri 'none'; object-src 'none'; form-action 'self'">
+  <title>Омский Водоканал · Личный кабинет</title>
+  <link rel="stylesheet" href="./portal.css">
+  <link rel="stylesheet" href="./portal-inventory.css">
+  <link rel="stylesheet" href="./portal-work-orders.css">
+  <link rel="stylesheet" href="./hydrology.css">
+  <link rel="stylesheet" href="./portal-identity.css">
+  <link rel="stylesheet" href="./portal-documents.css">
+  <link rel="stylesheet" href="./portal-operations.css">
+  <link rel="stylesheet" href="./portal-subscriber-water.css">
+  <link rel="stylesheet" href="./portal-dispatch.css">
+  <link rel="stylesheet" href="./public-portal.css">
+  <link rel="stylesheet" href="./compact.css">
+  <link rel="stylesheet" href="./landing.css">
+  <link rel="stylesheet" href="./service-theme.css">
+  <link rel="stylesheet" href="./cabinet.css">
+  <link rel="stylesheet" href="./cabinet-forms.css">
+  <link rel="stylesheet" href="./cabinet-pagination.css">
+  <script src="./portal-lab.js" defer></script>
+  <script src="./portal-lab-staff.js" defer></script>
+  <script src="./portal-inventory.js" defer></script>
+  <script src="./portal-work-materials.js" defer></script>
+  <script src="./portal-work-orders.js" defer></script>
+  <script src="./hydrology.js" defer></script>
+  <script src="./portal-identity.js" defer></script>
+  <script src="./portal-documents.js" defer></script>
+  <script src="./portal-operations.js" defer></script>
+  <script src="./portal-subscriber-water.js" defer></script>
+  <script src="./portal-dispatch.js" defer></script>
+  <script src="./public-portal-admin.js" defer></script>
+  <script src="./portal.js" defer></script>
+  <script src="./portal-shell.js" defer></script>
+  <script src="./cabinet-pagination.js" defer></script>
+</head>
+<body class="service-site auth-page">
+  <a class="skip-link" href="#main">К содержимому</a>
+  <div class="rv-landing site-chrome">
+  <header class="rv-header">
+    <div class="rv-utility"><div class="rv-wrap"><span>Для жителей и организаций Омска</span><a href="/services#archive">Документы и справочная информация</a></div></div>
+    <div class="rv-wrap rv-header-main">
+      <a class="rv-brand" href="/" aria-label="Омский Водоканал, главная"><svg viewBox="0 0 48 58" width="42" height="50" aria-hidden="true"><path d="M24 2C18 13 3 28 3 37a21 21 0 0 0 42 0C45 28 30 13 24 2z" fill="#087bbd"/><path d="M10 34c8-8 17 9 28-1M10 42c8-8 17 9 28-1" fill="none" stroke="#fff" stroke-width="3.2"/></svg><span>ОМСКИЙ ВОДОКАНАЛ<small>Портал города Омска</small></span></a>
+      <a class="rv-header-account" href="/login"><span class="rv-account-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="15" r="8"/><path d="M8 43v-6a16 16 0 0 1 32 0v6"/></svg></span>Личный кабинет</a>
+      <div class="rv-phone"><span>Контакт-центр</span><strong title="Тестовый номер. Для связи используйте обращение через кабинет.">8 (000) 000-00-00</strong></div>
+      <a class="rv-header-request" href="/login?service=request">Написать обращение <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+    </div>
+    <nav class="rv-nav rv-wrap" aria-label="Основные разделы"><a href="/services">Абонентам</a><a href="/services#services">Услуги</a><a href="/services#outages">Отключения</a><span class="rv-nav-divider" aria-hidden="true"></span><a href="/lakes.html">Качество воды</a><a href="/rivers.html">Уровни рек</a><a href="/#news">Объявления</a><a href="/#contacts">Контакты</a></nav>
+  </header>
+  </div>
+  <div id="notice" class="notice" role="status" aria-live="polite" hidden>
+    <span id="notice-text"></span>
+    <button id="notice-close" class="icon-button" type="button" aria-label="Закрыть уведомление">×</button>
+  </div>
+  <section id="login-screen" class="login-screen" aria-label="Вход в личный кабинет">
+    <div class="login-story">
+      <a class="brand" href="/" aria-label="Омский Водоканал, публичный портал"><span class="brand-symbol" aria-hidden="true"><span></span></span><span>Омский Водоканал<span class="brand-caption">Личный кабинет</span></span></a>
+      <div class="story-content">
+        <p class="eyebrow light">Личный кабинет</p>
+        <h1>Личный кабинет</h1>
+        <p class="story-description">Показания, обращения, заказы воды и документы.</p>
+        <nav class="login-public-links" aria-label="Открытые разделы"><a href="/">Публичный портал</a><a href="./rivers.html">Уровни рек</a><a href="./lakes.html">Исследования озёр</a></nav>
+      </div>
+    </div>
+    <main class="login-main">
+      <div class="login-card">
+        <section id="identity-login-mode" aria-labelledby="login-heading">
+        <span class="section-marker">ЛИЧНЫЙ КАБИНЕТ</span>
+        <h2 id="login-heading">Вход в кабинет</h2>
+        <form id="login-form">
+          <label for="login-name">Имя пользователя</label><input id="login-name" name="username" autocomplete="username" maxlength="150" required placeholder="Имя, указанное при регистрации" spellcheck="false">
+          <label for="login-password">Пароль</label><input id="login-password" name="password" type="password" autocomplete="current-password" required placeholder="Введите пароль">
+          <button id="login-button" class="button primary full-width" type="submit">Войти в кабинет <span aria-hidden="true">→</span></button>
+        </form>
+        <p id="login-status" class="login-status" role="status" aria-live="polite">Проверяем текущую сессию…</p>
+        <div class="security-note"><span class="lock-mark" aria-hidden="true"></span><span>Не используйте здесь пароль от почты или других сервисов.</span></div>
+        </section>
+      </div>
+      <div class="login-bottom"><span>Омский Водоканал</span><a href="/">Вернуться на публичный портал</a></div>
+    </main>
+  </section>
+  <div id="application" class="application" hidden>
+    <aside class="sidebar">
+      <a class="brand" href="/" aria-label="Омский Водоканал, публичный портал"><span class="brand-symbol" aria-hidden="true"><span></span></span><span>Омский Водоканал<span class="brand-caption">Личный кабинет</span></span></a>
+      <p class="nav-caption">ЛИЧНЫЙ КАБИНЕТ</p>
+      <details id="service-navigation" class="service-navigation" open>
+      <summary>Разделы кабинета</summary>
+      <nav class="navigation" aria-label="Основные разделы">
+        <a class="nav-item selected" href="#main" aria-current="page"><span class="nav-icon" aria-hidden="true">◫</span> Обзор</a>
+        <a class="nav-item" href="#registry"><span class="nav-icon" aria-hidden="true">▤</span> Реестр абонентов</a>
+        <a class="nav-item" href="#customer-accounts"><span class="nav-icon" aria-hidden="true">◇</span> Лицевые счета</a>
+        <a class="nav-item" href="#metering"><span class="nav-icon" aria-hidden="true">◴</span> Передать показания</a>
+        <span class="nav-section">УСЛУГИ</span>
+        <a id="dispatch-nav" class="nav-item" href="#dispatch-center" hidden>Обращения</a>
+        <a class="nav-item" href="#lab"><span class="nav-icon" aria-hidden="true">◉</span> Лаборатория</a>
+        <a id="lab-staff-nav" class="nav-item" href="#lab-staff" hidden>Очередь лаборатории</a>
+        <a class="nav-item" href="#water"><span class="nav-icon" aria-hidden="true">⌁</span> Водоснабжение</a>
+        <a id="inventory-nav" class="nav-item" href="#inventory" hidden><span class="nav-icon" aria-hidden="true">▦</span> Склад и материалы наряда</a>
+        <a id="work-materials-nav" class="nav-item" href="#work-materials" hidden>Материалы нарядов</a>
+        <a id="work-orders-nav" class="nav-item" href="#work-orders" hidden>Наряды и работы</a>
+        <a id="hydrology-nav" class="nav-item" href="#hydrology" hidden>Гидрологические посты</a>
+        <a id="subscriber-water-nav" class="nav-item" href="#subscriber-water-extra" hidden>Приборы и доставка</a>
+        <a id="documents-nav" class="nav-item" href="#documents" hidden>Мои документы</a>
+        <a id="operations-nav" class="nav-item" href="#operations" hidden>Уведомления</a>
+        <a id="public-editor-nav" class="nav-item" href="#public-editor" hidden>Публикации портала</a>
+        <span class="nav-section">УЧЁТНАЯ ЗАПИСЬ</span>
+        <a class="nav-item" href="#identity-account">Профиль и контакт</a>
+        <a class="nav-item" href="#workspace-settings">Настройки кабинета</a>
+      </nav>
+      </details>
+      <div class="sidebar-bottom"><a href="/">На портал Омска</a><a href="/#contacts">Обратная связь</a></div>
+    </aside>
+    <div class="app-content">
+      <header class="topbar"><div class="breadcrumb">Личный кабинет <span>/</span> <strong id="cabinet-breadcrumb">Обзор</strong></div><div class="topbar-actions"><button id="logout-button" class="button quiet" type="button">Выйти</button></div></header>
+      <section class="service-context" aria-label="Рабочая область">
+        <p>Рабочая область: <strong id="service-workspace-label">Выберите пространство</strong></p>
+        <a href="#workspace-settings" data-cabinet-link>Изменить</a>
+      </section>
+      <main id="main" class="dashboard" tabindex="-1">
+        <div class="page-heading"><div><h1 id="cabinet-page-title">Личный кабинет</h1><p id="cabinet-page-intro" class="muted">Счета, показания и ваши обращения.</p></div><button id="refresh-button" class="button secondary" type="button"><span aria-hidden="true">↻</span> Обновить</button></div>
+        <section class="profile-card" aria-labelledby="profile-heading"><div class="profile-avatar" id="profile-avatar" aria-hidden="true">В</div><div class="profile-text"><span class="overline">ВЫ ВОШЛИ КАК</span><h2 id="profile-heading"></h2></div><div class="profile-status"><span class="status-pill"><i></i> Вы в системе</span><span id="session-summary"></span></div></section>
+        <section id="cabinet-overview" class="cabinet-overview" aria-labelledby="cabinet-actions-heading">
+          <h2 id="cabinet-actions-heading">Что вы хотите сделать?</h2>
+          <div class="cabinet-shortcuts">
+            <a href="#metering" class="cabinet-shortcut" data-cabinet-link><svg class="shortcut-symbol" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V9a8 8 0 0 1 16 0v10zM8 10a4 4 0 0 1 8 0M12 11l3-3M8 16h8"/></svg><strong>Передать показания</strong><span>Выбрать счёт и прибор</span><span class="shortcut-arrow" aria-hidden="true">→</span></a>
+            <a href="#customer-accounts" class="cabinet-shortcut" data-cabinet-link><svg class="shortcut-symbol" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6M9 16h3"/></svg><strong>Мои лицевые счета</strong><span>Счета и заявки на доступ</span><span class="shortcut-arrow" aria-hidden="true">→</span></a>
+            <a href="#dispatch-center" class="cabinet-shortcut" data-cabinet-link><svg class="shortcut-symbol" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H9l-5 4zM8 8h8M8 12h5"/></svg><strong>Отправить обращение</strong><span>Сообщить о проблеме и получить ответ</span><span class="shortcut-arrow" aria-hidden="true">→</span></a>
+            <a href="#lab" class="cabinet-shortcut" data-cabinet-link><svg class="shortcut-symbol" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v7l-5 8a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-8V3M8 15h8"/></svg><strong>Исследование воды</strong><span>Заказы и результаты лаборатории</span><span class="shortcut-arrow" aria-hidden="true">→</span></a>
+          </div>
+        </section>
+        <p id="service-entry-notice" class="portal-context-note" role="status" hidden></p>
+        <p id="module-lock-notice" class="portal-context-note warning" role="status" hidden>Результат операции неизвестен. Вернитесь в её раздел и проверьте результат или повторите отправку. До этого новые изменения недоступны.</p>
+        <p id="module-availability-note" class="portal-context-note warning" role="status" hidden></p>
+        <section id="host-create-receipt" class="portal-context-note warning" role="status" hidden>
+          <p id="host-create-receipt-text"></p>
+          <button id="host-create-retry" class="button secondary" type="button" hidden>Повторить то же создание</button>
+          <button id="host-create-abandon" class="button quiet" type="button" hidden>Удалить данные повтора из вкладки</button>
+        </section>
+        <section id="identity-account" class="card" aria-label="Контакт и восстановление доступа" hidden></section>
+        <section id="metering" class="card metering-card resident-metering" aria-labelledby="metering-heading">
+          <h2 id="metering-heading" tabindex="-1">Передать показание</h2>
+          <p>Выберите лицевой счёт и прибор, затем укажите показание.</p>
+          <p id="meter-view-status" class="resident-status" role="status" aria-live="polite">Загрузите свои подтверждённые лицевые счета.</p>
+          <section class="resident-step" aria-labelledby="meter-account-heading">
+            <h3 id="meter-account-heading">1. Лицевой счёт и адрес</h3>
+            <div class="resident-toolbar">
+              <div id="meter-mode-field" class="field" hidden><label for="meter-mode">Режим работы</label><select id="meter-mode"><option value="personal">Мои счета</option><option value="staff">Служебный учёт</option></select></div>
+              <div id="meter-account-field" class="field"><label for="meter-account-select">Лицевой счёт и адрес</label><select id="meter-account-select"></select></div>
+              <button id="meter-refresh-accounts-button" class="button secondary" type="button">Загрузить мои счета</button>
+            </div>
+            <p id="meter-account-summary" class="resident-context"></p>
+            <p id="meter-authority-note" class="muted">Выберите доступный лицевой счёт.</p>
+            <button id="meter-load-installations-button" class="button secondary" type="button">Показать приборы этого счёта</button>
+          </section>
+          <section class="resident-step" aria-labelledby="meter-device-heading">
+            <h3 id="meter-device-heading">2. Прибор</h3>
+            <div class="resident-toolbar"><div id="meter-installation-field" class="field"><label for="meter-installation-select">Прибор и дата допуска</label><select id="meter-installation-select"></select></div><button id="meter-open-installation-button" class="button secondary" type="button">Открыть прибор и историю</button></div>
+            <p id="meter-context" class="resident-context"></p>
+            <dl id="meter-installation-detail" class="registry-detail-list meter-detail-list resident-summary"></dl>
+            <details id="meter-support" class="resident-support" hidden><summary>Сведения о приборе для поддержки</summary><dl id="meter-support-detail" class="registry-detail-list"></dl></details>
+          </section>
+          <section class="resident-step" aria-labelledby="meter-reading-heading">
+            <h3 id="meter-reading-heading">3. Новое показание</h3>
+            <p id="meter-reading-note" class="resident-status">Откройте прибор, чтобы проверить возможность подачи.</p>
+            <form id="meter-reading-form" class="management-form resident-reading-form" novalidate>
+              <div class="field"><label for="meter-measured-at">Дата снятия показания</label><input id="meter-measured-at" type="text" inputmode="numeric" maxlength="10" required placeholder="ДД.ММ.ГГГГ" autocomplete="off" aria-describedby="meter-reading-date-hint"><p id="meter-reading-date-hint" class="muted">День, месяц и год. Например, 21.10.2026.</p></div>
+              <div class="field"><label for="meter-measured-time">Время снятия показания</label><input id="meter-measured-time" type="text" inputmode="numeric" maxlength="5" required placeholder="ЧЧ:ММ" autocomplete="off" aria-describedby="meter-reading-time-hint"><p id="meter-reading-time-hint" class="muted">От 00:00 до 23:59, по местному времени.</p></div>
+              <div class="field resident-reading-value-field"><label for="meter-reading-value">Показание счётчика, м³</label><input id="meter-reading-value" inputmode="decimal" required maxlength="16" placeholder="Например, 127.4" aria-describedby="meter-reading-value-hint"><p id="meter-reading-value-hint" class="muted">До трёх знаков после точки. Например, 127.4.</p></div>
+              <p class="muted form-footnote">Более раннее измерение направляется на проверку. До решения оно не меняет принятые показания и расход.</p>
+              <div id="meter-reading-error" class="resident-error full-field" role="alert" tabindex="-1" hidden></div>
+              <button id="meter-reading-submit-button" class="button primary" type="submit">Передать показание</button>
+            </form>
+            <section id="meter-reading-result" class="resident-status" role="status" aria-live="polite" hidden><h4 id="meter-reading-result-heading" tabindex="-1"></h4><p id="meter-reading-result-text"></p><details id="meter-reading-diagnostics" class="resident-support" hidden><summary>Сведения для поддержки</summary><p id="meter-reading-diagnostics-text"></p></details></section>
+            <div class="resident-actions"><button id="meter-reading-retry-button" class="button primary" type="button" hidden>Повторить ту же отправку</button><button id="meter-reading-refresh-button" class="button secondary" type="button" hidden>Обновить прибор и историю</button><button id="meter-reading-next-button" class="button secondary" type="button" hidden>Ввести другое показание</button></div>
+          </section>
+          <section class="resident-step resident-history" aria-labelledby="meter-history-heading">
+            <h3 id="meter-history-heading">История показаний</h3>
+            <p id="meter-history-limit" class="muted">Для просмотра более ранних показаний перейдите на следующую страницу.</p>
+            <p id="meter-history-empty" class="muted">Выберите свой счёт и откройте прибор.</p>
+            <div id="meter-history-container" class="table-scroll" tabindex="0" role="region" aria-label="История показаний, таблица с горизонтальной прокруткой" aria-describedby="meter-history-scroll-hint" hidden><table><thead><tr><th scope="col">Статус</th><th scope="col">Измерено</th><th scope="col">Получено</th><th scope="col">Показание, м³</th><th scope="col">Предыдущее / разница</th><th scope="col">Расход / коэффициент</th><th scope="col">Пояснение</th></tr></thead><tbody id="meter-history-body"></tbody></table></div>
+            <p id="meter-history-scroll-hint" class="muted">Таблица прокручивается по горизонтали. С клавиатуры перейдите к таблице и используйте стрелки.</p>
+            <details class="resident-support"><summary>График принятых показаний</summary><div id="meter-chart" class="meter-chart" aria-label="График принятых показаний"></div><p id="meter-chart-caption" class="muted"></p></details>
+            <details class="resident-support"><summary>Запросить исправление принятого показания</summary>
+            <form id="meter-correction-form" class="management-form separated-form" novalidate><h3 class="form-section-heading">Запросить исправление принятого показания</h3><div class="field full-field"><label for="meter-correction-reading">Какое показание нужно исправить?</label><select id="meter-correction-reading"></select></div><div class="field"><label for="meter-proposed-at">Предлагаемое время (местное время)</label><input id="meter-proposed-at" type="datetime-local" step="1" required></div><div class="field"><label for="meter-proposed-value">Предлагаемое значение, м³</label><input id="meter-proposed-value" inputmode="decimal" required></div><div class="field full-field"><label for="meter-correction-reason">Основание (до 2000 символов)</label><input id="meter-correction-reason" maxlength="2000" required></div><p class="muted small form-footnote">Сотрудник проверит исправление. До согласования прежнее показание остаётся действующим.</p><button id="meter-correction-submit-button" class="button secondary" type="submit">Отправить запрос на исправление</button><div id="meter-correction-receipt" class="muted small form-footnote"></div></form>
+            </details>
+          </section>
+          <details class="meter-staff-details"><summary>Сотруднику: паспорта и установка прибора</summary><p class="muted small section-description">Выберите паспорт прибора и действующий лицевой счёт для установки.</p>
+            <form id="meter-staff-load-form" class="management-form"><div class="field"><label for="meter-staff-area">Область выбранного пространства</label><select id="meter-staff-area"></select></div><button id="meter-staff-load-button" class="button secondary" type="submit">Загрузить паспорта и ЛС</button></form>
+            <div id="meter-passports-list" class="record-list meter-passports-list"></div><p id="meter-passports-empty" class="muted small">Паспорта ещё не загружены.</p>
+            <div class="workspace-grid meter-forms-grid">
+              <form id="meter-passport-form" class="management-form separated-form" novalidate><h3 class="form-section-heading">Новый паспорт</h3>
+                <div class="field"><label for="meter-passport-name">Наименование</label><input id="meter-passport-name" maxlength="150" required></div><div class="field"><label for="meter-passport-type">Тип прибора</label><input id="meter-passport-type" maxlength="32" required></div>
+                <div class="field"><label for="meter-manufacturer">Производитель</label><input id="meter-manufacturer" maxlength="64" required></div><div class="field"><label for="meter-model">Модель</label><input id="meter-model" maxlength="64" required></div>
+                <div class="field"><label for="meter-serial">Серийный номер</label><input id="meter-serial" maxlength="64" required placeholder="Начальные нули сохраняются"></div><div class="field"><label for="meter-digits">Целых разрядов регистра (1–12)</label><input id="meter-digits" inputmode="numeric" required value="6"></div>
+                <div class="field"><label for="meter-coefficient">Коэффициент (0.001–1000000)</label><input id="meter-coefficient" inputmode="decimal" required value="1"></div><div class="field"><label for="meter-verification-until">Поверка до (местное время)</label><input id="meter-verification-until" type="datetime-local" step="1" required></div>
+                <p class="muted small form-footnote">До трёх знаков после точки. В серийном номере допустимы латинские буквы, цифры и - / _. После окончания поверки новые показания не принимаются.</p><button id="meter-passport-create-button" class="button primary" type="submit">Создать паспорт</button>
+              </form>
+              <form id="meter-install-form" class="management-form separated-form" novalidate><h3 class="form-section-heading">Установка прибора</h3>
+                <div class="field"><label for="meter-install-passport">Паспорт выбранной области</label><select id="meter-install-passport"></select></div><div class="field"><label for="meter-install-account">Действующий лицевой счет</label><select id="meter-install-account"></select></div>
+                <div class="field full-field"><label for="meter-install-point">Точка обслуживания по ЛС</label><input id="meter-install-point" readonly></div>
+                <div class="field"><label for="meter-installed-at">Установлен (местное время)</label><input id="meter-installed-at" type="datetime-local" step="1" required></div><div class="field"><label for="meter-admitted-at">Допущен (местное время)</label><input id="meter-admitted-at" type="datetime-local" step="1" required></div>
+                <div class="field"><label for="meter-initial-value">Начальное показание, м³</label><input id="meter-initial-value" inputmode="decimal" required placeholder="0"></div><p class="muted small form-footnote">Начальное показание задаёт отсчёт расхода. Дата установки должна быть не позже даты допуска.</p><button id="meter-install-create-button" class="button primary" type="submit">Создать установку</button>
+              </form>
+            </div>
+          </details>
+        </section>
+        <section id="customer-accounts" class="card customer-card" aria-labelledby="customer-heading">
+          <div class="card-heading"><div><span class="overline">ПЕРСОНАЛЬНЫЙ ДОСТУП</span><h2 id="customer-heading">Мои лицевые счета</h2></div><button id="customer-refresh-button" class="button secondary" type="button">Загрузить / обновить</button></div>
+          <p class="muted small section-description">Ваши лицевые счета. Начисления и платежи пока недоступны.</p>
+          <details class="resident-support"><summary>Запросить доступ к другому счёту через сотрудника</summary><form id="customer-request-form" class="separated-form customer-request-form"><label for="customer-account-id">Идентификатор счёта</label><div class="inline-form"><input id="customer-account-id" maxlength="36" required placeholder="Идентификатор из карточки счёта" spellcheck="false"><button id="customer-request-button" class="button primary" type="submit">Отправить заявку</button></div><p class="muted small">Получите идентификатор счёта у сотрудника. Доступ появится после одобрения заявки.</p></form></details>
+          <div class="invitation-columns customer-columns">
+            <div><h3 class="list-heading">Мои заявки <span id="customer-request-count" class="count-pill">0</span></h3><div id="customer-requests-list" class="record-list"></div><p id="customer-requests-empty" class="muted small">Список еще не загружен.</p></div>
+            <div><h3 class="list-heading">Подтвержденные счета <span id="customer-account-count" class="count-pill">0</span></h3><div id="customer-accounts-list" class="record-list"></div><p id="customer-accounts-empty" class="muted small">Список еще не загружен.</p></div>
+          </div>
+          <section class="registry-detail customer-detail" aria-labelledby="customer-detail-heading"><h3 id="customer-detail-heading" class="list-heading">Карточка подтвержденного счета</h3><p id="customer-detail-empty" class="muted small">Откройте счет из своего списка.</p><dl id="customer-detail-body" class="registry-detail-list"></dl></section>
+          <details class="registry-create-details customer-staff-details"><summary>Сотруднику: подтверждение и отзыв персонального доступа</summary><p class="muted small">Перед одобрением проверьте документы, подтверждающие право доступа к счёту.</p>
+            <form id="customer-queue-form" class="management-form"><div class="field"><label for="customer-staff-area">Область очереди выбранного пространства</label><select id="customer-staff-area"></select></div><button id="customer-queue-button" class="button secondary" type="submit">Загрузить очередь</button></form>
+            <div id="customer-pending-list" class="record-list customer-pending-list"></div><p id="customer-pending-empty" class="muted small">Очередь еще не загружена.</p>
+            <form id="customer-staff-revoke-form" class="management-form separated-form"><div class="field"><label for="customer-staff-link-id">Идентификатор доступа</label><input id="customer-staff-link-id" maxlength="36" required placeholder="Идентификатор из карточки клиента"></div><div class="field"><label for="customer-staff-link-revision">Версия записи</label><input id="customer-staff-link-revision" type="number" min="0" step="1" required></div><div class="field"><label for="customer-staff-reason">Основание отзыва сотрудником</label><input id="customer-staff-reason" maxlength="250" required></div><button id="customer-staff-revoke-button" class="button danger" type="submit">Отозвать доступ</button><p class="muted small form-footnote">Скопируйте идентификатор и версию записи из карточки клиента. Отзыв не меняет служебные права сотрудника.</p></form>
+          </details>
+        </section>
+        <div id="workspace-settings" class="workspace-grid" tabindex="-1">
+          <section class="card workspace-card" aria-labelledby="workspace-heading">
+            <div class="card-heading"><div><span class="overline">РАБОЧАЯ ОБЛАСТЬ</span><h2 id="workspace-heading">Рабочее пространство</h2></div><span class="card-number">01</span></div>
+            <label for="workspace-select">Рабочее пространство</label><select id="workspace-select"></select>
+            <div id="workspace-details" class="workspace-details" hidden><span id="workspace-state" class="status-pill"></span><span id="workspace-ownership" class="subtle-tag"></span><span id="workspace-profile" class="subtle-tag"></span></div>
+            <p id="workspace-empty" class="muted" hidden>Нет доступных активных пространств. Можно создать личное пространство ниже.</p>
+            <details class="create-details"><summary>Создать или открыть личное пространство <span aria-hidden="true">+</span></summary><p class="muted small">У вас может быть одно личное пространство. Если оно уже создано, кнопка откроет его.</p><form id="workspace-form"><label for="workspace-name">Название пространства</label><div class="inline-form"><input id="workspace-name" maxlength="150" required placeholder="Например, мой участок"><button id="create-workspace-button" class="button secondary" type="submit">Открыть</button></div></form></details>
+          </section>
+          <section class="card identity-card" aria-labelledby="identity-heading"><div class="card-heading"><div><span class="overline">ИДЕНТИФИКАЦИЯ</span><h2 id="identity-heading">Данные учетной записи</h2></div><span class="card-number">02</span></div><dl class="identity-list"><div><dt>Пользователь</dt><dd id="identity-name"></dd></div><div><dt>ID учетной записи</dt><dd id="account-id" class="mono"></dd></div><div><dt>Код пользователя</dt><dd id="actor-id" class="mono"></dd></div><div><dt>Завершение при бездействии</dt><dd id="idle-timeout"></dd></div></dl></section>
+        </div>
+        <section class="card roles-card" aria-labelledby="roles-heading">
+          <div class="card-heading"><div><span class="overline">ПРАВА ДОСТУПА</span><h2 id="roles-heading">Роли в пространстве <span id="role-count" class="count-pill">0</span></h2></div><span id="membership-visibility" class="muted small"></span></div>
+          <p class="muted roles-description">Роли действуют только внутри выбранного пространства и в указанной области доступа.</p>
+          <div id="memberships-empty" class="empty-state" hidden><span class="empty-symbol" aria-hidden="true">◫</span><h3>Пока нет доступных назначений</h3><p>Выберите пространство или обновите данные.</p></div>
+          <div id="memberships-container" class="table-scroll" hidden><table><thead><tr><th scope="col">Роль</th><th scope="col">Учетная запись</th><th scope="col">Область доступа</th><th scope="col">Состояние / срок</th><th scope="col">Версия записи</th><th scope="col">Действие</th></tr></thead><tbody id="memberships-body"></tbody></table></div>
+          <div class="role-assignment"><div class="assignment-copy"><h3>Назначить роль</h3><p id="assignment-note" class="muted small">Назначение доступно владельцу пространства. Новый участник сначала принимает приглашение.</p></div><form id="role-form" class="management-form">
+            <div class="field"><label for="role-target">Участник</label><select id="role-target"></select></div>
+            <div class="field"><label for="role-select">Локальная роль</label><select id="role-select"></select></div>
+            <div class="field"><label for="role-scope">Область доступа</label><select id="role-scope"><option value="All">Все пространство</option><option value="Area">Отдельная область</option></select></div>
+            <div id="role-area-field" class="field" hidden><label for="role-area">Область</label><select id="role-area"></select></div>
+            <button id="assign-role-button" class="button primary" type="submit">Назначить роль +</button>
+          </form></div>
+        </section>
+        <div class="workspace-grid lifecycle-grid">
+          <section class="card" aria-labelledby="areas-heading">
+            <div class="card-heading"><div><span class="overline">ТЕРРИТОРИИ И ОБЪЕКТЫ</span><h2 id="areas-heading">Области пространства <span id="area-count" class="count-pill">0</span></h2></div></div>
+            <p class="muted small section-description">Показаны только области, доступные вашей учетной записи.</p>
+            <div id="areas-list" class="record-list"></div><p id="areas-empty" class="muted small" hidden>Доступных областей пока нет.</p>
+            <form id="area-form" class="separated-form"><label for="area-name">Новая область</label><div class="inline-form"><input id="area-name" maxlength="150" required placeholder="Например, Северный участок"><button id="create-area-button" class="button secondary" type="submit">Создать</button></div><p id="area-owner-note" class="muted small">Создавать области может только владелец пространства.</p></form>
+          </section>
+          <section class="card" aria-labelledby="password-heading">
+            <div class="card-heading"><div><span class="overline">БЕЗОПАСНОСТЬ</span><h2 id="password-heading">Сменить пароль</h2></div></div>
+          <p class="muted small section-description">После смены пароля потребуется войти заново на всех устройствах.</p>
+            <form id="password-form" class="password-form" novalidate>
+              <label for="password-current">Текущий пароль</label><input id="password-current" type="password" autocomplete="current-password" required>
+              <label for="password-new">Новый пароль</label><input id="password-new" type="password" autocomplete="new-password" minlength="12" maxlength="128" required aria-describedby="password-help">
+              <label for="password-confirm">Повторите новый пароль</label><input id="password-confirm" type="password" autocomplete="new-password" minlength="12" maxlength="128" required>
+              <p id="password-help" class="muted small">От 12 до 128 символов.</p>
+              <button id="change-password-button" class="button secondary" type="submit">Подтвердить и сменить пароль</button>
+            </form>
+          </section>
+        </div>
+        <section class="card invitations-card" aria-labelledby="invitations-heading">
+          <div class="card-heading"><div><span class="overline">УЧАСТИЕ В ПРОСТРАНСТВАХ</span><h2 id="invitations-heading">Приглашения</h2></div></div>
+          <p class="muted small section-description">Получатель должен принять приглашение. Доступ действует до указанной даты.</p>
+          <div class="invitation-columns">
+            <div><h3 class="list-heading">Входящие <span id="incoming-count" class="count-pill">0</span></h3><div id="incoming-list" class="record-list"></div><p id="incoming-empty" class="muted small" hidden>Входящих приглашений нет.</p></div>
+            <div><h3 class="list-heading">Исходящие пространства <span id="outgoing-count" class="count-pill">0</span></h3><div id="outgoing-list" class="record-list"></div><p id="outgoing-empty" class="muted small" hidden>Исходящих приглашений нет.</p><p id="outgoing-owner-note" class="muted small" hidden>Исходящие приглашения видны только владельцу выбранного пространства.</p></div>
+          </div>
+          <form id="invitation-form" class="management-form invitation-form">
+            <div class="field"><label for="invitation-recipient">ID учетной записи получателя</label><input id="invitation-recipient" maxlength="36" required placeholder="Идентификатор из профиля получателя" spellcheck="false"></div>
+            <div class="field"><label for="invitation-role">Локальная роль</label><select id="invitation-role"></select></div>
+            <div class="field"><label for="invitation-scope">Область доступа</label><select id="invitation-scope"><option value="All">Все пространство</option><option value="Area">Отдельная область</option></select></div>
+            <div id="invitation-area-field" class="field" hidden><label for="invitation-area">Область</label><select id="invitation-area"></select></div>
+            <div class="field"><label for="invitation-ttl">Срок принятия и действия роли</label><select id="invitation-ttl"><option value="86400">24 часа</option><option value="3600">1 час</option><option value="604800">7 дней</option><option value="300">5 минут</option></select></div>
+            <button id="create-invitation-button" class="button primary" type="submit">Отправить приглашение</button>
+            <p class="muted small form-footnote">Попросите получателя скопировать идентификатор из своего профиля.</p>
+          </form>
+        </section>
+        <section id="registry" class="card registry-card" aria-labelledby="registry-heading">
+          <div class="card-heading"><div><span class="overline">АБОНЕНТЫ</span><h2 id="registry-heading">Абоненты и объекты</h2></div></div>
+          <p class="muted small section-description">Абоненты, объекты, договоры и лицевые счета. Начисления и платежи пока недоступны.</p>
+          <p id="registry-access-note" class="registry-access-note"></p>
+          <form id="registry-filter-form" class="management-form registry-toolbar">
+            <div class="field"><label for="registry-area">Доступная область</label><select id="registry-area"></select></div>
+            <div class="field"><label for="registry-entity">Раздел реестра</label><select id="registry-entity"></select></div>
+            <div class="field"><label for="registry-state">Состояние</label><select id="registry-state"><option value="">Все</option><option value="Active">Действующие</option><option value="Closed">Архивные</option></select></div>
+            <div class="field"><label for="registry-search">Точное совпадение</label><input id="registry-search" maxlength="250" placeholder="Наименование абонента"></div>
+            <div class="registry-toolbar-actions"><button id="registry-load-button" class="button secondary" type="submit">Загрузить список</button><button id="registry-export-button" class="button secondary" type="button">Скачать CSV выборки</button></div>
+          </form>
+          <p class="muted small registry-limit-note">Поиск по полному значению. Для CSV загрузите список с нужными фильтрами; в выгрузке должно быть меньше 100 записей.</p>
+          <div class="registry-content-grid">
+            <div><h3 id="registry-list-heading" class="list-heading">Список</h3><div id="registry-list" class="record-list"></div><p id="registry-empty" class="muted small">Выберите область и загрузите список.</p></div>
+            <section class="registry-detail" aria-labelledby="registry-detail-heading">
+              <h3 id="registry-detail-heading" class="list-heading">Карточка записи</h3><p id="registry-detail-empty" class="muted small">Откройте запись из списка.</p><dl id="registry-detail-body" class="registry-detail-list"></dl>
+              <form id="registry-lifecycle-form" class="management-form registry-lifecycle-form" novalidate hidden>
+                <div id="registry-lifecycle-fields" class="registry-create-fields full-field"></div>
+                <div class="field full-field"><label for="registry-lifecycle-reason">Основание изменения / закрытия</label><input id="registry-lifecycle-reason" maxlength="250" required placeholder="Ссылка на обращение или документ"></div>
+                <p id="registry-lifecycle-note" class="muted small form-footnote"></p>
+                <button id="registry-lifecycle-button" class="button primary" type="submit">Выполнить действие</button>
+              </form>
+              <div class="registry-history-controls"><button id="registry-history-button" class="button secondary" type="button">Загрузить историю карточки</button><p class="muted small">Последние изменения показаны первыми. История точек обслуживания пока недоступна.</p></div>
+              <p id="registry-history-empty" class="muted small">История еще не загружена.</p><div id="registry-history-body" class="record-list registry-history-list"></div>
+            </section>
+          </div>
+          <details class="registry-create-details"><summary>Создать запись выбранного раздела</summary><p id="registry-create-note" class="muted small">Сначала загрузите нужный раздел и связанные записи.</p><form id="registry-create-form" class="management-form registry-create-form" novalidate><div id="registry-create-fields" class="registry-create-fields"></div><button id="registry-create-button" class="button primary" type="submit">Создать запись</button></form></details>
+        </section>
+        <section id="water" class="card water-card" aria-labelledby="water-heading">
+          <div class="card-heading"><div><span class="overline">ВОДОСНАБЖЕНИЕ</span><h2 id="water-heading">Запас и самовывоз</h2></div></div>
+          <p class="muted small section-description">Заказы, запасы и выдача питьевой воды, м³. Доставка — в разделе «Приборы и доставка воды».</p>
+          <p id="water-access-note" class="registry-access-note"></p>
+          <form id="water-load-form" class="management-form water-scope-form"><div class="field"><label for="water-area">Участок</label><select id="water-area"></select></div><button id="water-load-button" class="button secondary" type="submit">Загрузить справочники и заказы</button></form>
+          <details class="registry-create-details water-setup-details"><summary>Источники, точки и получатели</summary><p class="muted small">До 100 записей в каждом списке. Редактирование и удаление пока недоступны.</p><form id="water-setup-form" class="management-form" novalidate><div class="field"><label for="water-setup-kind">Вид записи</label><select id="water-setup-kind"><option value="sources">Источник</option><option value="points">Точка самовывоза</option><option value="recipients">Получатель</option></select></div><div class="field"><label for="water-setup-name">Наименование</label><input id="water-setup-name" maxlength="150" required></div><button id="water-setup-button" class="button primary" type="submit">Создать запись</button></form><div id="water-setup-list" class="water-setup-list"></div></details>
+          <div class="management-form water-point-toolbar"><div class="field"><label for="water-point">Точка для остатков и движений</label><select id="water-point"></select></div><button id="water-point-load-button" class="button secondary" type="button">Обновить остатки и движения</button></div>
+          <div id="water-balances" class="water-balances"></div><p id="water-balances-empty" class="muted small">Выберите точку из загруженного справочника. Остатки еще не загружены.</p>
+          <details class="registry-create-details water-receipt-details"><summary>Явное начальное заполнение или пополнение</summary><p class="muted small">Начальное заполнение — 10 м³ однократно. Общий лимит поступлений — 1000 м³ на пространство; выдачи и возвраты его не восстанавливают.</p><form id="water-receipt-form" class="management-form" novalidate><div class="field"><label for="water-source">Источник</label><select id="water-source"></select></div><div class="field"><label for="water-receipt-point">Точка поступления</label><select id="water-receipt-point"></select></div><div class="field"><label for="water-occurred-at">Фактическое время (местное время)</label><input id="water-occurred-at" type="datetime-local" step="1" required></div><div class="field"><label for="water-quantity">Пополнение, м³ (не используется для начальных 10 м³)</label><input id="water-quantity" inputmode="decimal" required></div><div class="field full-field"><label for="water-basis">Основание (до 2000 символов)</label><input id="water-basis" maxlength="2000" required></div><p class="muted small form-footnote">Количество от 0,001 до 1000 м³. Время — UTC. Запас обновится при проведении, независимо от фактической даты.</p><button id="water-receipt-button" class="button primary" type="submit">Провести пополнение</button><button id="water-seed-button" class="button secondary" type="button">Явно заполнить начальные 10 м³</button></form></details>
+          <details class="registry-create-details"><summary>Создать заказ самовывоза</summary><form id="water-order-form" class="management-form water-order-form" novalidate><div class="field"><label for="water-order-point">Точка самовывоза</label><select id="water-order-point"></select></div><div class="field"><label for="water-recipient">Получатель</label><select id="water-recipient"></select></div><div class="field"><label for="water-order-quantity">Количество, м³</label><input id="water-order-quantity" inputmode="decimal" required></div><div class="field"><label for="water-scheduled-at">Плановое время (местное время)</label><input id="water-scheduled-at" type="datetime-local" step="1" required></div><p class="muted small form-footnote">До 1000 м³, с точностью до 0,001 м³. Дата — не более чем на 90 дней вперёд. Вода резервируется после подтверждения заказа.</p><button id="water-order-create-button" class="button primary" type="submit">Создать заказ самовывоза</button></form></details>
+          <div class="registry-content-grid water-orders-grid"><div><h3 class="list-heading">Заказы самовывоза</h3><div id="water-orders-list" class="record-list"></div><p id="water-orders-empty" class="muted small">Заказы еще не загружены.</p></div><section class="registry-detail" aria-labelledby="water-order-detail-heading"><h3 id="water-order-detail-heading" class="list-heading">Актуальная карточка самовывоза</h3><p id="water-order-detail-empty" class="muted small">Откройте заказ из списка.</p><dl id="water-order-detail" class="registry-detail-list"></dl><form id="water-order-action-form" class="management-form separated-form" novalidate hidden><div class="field full-field"><label for="water-order-action">Допустимое действие</label><select id="water-order-action"></select></div><div id="water-return-fields" class="full-field water-return-fields" hidden><div class="field"><label for="water-return-quantity">Возвращаемое количество, м³</label><input id="water-return-quantity" inputmode="decimal"></div><div class="field"><label for="water-return-reason">Основание возврата (до 2000 символов)</label><input id="water-return-reason" maxlength="2000"></div></div><p id="water-order-action-note" class="muted small form-footnote"></p><button id="water-order-action-button" class="button primary" type="submit">Выполнить действие</button></form></section></div>
+          <h3 class="list-heading water-movements-heading">Неизменяемые движения выбранной точки</h3><p class="muted small registry-limit-note">Движения показывают изменения запаса и резерва. Чтобы увидеть новые записи, обновите список. Текущее состояние заказа — в его карточке.</p><div id="water-movements" class="record-list"></div><p id="water-movements-empty" class="muted small">Движения еще не загружены.</p>
+        </section>
+        <section id="dispatch" class="card dispatch-card" aria-labelledby="dispatch-heading">
+          <div class="card-heading"><div><span class="overline">ОБРАЩЕНИЯ</span><h2 id="dispatch-heading">Диспетчерская</h2></div></div>
+          <p class="muted small section-description">Выберите приёмную и отправьте обращение. Ответ появится в его карточке.</p>
+          <details class="registry-create-details"><summary>Настройка приемных владельцем пространства</summary><p id="dispatch-owner-note" class="muted small section-description"></p><button id="dispatch-intake-load-button" type="button" class="button secondary">Загрузить приемные пространства</button><div id="dispatch-intake-list" class="record-list"></div>
+            <form id="dispatch-intake-form" class="management-form separated-form" novalidate>
+              <div class="field"><label for="dispatch-intake-select">Новая приемная или конфигурация</label><select id="dispatch-intake-select"></select></div><div class="field"><label for="dispatch-intake-area">Единственная область новых заявок</label><select id="dispatch-intake-area"></select></div>
+              <div class="field full-field"><label for="dispatch-intake-name">Название (до 150)</label><input id="dispatch-intake-name" maxlength="150"></div><div class="field full-field"><label for="dispatch-intake-addresses">Точные адреса, по одному на строку (1–30, до 250 каждый)</label><textarea id="dispatch-intake-addresses" rows="3"></textarea></div><div class="field full-field"><label for="dispatch-intake-categories">Категории через запятую</label><input id="dispatch-intake-categories" maxlength="150"><p class="muted small">Коды категорий: Leak — утечка, NoWater — нет воды, Pressure — давление, Sewer — канализация, Manhole — люк, Quality — качество, Billing — расчёты, Other — другое. Укажите адреса полностью, с учётом регистра.</p></div>
+              <div class="field"><label for="dispatch-intake-published">Показать вошедшим пользователям</label><select id="dispatch-intake-published"></select></div><div class="field"><label for="dispatch-intake-accepting">Принимать новые заявки</label><select id="dispatch-intake-accepting"></select></div><p class="muted small form-footnote">Не более 20 приёмных за всё время. Закрытие сохраняет заявки. Смена участка действует только для новых обращений.</p><button id="dispatch-intake-button" class="button primary" type="submit">Сохранить приемную</button>
+            </form>
+          </details>
+          <div class="dispatch-subheading"><h3>Мои обращения</h3><button id="dispatch-own-load-button" class="button secondary" type="button">Загрузить приемные и мои заявки</button></div><p id="dispatch-own-note" class="muted small">Данные ещё не загружены.</p>
+          <details class="registry-create-details"><summary>Подать личную заявку</summary><form id="dispatch-request-form" class="management-form separated-form" novalidate>
+            <div class="field full-field"><label for="dispatch-intake">Принимающая организация / приемная</label><select id="dispatch-intake"></select></div><div class="field"><label for="dispatch-address">Точный обслуживаемый адрес</label><select id="dispatch-address"></select></div><div class="field"><label for="dispatch-category">Категория</label><select id="dispatch-category"></select></div><div class="field full-field"><label for="dispatch-title">Тема (до 150)</label><input id="dispatch-title" maxlength="150"></div><div class="field full-field"><label for="dispatch-description">Описание (до 2000)</label><textarea id="dispatch-description" rows="3" maxlength="2000"></textarea></div><div class="field full-field"><label for="dispatch-contact">Телефон или email (до 128 символов)</label><input id="dispatch-contact" maxlength="128"></div><p class="muted small form-footnote">Укажите телефон или email для связи. Срок рассмотрения по умолчанию — 48 часов.</p><button id="dispatch-request-button" class="button primary" type="submit">Отправить личную заявку</button>
+          </form></details>
+          <div class="registry-content-grid dispatch-grid"><div><div id="dispatch-own-list" class="record-list"></div></div><section class="registry-detail"><h3 class="list-heading">Моя актуальная карточка</h3><dl id="dispatch-own-detail" class="registry-detail-list"></dl><div id="dispatch-own-messages" class="record-list dispatch-messages"></div><form id="dispatch-own-reply-form" class="management-form separated-form" novalidate hidden><div class="field full-field"><label for="dispatch-own-reply-text">Ответ диспетчеру (до 4000)</label><textarea id="dispatch-own-reply-text" rows="3" maxlength="4000"></textarea></div><button id="dispatch-own-reply-button" type="submit" class="button primary">Отправить ответ заявителя</button></form><form id="dispatch-own-reopen-form" class="management-form separated-form" novalidate hidden><div class="field full-field"><label for="dispatch-own-reopen-reason">Причина повторного обращения (до 250)</label><input id="dispatch-own-reopen-reason" maxlength="250"></div><button id="dispatch-own-reopen-button" class="button secondary" type="submit">Открыть новый этап</button></form><div class="registry-history-controls"><button id="dispatch-own-history-button" class="button secondary" type="button">Загрузить историю моей заявки</button><div id="dispatch-own-history" class="record-list"></div></div>
+            <section id="dispatch-own-files" class="request-files" hidden aria-labelledby="dispatch-own-files-heading">
+              <h3 id="dispatch-own-files-heading">Вложения моей заявки</h3><p id="dispatch-own-files-note" class="muted small"></p>
+              <button id="dispatch-own-files-load-button" class="button secondary" type="button">Загрузить вложения</button>
+              <div id="dispatch-own-files-list" class="record-list"></div><div id="dispatch-own-files-detail" class="record-list"></div>
+              <form id="dispatch-own-file-form" class="management-form separated-form" novalidate>
+                <div class="field full-field"><label for="dispatch-own-file-input">Один файл: PDF, PNG, JPEG, TXT или CSV, до 5 МиБ</label><input id="dispatch-own-file-input" type="file" accept=".pdf,.png,.jpg,.jpeg,.txt,.csv"></div>
+                <div class="field full-field"><label for="dispatch-own-file-visibility">Видимость нового файла (замена её не меняет)</label><select id="dispatch-own-file-visibility"><option value="Public">Заявитель и диспетчеры</option></select></div>
+                <div class="field full-field"><label for="dispatch-own-file-reason">Причина замены выбранного файла (до 250)</label><input id="dispatch-own-file-reason" maxlength="250"></div>
+                <button id="dispatch-own-file-upload-button" type="submit" class="button primary">Добавить новый файл</button><button id="dispatch-own-file-replace-button" type="button" class="button secondary">Заменить свой выбранный файл</button>
+              </form>
+              <button id="dispatch-own-file-cancel-button" type="button" class="button quiet">Отменить операцию и очистить выбор</button>
+              <p class="muted small">Файлы видны вам и диспетчеру. До 100 файлов и 20 МиБ на заявку; до 200 МиБ на пространство. Версии сохраняются и занимают место. В завершённой заявке файлы доступны только для скачивания. Не открывайте подозрительные файлы; отключайте выполнение формул в CSV.</p>
+            </section>
+          </section></div>
+          <div class="dispatch-subheading"><h3>Служебная очередь и инциденты</h3></div><p id="dispatch-staff-note" class="muted small"></p><form id="dispatch-load-form" class="management-form separated-form" novalidate><div class="field"><label for="dispatch-area">Участок</label><select id="dispatch-area"></select></div><div class="field"><label for="dispatch-state">Состояние заявки</label><select id="dispatch-state"></select></div><button id="dispatch-load-button" class="button primary" type="submit">Загрузить очередь и инциденты</button></form>
+          <div class="registry-content-grid dispatch-grid"><div><h3 class="list-heading">Очередь · не личные заявки</h3><div id="dispatch-queue" class="record-list"></div></div><section class="registry-detail"><h3 class="list-heading">Служебная карточка</h3><p id="dispatch-stale-note" class="muted small"></p><dl id="dispatch-staff-detail" class="registry-detail-list"></dl><div id="dispatch-staff-messages" class="record-list dispatch-messages"></div><form id="dispatch-action-form" class="management-form separated-form" novalidate hidden><div class="field full-field"><label for="dispatch-action">Допустимый переход</label><select id="dispatch-action"></select></div><div class="field full-field"><label for="dispatch-reason">Основание (до 250)</label><input id="dispatch-reason" maxlength="250"></div><button id="dispatch-action-button" class="button primary" type="submit">Выполнить переход</button></form>
+            <form id="dispatch-staff-reply-form" class="management-form separated-form" novalidate hidden><div class="field full-field"><label for="dispatch-staff-reply-visibility">Получатель сообщения</label><select id="dispatch-staff-reply-visibility"></select></div><div class="field full-field"><label for="dispatch-staff-reply-text">Сообщение / внутренняя заметка (до 4000)</label><textarea id="dispatch-staff-reply-text" rows="3" maxlength="4000"></textarea></div><button id="dispatch-staff-reply-button" class="button primary" type="submit">Отправить служебное сообщение</button></form>
+            <form id="dispatch-triage-form" class="management-form separated-form" novalidate hidden><div class="field"><label for="dispatch-priority">Приоритет</label><select id="dispatch-priority"></select></div><div class="field"><label for="dispatch-due-at">Срок (время браузера, до 30 дней)</label><input id="dispatch-due-at" type="datetime-local" step="1"></div><div class="field full-field"><label for="dispatch-triage-reason">Основание приоритета / срока</label><input id="dispatch-triage-reason" maxlength="250"></div><p class="muted small form-footnote">Ответственным станет текущий диспетчер. Изменение видно только сотрудникам.</p><button id="dispatch-triage-button" class="button secondary" type="submit">Изменить приоритет и срок</button></form><div class="registry-history-controls"><button id="dispatch-staff-history-button" class="button secondary" type="button">Загрузить служебную историю</button><div id="dispatch-staff-history" class="record-list"></div></div>
+            <section id="dispatch-staff-files" class="request-files" hidden aria-labelledby="dispatch-staff-files-heading">
+              <h3 id="dispatch-staff-files-heading">Служебные вложения заявки</h3><p id="dispatch-staff-files-note" class="muted small"></p>
+              <button id="dispatch-staff-files-load-button" class="button secondary" type="button">Загрузить служебные вложения</button>
+              <div id="dispatch-staff-files-list" class="record-list"></div><div id="dispatch-staff-files-detail" class="record-list"></div>
+              <form id="dispatch-staff-file-form" class="management-form separated-form" novalidate>
+                <div class="field full-field"><label for="dispatch-staff-file-input">Один файл: PDF, PNG, JPEG, TXT или CSV, до 5 МиБ</label><input id="dispatch-staff-file-input" type="file" accept=".pdf,.png,.jpg,.jpeg,.txt,.csv"></div>
+                <div class="field full-field"><label for="dispatch-staff-file-visibility">Видимость нового файла (замена её не меняет)</label><select id="dispatch-staff-file-visibility"><option value="Public">Заявитель и диспетчеры</option><option value="Internal">Только диспетчеры</option></select></div>
+                <div class="field full-field"><label for="dispatch-staff-file-reason">Причина замены выбранного файла (до 250)</label><input id="dispatch-staff-file-reason" maxlength="250"></div>
+                <button id="dispatch-staff-file-upload-button" type="submit" class="button primary">Добавить новый файл</button><button id="dispatch-staff-file-replace-button" type="button" class="button secondary">Заменить свой выбранный файл</button>
+              </form>
+              <button id="dispatch-staff-file-cancel-button" type="button" class="button quiet">Отменить операцию и очистить выбор</button>
+              <p class="muted small">Служебные файлы видны только диспетчерам. Новую версию загружает автор файла. До 100 файлов и 20 МиБ на заявку; до 200 МиБ на пространство, до 100 версий файла. Версии занимают место. В завершённой заявке можно добавлять только служебные файлы. Не открывайте подозрительные файлы; отключайте выполнение формул в CSV.</p>
+            </section>
+          </section></div>
+          <details class="registry-create-details"><summary>Создать внутренний инцидент</summary><form id="dispatch-incident-form" class="management-form separated-form" novalidate><div class="field full-field"><label for="dispatch-incident-title">Тема инцидента</label><input id="dispatch-incident-title" maxlength="150"></div><div class="field"><label for="dispatch-incident-type">Тип</label><select id="dispatch-incident-type"></select></div><div class="field"><label for="dispatch-incident-severity">Тяжесть</label><select id="dispatch-incident-severity"></select></div><div class="field"><label for="dispatch-incident-started-at">Начало (местное время)</label><input id="dispatch-incident-started-at" type="datetime-local" step="1"></div><div class="field"><label for="dispatch-incident-forecast-at">Прогноз (время браузера, до 90 дней)</label><input id="dispatch-incident-forecast-at" type="datetime-local" step="1"></div><div class="field full-field"><label for="dispatch-incident-description">Внутреннее описание</label><textarea id="dispatch-incident-description" rows="3" maxlength="2000"></textarea></div><button id="dispatch-incident-create-button" class="button primary" type="submit">Создать внутренний инцидент</button></form></details>
+          <div class="registry-content-grid dispatch-grid"><div><h3 class="list-heading">Инциденты · до 100</h3><div id="dispatch-incidents-list" class="record-list"></div></div><section class="registry-detail"><h3 class="list-heading">Актуальный инцидент</h3><dl id="dispatch-incident-detail" class="registry-detail-list"></dl><div id="dispatch-incident-links" class="record-list"></div><form id="dispatch-incident-action-form" class="management-form separated-form" novalidate hidden><div class="field full-field"><label for="dispatch-incident-action">Действие с инцидентом</label><select id="dispatch-incident-action"></select></div><div class="field"><label for="dispatch-incident-update-severity">Тяжесть</label><select id="dispatch-incident-update-severity"></select></div><div class="field"><label for="dispatch-incident-update-forecast-at">Прогноз (местное время)</label><input id="dispatch-incident-update-forecast-at" type="datetime-local" step="1"></div><div class="field full-field"><label for="dispatch-incident-update-description">Внутреннее описание</label><textarea id="dispatch-incident-update-description" rows="3" maxlength="2000"></textarea></div><div class="field full-field"><label for="dispatch-incident-reason">Основание (до 250)</label><input id="dispatch-incident-reason" maxlength="250"></div><p class="muted small form-footnote">Закрытие блокируется, пока хотя бы одна связанная заявка не завершена. Состояния заявок не меняются автоматически.</p><button id="dispatch-incident-action-button" class="button primary" type="submit">Изменить инцидент</button></form><form id="dispatch-relation-form" class="management-form separated-form" novalidate hidden><div class="field full-field"><label for="dispatch-relation-action">Связь с открытой служебной заявкой</label><select id="dispatch-relation-action"></select></div><div class="field full-field"><label for="dispatch-relation-reason">Основание связи / отмены связи</label><input id="dispatch-relation-reason" maxlength="250"></div><p id="dispatch-relation-note" class="muted small form-footnote"></p><button id="dispatch-relation-button" class="button secondary" type="submit">Сохранить связь</button></form></section></div>
+          <p class="muted small section-description">Повторное открытие создаёт новый этап заявки, не более 20. Связанный инцидент открывается отдельно.</p>
+        </section>
+        <section id="lab" class="lab-shell" aria-labelledby="lab-heading">
+          <div id="lab-app"><h2 id="lab-heading">Лаборатория</h2><p>Компонент лаборатории еще не загружен. Обновите страницу.</p></div>
+        </section>
+        <section id="lab-staff" class="lab-shell" aria-labelledby="lab-staff-heading" hidden>
+          <div id="lab-staff-app"><h2 id="lab-staff-heading">Очередь лаборатории</h2><p>Рабочее место сотрудника еще не загружено. Обновите страницу.</p></div>
+        </section>
+        <section id="inventory" aria-labelledby="inventory-heading" hidden>
+          <div id="inventory-app"><h2 id="inventory-heading">Склад и материалы наряда</h2><p>Компонент склада не загружен. Обновите страницу.</p></div>
+        </section>
+        <section id="work-materials" aria-labelledby="work-materials-heading" hidden>
+          <div id="work-materials-app"><h2 id="work-materials-heading">Материалы нарядов</h2><p>Компонент материалов нарядов не загружен. Обновите страницу.</p></div>
+        </section>
+        <section id="work-orders" aria-labelledby="wo-heading" hidden>
+          <div id="work-orders-app"><h2 id="wo-heading">Наряды и допуски</h2><p>Компонент нарядов не загружен. Обновите страницу.</p></div>
+        </section>
+        <section id="hydrology" aria-labelledby="hyd-operator-heading" hidden>
+          <div id="hydrology-app"><h2 id="hyd-operator-heading">Гидрологические посты</h2><p>Компонент гидрологии не загружен. Обновите страницу.</p></div>
+        </section>
+        <section class="card sessions-card" aria-labelledby="sessions-heading">
+          <div class="card-heading"><div><span class="overline">БЕЗОПАСНОСТЬ УЧЕТНОЙ ЗАПИСИ</span><h2 id="sessions-heading">Мои сеансы <span id="session-count" class="count-pill">0</span></h2></div><button id="refresh-sessions-button" class="button secondary" type="button">Загрузить / обновить</button></div>
+          <p class="muted small section-description">Ваши сеансы. Время указано в часовом поясе браузера.</p>
+          <p id="sessions-empty" class="muted small">Список еще не загружен.</p>
+          <div id="sessions-container" class="table-scroll" hidden><table><thead><tr><th scope="col">ID сеанса</th><th scope="col">Создан</th><th scope="col">Последняя активность</th><th scope="col">При бездействии до</th><th scope="col">Предельный срок</th><th scope="col">Состояние</th><th scope="col">Действие</th></tr></thead><tbody id="sessions-body"></tbody></table></div>
+          <div class="session-footer"><p class="muted small">Завершение текущего сеанса закроет кабинет.</p><button id="revoke-all-sessions-button" class="button danger" type="button">Завершить все, включая текущий</button></div>
+        </section>
+        <section id="dispatch-center" class="card" aria-label="Обращения и диспетчерская" hidden><div id="dispatch-app"></div></section>
+        <section id="subscriber-water-extra" class="card" aria-label="Приборы и доставка воды" hidden><div id="subscriber-water-app"></div></section>
+        <section id="documents" class="card" aria-label="Мои документы" hidden><div id="documents-app"></div></section>
+        <section id="operations" class="card" aria-label="Уведомления и управление" hidden><div id="operations-app"></div></section>
+        <section id="public-editor" class="card" aria-labelledby="public-editor-heading" hidden><h2 id="public-editor-heading" tabindex="-1">Публикации портала</h2><p class="muted">Публикация меняет открытые страницы портала. Черновики посетителям не видны.</p><button id="public-editor-load" class="button secondary" type="button">Загрузить публикации области</button><div id="public-editor-app"></div></section>
+        <footer class="dashboard-footer"><span>Омский Водоканал</span><a href="/">Публичная главная</a></footer>
+      </main>
+    </div>
+  </div>
+  <noscript><div class="noscript-note">Включите JavaScript для работы личного кабинета.</div></noscript>
+  <template id="payment-warning-template"><p class="notice warning">Демонстрационная оплата. Реальные деньги не списываются.</p></template>
+  <footer class="service-site-footer"><div><a class="service-footer-brand" href="/">ОМСКИЙ ВОДОКАНАЛ</a><span>Портал города Омска</span><nav aria-label="Ссылки в подвале"><a href="/services">Сервисы</a><a href="/login">Личный кабинет</a><a href="/#contacts">Обратная связь</a></nav></div></footer>
+</body>
+</html>

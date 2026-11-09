@@ -1,0 +1,266 @@
+name: svyaz
+
+x-runtime: &runtime
+  restart: unless-stopped
+  read_only: true
+  tmpfs: ["/tmp"]
+  cap_drop: ["ALL"]
+  security_opt: ["no-new-privileges:true"]
+  networks: [backend]
+  healthcheck:
+    test: ["CMD", "/bin/healthcheck"]
+    interval: 5s
+    timeout: 4s
+    retries: 12
+    start_period: 5s
+
+x-common-env: &common-env
+  APP_ENV: ${APP_ENV:-development}
+  APP_VERSION: ${APP_VERSION:-0.1.0}
+  APP_ORIGIN: ${APP_ORIGIN:-http://127.0.0.1:18080}
+  ALLOW_PUBLIC_HTTP: ${ALLOW_PUBLIC_HTTP:-0}
+  HTTP_PORT: ${HTTP_PORT:-8080}
+  HEALTH_TIMEOUT_MS: ${HEALTH_TIMEOUT_MS:-1500}
+  HTTP_TIMEOUT_MS: ${HTTP_TIMEOUT_MS:-5000}
+  MAX_BODY_BYTES: ${MAX_BODY_BYTES:-1048576}
+  DB_MAX_CONNECTIONS: ${DB_MAX_CONNECTIONS:-5}
+  DB_HOST: postgres
+  DB_PORT: "5432"
+  DB_NAME: ${POSTGRES_DB:-svyaz}
+
+x-passwords: &passwords
+  APP_ENV: ${APP_ENV:-development}
+  POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?run deploy/start.sh first}
+  API_DB_PASSWORD: ${API_DB_PASSWORD:?run deploy/start.sh first}
+  REALTIME_DB_PASSWORD: ${REALTIME_DB_PASSWORD:?run deploy/start.sh first}
+  MEDIA_DB_PASSWORD: ${MEDIA_DB_PASSWORD:?run deploy/start.sh first}
+  VOICE_DB_PASSWORD: ${VOICE_DB_PASSWORD:?run deploy/start.sh first}
+  REDIS_PASSWORD: ${REDIS_PASSWORD:?run deploy/start.sh first}
+  S3_ROOT_PASSWORD: ${S3_ROOT_PASSWORD:?run deploy/start.sh first}
+  S3_MEDIA_PASSWORD: ${S3_MEDIA_PASSWORD:?run deploy/start.sh first}
+
+x-api-build: &api-build
+  context: .
+  dockerfile: deploy/Dockerfile
+  target: api
+
+x-rust-build: &rust-build
+  context: .
+  dockerfile: deploy/Dockerfile
+  target: rust
+
+services:
+  preflight:
+    <<: *runtime
+    user: "0:0"
+    cap_add: ["CHOWN", "DAC_OVERRIDE"]
+    image: svyaz-preflight:0.1.0
+    build: *api-build
+    command: ["/bin/preflight"]
+    restart: "no"
+    environment:
+      <<: *passwords
+      IDEMPOTENCY_SECRET_FILE: /run/svyaz-secrets/idempotency/key
+      REALTIME_CAPABILITY_SECRET_FILE: /run/svyaz-secrets/realtime/key
+      VOICE_CAPABILITY_SECRET_FILE: /run/svyaz-secrets/voice/key
+      MEDIA_CAPABILITY_SECRET_FILE: /run/svyaz-secrets/media/key
+    volumes:
+      - "idempotency-secret:/run/svyaz-secrets/idempotency"
+      - "realtime-secret:/run/svyaz-secrets/realtime"
+      - "voice-secret:/run/svyaz-secrets/voice"
+      - "media-secret:/run/svyaz-secrets/media"
+    healthcheck: { disable: true }
+
+  postgres:
+    image: postgres:17-alpine@sha256:266d3c257594e195b309ae9d1805e54c788f1d7b375f56bf6c367aac6c917e7b
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-svyaz_admin}
+      POSTGRES_DB: ${POSTGRES_DB:-svyaz}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?run deploy/start.sh first}
+      POSTGRES_INITDB_ARGS: --auth-host=scram-sha-256
+    volumes: ["postgres-data:/var/lib/postgresql/data"]
+    networks: [backend]
+    depends_on:
+      preflight: { condition: service_completed_successfully }
+    healthcheck:
+      test: ["CMD-SHELL", 'pg_isready -U "$$POSTGRES_USER" -d "$$POSTGRES_DB"']
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  redis:
+    image: redis:7-alpine@sha256:8da19c7399dca900c6822a1cf30f9d2285585e2c4b457ff4095b0f4500054d3f
+    restart: unless-stopped
+    environment:
+      REDIS_PASSWORD: ${REDIS_PASSWORD:?run deploy/start.sh first}
+      REDISCLI_AUTH: ${REDIS_PASSWORD:?run deploy/start.sh first}
+    command: ["sh", "-c", 'exec redis-server --appendonly yes --requirepass "$$REDIS_PASSWORD"']
+    volumes: ["redis-data:/data"]
+    networks: [backend]
+    depends_on:
+      preflight: { condition: service_completed_successfully }
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  s3:
+    image: svyaz-s3:0.1.0
+    build: { context: ., dockerfile: deploy/Dockerfile, target: s3 }
+    restart: unless-stopped
+    environment:
+      APP_ENV: ${APP_ENV:-development}
+      S3_ROOT_USER: ${S3_ROOT_USER:-local-svyaz}
+      S3_ROOT_PASSWORD: ${S3_ROOT_PASSWORD:?run deploy/start.sh first}
+      S3_MEDIA_USER: ${S3_MEDIA_USER:-local-svyaz-media}
+      S3_MEDIA_PASSWORD: ${S3_MEDIA_PASSWORD:?run deploy/start.sh first}
+      S3_BUCKET: ${S3_BUCKET:-svyaz}
+      HEALTH_URL: http://127.0.0.1:8333/readyz
+    volumes: ["s3-data:/data"]
+    tmpfs: ["/tmp:mode=1777"]
+    networks: [storage]
+    depends_on:
+      preflight: { condition: service_completed_successfully }
+    healthcheck:
+      test: ["CMD", "/bin/healthcheck"]
+      interval: 5s
+      timeout: 4s
+      retries: 30
+      start_period: 10s
+
+  storage-gateway:
+    <<: *runtime
+    image: svyaz-storage-gateway:0.1.0
+    build: { context: ., dockerfile: deploy/Dockerfile, target: storage-gateway }
+    networks: [backend, storage]
+    depends_on:
+      s3: { condition: service_healthy }
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8333/readyz"]
+      interval: 5s
+      timeout: 4s
+      retries: 12
+
+  migrate:
+    <<: *runtime
+    platform: linux/amd64
+    image: svyaz-migrate:0.1.0
+    build: *api-build
+    command: ["/bin/migrate"]
+    restart: "no"
+    environment:
+      <<: [*common-env, *passwords]
+      DB_USER: ${POSTGRES_USER:-svyaz_admin}
+      DB_PASSWORD: ${POSTGRES_PASSWORD:?run deploy/start.sh first}
+    depends_on:
+      postgres: { condition: service_healthy }
+    healthcheck: { disable: true }
+
+  api:
+    <<: *runtime
+    image: svyaz-api:0.1.0
+    networks: [backend, edge]
+    build: *api-build
+    environment:
+      <<: *common-env
+      DB_USER: svyaz_api
+      IDEMPOTENCY_SECRET_FILE: /run/svyaz-secrets/idempotency/key
+      REALTIME_CAPABILITY_SECRET_FILE: /run/svyaz-secrets/realtime/key
+      VOICE_CAPABILITY_SECRET_FILE: /run/svyaz-secrets/voice/key
+      VOICE_STUN_URL: ${VOICE_STUN_URL:-}
+      VOICE_TURN_URL: ${VOICE_TURN_URL:-}
+      VOICE_TURN_SECRET: ${VOICE_TURN_SECRET:-}
+      MEDIA_CAPABILITY_SECRET_FILE: /run/svyaz-secrets/media/key
+      ACCESS_TTL_SECONDS: ${ACCESS_TTL_SECONDS:-300}
+      SESSION_TTL_SECONDS: ${SESSION_TTL_SECONDS:-2592000}
+      AUTH_IP_LIMIT: ${AUTH_IP_LIMIT:-30}
+      DB_PASSWORD: ${API_DB_PASSWORD:?run deploy/start.sh first}
+      REDIS_ADDR: redis:6379
+      REDIS_PASSWORD: ${REDIS_PASSWORD:?run deploy/start.sh first}
+      REALTIME_URL: http://rust:8081
+      MEDIA_URL: http://rust:8082
+    volumes:
+      - "idempotency-secret:/run/svyaz-secrets/idempotency:ro"
+      - "realtime-secret:/run/svyaz-secrets/realtime:ro"
+      - "voice-secret:/run/svyaz-secrets/voice:ro"
+      - "media-secret:/run/svyaz-secrets/media:ro"
+    depends_on:
+      migrate: { condition: service_completed_successfully }
+      redis: { condition: service_healthy }
+
+  rust:
+    <<: *runtime
+    platform: linux/amd64
+    image: svyaz-rust:0.1.0
+    build: *rust-build
+    command: ["/bin/svyaz-rust", "serve"]
+    networks: [backend, edge]
+    ports: ["${VOICE_BIND_IP:-127.0.0.1}:${VOICE_UDP_PORT:-20000}:${VOICE_UDP_PORT:-20000}/udp"]
+    cap_add: ["CHOWN", "FOWNER", "SETUID", "SETGID"]
+    mem_limit: 1024m
+    cpus: 3.0
+    environment:
+      <<: *common-env
+      REALTIME_DB_PASSWORD: ${REALTIME_DB_PASSWORD:?run deploy/start.sh first}
+      MEDIA_DB_PASSWORD: ${MEDIA_DB_PASSWORD:?run deploy/start.sh first}
+      VOICE_DB_PASSWORD: ${VOICE_DB_PASSWORD:?run deploy/start.sh first}
+      REDIS_ADDR: redis:6379
+      REDIS_PASSWORD: ${REDIS_PASSWORD:?run deploy/start.sh first}
+      S3_URL: http://storage-gateway:8333
+      S3_BUCKET: ${S3_BUCKET:-svyaz}
+      S3_ACCESS_KEY: ${S3_MEDIA_USER:-local-svyaz-media}
+      S3_SECRET_KEY: ${S3_MEDIA_PASSWORD:?run deploy/start.sh first}
+      API_URL: http://api:${HTTP_PORT:-8080}
+      VOICE_UDP_PORT: ${VOICE_UDP_PORT:-20000}
+      VOICE_ANNOUNCE_IP: ${VOICE_ANNOUNCE_IP:-127.0.0.1}
+    volumes:
+      - "realtime-secret:/run/svyaz-secrets/realtime"
+      - "media-secret:/run/svyaz-secrets/media"
+      - "voice-secret:/run/svyaz-secrets/voice"
+    depends_on:
+      api: { condition: service_healthy }
+      s3: { condition: service_healthy }
+      storage-gateway: { condition: service_healthy }
+    healthcheck:
+      test: ["CMD", "/bin/svyaz-rust", "health"]
+      interval: 5s
+      timeout: 7s
+      retries: 12
+      start_period: 10s
+
+  web:
+    <<: *runtime
+    image: svyaz-web:0.1.0
+    networks: [backend, edge]
+    build: { context: ., dockerfile: deploy/Dockerfile, target: web }
+    environment:
+      WEB_API_UPSTREAM: ${WEB_API_UPSTREAM:-api:${HTTP_PORT:-8080}}
+      WEB_REALTIME_UPSTREAM: rust:8081
+      WEB_VOICE_UPSTREAM: rust:8083
+      WEB_MAX_BODY_BYTES: ${MAX_BODY_BYTES:-1048576}
+      WEB_LISTEN_TLS: ${WEB_LISTEN_TLS:-}
+    ports: ["${WEB_BIND_IP:-127.0.0.1}:${WEB_PORT:-18080}:8080"]
+    depends_on:
+      api: { condition: service_healthy }
+      rust: { condition: service_healthy }
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+
+networks:
+  backend: { internal: true }
+  storage: { internal: true }
+  edge: {}
+
+volumes:
+  idempotency-secret:
+  realtime-secret:
+  voice-secret:
+  media-secret:
+  postgres-data:
+  redis-data:
+  s3-data:

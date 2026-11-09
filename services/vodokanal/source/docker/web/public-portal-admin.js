@@ -1,0 +1,94 @@
+
+(() => {
+  "use strict";
+  const UUID=/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+  const KINDS={announcement:"Объявление",tariff:"Тариф",rules:"Правила работы",faq:"Вопрос и ответ",service:"Услуга"};
+  const STATES={Draft:"Черновик",Published:"Опубликовано",Archived:"В архиве"};
+  const PRESETS={
+    faq:{kind:"faq",key:"first-steps",title:"Как начать пользоваться кабинетом?",body:"Зарегистрируйтесь и войдите в кабинет. Для подключения лицевого счёта отправьте заявку на доступ.",details:{}},
+    rules:{kind:"rules",key:"training-data",title:"Правила работы с данными",body:"Заполните сведения и приложите документы для выбранной услуги.",details:{}},
+    announcement:{kind:"announcement",key:"how-to-contact",title:"Как обратиться в службу",body:"В кабинете выберите «Сообщить о проблеме». Об опасном люке можно сообщить без входа.",details:{}},
+    tariff:{kind:"tariff",key:"demo-water",title:"Тариф на воду",body:"Стоимость за единицу услуги. Условия применения указаны в действующей редакции тарифа.",details:{amount:"20.00",unit:"м³"}},
+    lab:{kind:"service",key:"lab-analysis",title:"Заказать исследование воды",body:"Укажите источник воды, показатели и сведения об отборе пробы. Готовый протокол появится в кабинете.",details:{applicants:["resident","organization"],documents:["Сведения об источнике и месте отбора","Дата и способ отбора пробы"],price:"350.00",priceUnit:"проба, ориентировочно",execution:"local",flow:"lab",category:"lab"}},
+    request:{kind:"service",key:"report-problem",title:"Сообщить о проблеме водоснабжения",body:"Выберите опубликованную приёмную, укажите обслуживаемый адрес и описание. Статус и ответы доступны в вашей карточке обращения.",details:{applicants:["resident","organization"],documents:[],price:"0",priceUnit:"обращение",execution:"portal",flow:"request",category:"report"}},
+    meter:{kind:"service",key:"meter-reading",title:"Передать показание прибора",body:"Выберите лицевой счёт и прибор, укажите дату и показание.",details:{applicants:["resident","organization"],documents:["Подтверждённая привязка лицевого счёта","Показание и дата измерения"],price:"0",priceUnit:"передачу показания",execution:"portal",flow:"meter",category:"meter"}},
+    water:{kind:"service",key:"water-order",title:"Заказать выдачу воды",body:"Создайте заказ. Вода резервируется после подтверждения оператором.",details:{applicants:["resident","organization"],documents:["Объём и назначение заказа"],price:"0",priceUnit:"заказ",execution:"local",flow:"water",category:"water"}}
+  };
+  function mount({root,request,getWorkspaceId,onSessionError=()=>{},onMutationLock=()=>{}}) {
+    if(!root||typeof request!=="function"||typeof getWorkspaceId!=="function")throw new Error("Нужны корневой элемент, транспорт и область редактора");
+    const doc=root.ownerDocument;root.classList.add("public-portal-admin");const el=(tag,cls="",text)=>{const n=doc.createElement(tag);n.className=cls;if(text!==undefined)n.textContent=text;return n;};
+    const button=(label,handler,primary=false)=>{const n=el("button",primary?"pub-primary":"",label);n.type="button";n.addEventListener("click",handler);return n;};
+    const field=(host,label,name,type="text",options)=>{const wrap=el("div","pub-field"),caption=el("label","",label),input=el(type==="select"?"select":type==="textarea"?"textarea":"input");input.id="public-editor-"+name;caption.htmlFor=input.id;if(!["select","textarea"].includes(type))input.type=type;if(options)for(const[value,label]of options){const option=el("option","",label);option.value=value;input.append(option);}wrap.append(caption,input);host.append(wrap);return input;};
+    let epoch=0,controller,workspace="",rows=[],cursor="",selected=null,busy=false,pending=null;
+    let externalBusy=false,externalMutationLock=false;
+    const heading=el("h2","","Публикации портала"),intro=el("p","","Сохраните черновик, затем опубликуйте. Для изменения опубликованного текста создайте новую редакцию.");
+    const message=el("p","pub-status");message.setAttribute("role","status");message.setAttribute("aria-live","polite");const actions=el("div","pub-actions"),reload=button("Обновить публикации",()=>refresh()),create=button("Новая публикация",()=>edit(null));actions.append(reload,create);
+    const command=el("div","pub-warning");command.hidden=true;command.setAttribute("aria-label","Неподтверждённая операция");
+    const columns=el("div","pub-columns"),left=el("div"),records=el("ul","pub-list pub-admin-list"),more=button("Показать ещё",()=>refresh(true));more.hidden=true;left.append(records,more);const editor=el("section","pub-detail");editor.setAttribute("aria-label","Редактор публикации");columns.append(left,editor);root.replaceChildren(heading,intro,message,command,actions,columns);
+    const form=el("form"),meta=el("p","pub-meta"),presetsHost=el("div","pub-fields two"),preset=field(presetsHost,"Начальные материалы","preset","select",[["","Пустая форма"],...Object.entries(PRESETS).map(([key,p])=>[key,p.title])]);const usePreset=button("Заполнить форму образцом",()=>{if(!preset.value)return;edit({...PRESETS[preset.value],id:"",revision:0,version:0,state:"Draft",validFrom:new Date().toISOString().slice(0,19)+"Z",validTo:""});});presetsHost.append(usePreset);
+    const fields=el("div","pub-fields two"),kind=field(fields,"Тип материала","kind","select",Object.entries(KINDS)),key=field(fields,"Постоянный ключ","key"),title=field(fields,"Заголовок","title"),from=field(fields,"Действует с (UTC)","from","date"),to=field(fields,"Действует до, не включая (UTC)","to","date"),body=field(form,"Текст публикации","body","textarea");key.maxLength=64;title.maxLength=200;body.maxLength=8000;
+    const serviceFields=el("div"),serviceGrid=el("div","pub-fields two"),flow=field(serviceGrid,"Открываемая форма","flow","select",[["lab","Заказ анализа"],["meter","Передача показания"],["request","Обращение"],["water","Заказ воды"],["hazard","Гостевая форма опасного люка"]]),category=field(serviceGrid,"Категория услуги","category","select",[["lab","Лаборатория"],["meter","Приборы учёта"],["report","Обращения"],["water","Выдача воды"]]),execution=field(serviceGrid,"Способ исполнения","execution","select",[["portal","В кабинете"],["local","Работы и отметка в кабинете"]]),price=field(serviceGrid,"Ориентировочная цена, ₽","price"),priceUnit=field(serviceGrid,"За какую единицу","priceUnit"),documents=field(serviceFields,"Что подготовить, по одному пункту в строке","documents","textarea");price.inputMode="decimal";price.maxLength=16;priceUnit.maxLength=60;documents.maxLength=3012;
+    const checks=el("div","pub-checks"),applicants={};for(const[value,label]of[["resident","Житель / заявитель"],["organization","Представитель организации"]]){const l=el("label"),i=el("input");i.type="checkbox";applicants[value]=i;l.append(i,doc.createTextNode(label));checks.append(l);}serviceFields.prepend(serviceGrid,el("p","","Категории заявителя"),checks);
+    const tariffFields=el("div","pub-fields two"),amount=field(tariffFields,"Тариф, ₽","amount"),unit=field(tariffFields,"Единица тарифа","unit");amount.maxLength=16;unit.maxLength=60;
+    const formActions=el("div","pub-actions"),save=button("Сохранить черновик",saveDraft,true),publish=button("Опубликовать редакцию",()=>transition("publish")),archive=button("Перевести в архив",()=>transition("archive")),newVersion=button("Создать следующую редакцию",()=>{if(!selected)return;const copy={...selected,id:"",revision:0,state:"Draft"};edit(copy);});formActions.append(save,publish,archive,newVersion);form.prepend(meta,presetsHost,fields);form.append(serviceFields,tariffFields,el("p","pub-warning","Публикация доступна любому гостю. Не помещайте сюда персональные данные, внутренние заметки и частные заключения."),formActions);editor.append(form);form.addEventListener("submit",e=>{e.preventDefault();saveDraft();});kind.addEventListener("change",showKind);
+    const notice=(text,error=false)=>{message.textContent=text;message.classList.toggle("error",error);};
+    function scope(){const id=getWorkspaceId();if(!UUID.test(id||""))throw new Error("Выберите рабочую область.");return id;}
+    function sameScope(token){if(token!==epoch)return false;let current;try{current=scope();}catch(_){clear();return false;}if(current!==workspace){clear();return false;}return true;}
+    function blocked(){return busy||externalBusy||externalMutationLock;}
+    function controls(){const unavailable=blocked();for(const n of root.querySelectorAll("button,input,select,textarea"))n.disabled=unavailable||!!pending;if(!unavailable&&!pending){for(const n of form.querySelectorAll("input,select,textarea"))n.disabled=!!selected&&selected.state!=="Draft";kind.disabled=!!selected?.id;key.disabled=!!selected?.id;}for(const n of command.querySelectorAll("button"))n.disabled=unavailable;root.setAttribute("aria-busy",busy?"true":"false");}
+    function setBusy(value){busy=!!value;controls();}
+    function renderCommand(){command.replaceChildren();command.hidden=!pending;if(pending){command.append(el("p","","Результат сохранения неизвестен. Повторите ту же операцию кнопкой ниже. Не закрывайте вкладку до подтверждения."),button("Повторить ту же операцию",()=>mutate(pending)));}onMutationLock(!!pending);controls();}
+    function showKind(){serviceFields.hidden=kind.value!=="service";tariffFields.hidden=kind.value!=="tariff";}
+    function edit(item){if(blocked()||pending)return;let next;try{next=scope();}catch(e){clear();notice(e.message,true);return;}if(workspace&&workspace!==next){clear();notice("Рабочая область изменилась. Перечитайте список.",true);return;}workspace=next;selected=item?.id?item:null;meta.textContent=selected?"Редакция "+selected.version+". "+STATES[selected.state]+". Автор: "+selected.authorId:"Новый черновик. Он ещё не сохранён.";
+      kind.value=item?.kind||"announcement";key.value=item?.key||"";title.value=item?.title||"";body.value=item?.body||"";from.value=(item?.validFrom||new Date().toISOString()).slice(0,10);to.value=(item?.validTo||"").slice(0,10);const d=item?.details||{};flow.value=d.flow||"request";category.value=d.category||"report";execution.value=d.execution||"portal";price.value=d.price||"0";priceUnit.value=d.priceUnit||"обращение";documents.value=(d.documents||[]).join("\n");Object.entries(applicants).forEach(([v,input])=>input.checked=(d.applicants||["resident"]).includes(v));amount.value=d.amount||"0";unit.value=d.unit||"м³";
+      const draft=!selected||selected.state==="Draft";save.hidden=!draft;publish.hidden=!selected||!draft;archive.hidden=!selected||selected.state!=="Published";newVersion.hidden=!selected||draft;presetsHost.hidden=!!selected;showKind();editor.hidden=false;controls();}
+    function dto(v){if(!v||!UUID.test(v.id||"")||v.workspaceId!==workspace||!Object.hasOwn(KINDS,v.kind)||!Object.hasOwn(STATES,v.state)||!Number.isInteger(v.revision)||v.revision<1||!Number.isInteger(v.version)||v.version<1||typeof v.key!=="string"||typeof v.title!=="string"||typeof v.body!=="string"||!v.details||!UUID.test(v.authorId||"")||!UUID.test(v.editorId||""))throw Object.assign(new Error("Некорректный ответ сервера."),{code:"некорректно_ответ"});return v;}
+    function errorMessage(error){if([401,403,404].includes(error.status)){clear();onSessionError(error);return "Доступ к публикациям не подтверждён. Обновите кабинет.";}if(error.status===409)return "Редакция изменилась или для этого ключа уже есть черновик. Перечитайте список, прежде чем продолжить.";if(error.status===429)return "Достигнут лимит операций. Повторите позже.";return error.status===400?"Проверьте заполнение полей и формат цены/дат.":"Ответ сервера не получен или некорректен.";}
+    async function refresh(append=false){
+      if(blocked()||pending)return;
+      let next;try{next=scope();}catch(e){clear();notice(e.message,true);return;}
+      if(!append||workspace!==next){epoch++;controller?.abort();rows=[];cursor="";records.replaceChildren();editor.hidden=true;selected=null;}
+      workspace=next;const token=epoch;controller=new AbortController();setBusy(true);notice("Загружаем публикации выбранной области…");
+      try{
+        const result=await request("admin/publications?"+new URLSearchParams({workspaceId:workspace,limit:"25",...(cursor?{cursor}:{})}),{signal:controller.signal});
+        if(!sameScope(token))return;
+        if(!Array.isArray(result?.items)||result.limit!==25||result.items.length>25||typeof result.hasMore!=="boolean"||typeof result.nextCursor!=="string"||
+          result.hasMore&&(!result.items.length||!UUID.test(result.nextCursor)||result.nextCursor===cursor)||!result.hasMore&&result.nextCursor!=="")throw new Error("Некорректная страница.");
+        const fresh=result.items.map(dto),known=new Set(rows.map(v=>v.id));
+        if(fresh.some(v=>known.has(v.id))||new Set(fresh.map(v=>v.id)).size!==fresh.length)throw new Error("Повтор записи в списке.");
+        rows.push(...fresh);cursor=result.nextCursor;
+        for(const item of fresh){const li=el("li","pub-record");li.append(button(item.title,()=>edit(item)),el("p","pub-meta",KINDS[item.kind]+" · редакция "+item.version+" · "+STATES[item.state]));records.append(li);}
+        more.hidden=!result.hasMore;
+        notice(rows.length?"Загружено редакций: "+rows.length+(result.hasMore?". Есть следующая страница.":"."):"Публикаций ещё нет. Создайте черновик или выберите начальный материал.");
+      }catch(e){if(!sameScope(token))return;notice(errorMessage(e),true);}
+      finally{if(token===epoch){controller=null;setBusy(false);}}
+    }
+    function payload(){if(!/^[a-z0-9_-]{1,64}$/.test(key.value))throw new Error("Ключ: латинские строчные буквы, цифры, дефис или подчёркивание, до 64 знаков.");if(!title.value.trim()||!body.value.trim())throw new Error("Заполните заголовок и текст.");const validFrom=from.value+"T00:00:00Z",validTo=to.value?to.value+"T00:00:00Z":"";if(!Number.isFinite(Date.parse(validFrom))||validTo&&(!Number.isFinite(Date.parse(validTo))||validTo<=validFrom))throw new Error("Проверьте даты действия редакции.");let details={};if(kind.value==="service"){const categories=Object.keys(applicants).filter(v=>applicants[v].checked);if(!categories.length)throw new Error("Выберите хотя бы одну категорию заявителя.");details={applicants:categories,documents:documents.value.split("\n").map(v=>v.trim()).filter(Boolean),price:price.value.trim().replace(",","."),priceUnit:priceUnit.value.trim(),execution:execution.value,flow:flow.value,category:category.value};if(details.documents.length>12||details.documents.some(v=>v.length>250))throw new Error("Не более 12 пунктов документов, каждый до 250 знаков.");if(!/^(0|[1-9]\d{0,7})(\.\d{1,2})?$/.test(details.price)||!details.priceUnit)throw new Error("Укажите неотрицательную цену до 8 целых и 2 дробных цифр и единицу.");}
+      if(kind.value==="tariff"){details={amount:amount.value.trim().replace(",","."),unit:unit.value.trim()};if(!/^(0|[1-9]\d{0,7})(\.\d{1,2})?$/.test(details.amount)||!details.unit)throw new Error("Укажите тариф и единицу.");}return {workspaceId:scope(),id:selected?.id||"",expectedRevision:selected?.revision||0,kind:kind.value,key:key.value,title:title.value.trim(),body:body.value.trim(),details,validFrom,validTo,commandId:crypto.randomUUID()};}
+    function makeIntent(path,value,targetId="",expectedState=""){return Object.freeze({path,json:JSON.stringify(value),key:value.commandId,workspace:value.workspaceId,targetId,expectedState,epoch});}
+    async function saveDraft(){if(blocked()||pending)return;let value;try{value=payload();}catch(e){notice(e.message,true);return;}if(workspace!==value.workspaceId){notice("Рабочая область изменилась. Перечитайте список.",true);return;}await mutate(makeIntent("admin/publications",value,value.id,"Draft"));}
+    async function transition(action){if(blocked()||pending||!selected)return;const question=action==="publish"?"Опубликовать эту редакцию для всех гостей? Предыдущая опубликованная версия перейдёт в архив.":"Перевести редакцию в публичный архив? Старый текст останется доступен как архивный.";if(!globalThis.confirm(question))return;let value;try{value={workspaceId:scope(),expectedRevision:selected.revision,commandId:crypto.randomUUID()};}catch(e){notice(e.message,true);return;}await mutate(makeIntent("admin/publications/"+selected.id+"/actions/"+action,value,selected.id,action==="publish"?"Published":"Archived"));}
+    async function mutate(intent){
+      if(blocked()||!intent||intent.epoch!==epoch||intent.workspace!==workspace||(pending&&pending!==intent))return;
+      let current;try{current=scope();}catch(e){clear();notice(e.message,true);return;}if(current!==workspace){clear();notice("Рабочая область изменилась. Перечитайте список.",true);return;}
+      const token=epoch,retrying=pending===intent;pending=intent;controller=new AbortController();setBusy(true);renderCommand();notice("Сохраняем…");
+      try{
+        const body=JSON.parse(intent.json),result=await request(intent.path,{method:"POST",body,headers:{"Idempotency-Key":intent.key},signal:controller.signal});
+        if(!sameScope(token))return;
+        const item=dto(result);
+        if(intent.targetId&&item.id!==intent.targetId||item.state!==intent.expectedState||body.kind&&item.kind!==body.kind||body.key&&item.key!==body.key)throw Object.assign(new Error("Ответ не соответствует команде."),{code:"некорректно_ответ"});
+        pending=null;renderCommand();rows=[];cursor="";records.replaceChildren();more.hidden=true;setBusy(false);edit(item);
+        notice(item.state==="Draft"?"Черновик сохранён. Публикация выполняется отдельной кнопкой. Обновите список редакций.":"Состояние подтверждено сервером: "+STATES[item.state]+". Обновите список для актуальных редакций.");
+      }catch(e){
+        if(token!==epoch)return;
+        const uncertain=!e.status||e.status>=500||e.code==="некорректно_ответ";
+        if(!retrying&&!uncertain)pending=null;
+        const text=errorMessage(e);if(token!==epoch)return;
+        renderCommand();notice(text+(pending?" Результат записи неизвестен. Используйте повтор той же операции; исходные данные не изменяются.":""),true);
+      }finally{if(token===epoch){controller=null;setBusy(false);}}
+    }
+    function clear(){epoch++;controller?.abort();controller=null;workspace="";rows=[];cursor="";selected=null;pending=null;busy=false;records.replaceChildren();for(const n of form.querySelectorAll("input,textarea,select")){n.value="";if(n.type==="checkbox")n.checked=false;}meta.textContent="";editor.hidden=true;more.hidden=true;notice("");renderCommand();}
+    editor.hidden=true;controls();return Object.freeze({refresh,clear,reset:clear,setExternalBusy(value){externalBusy=!!value;controls();},setExternalMutationLock(value){externalMutationLock=!!value;controls();},destroy(){clear();root.replaceChildren();}});
+  }
+  globalThis.PublicPortalAdmin=Object.freeze({mount});
+})();

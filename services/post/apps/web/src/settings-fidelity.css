@@ -1,0 +1,1586 @@
+.identity.settings-dialog .settings-content,
+.identity.settings-dialog .settings-content > *,
+.identity.settings-dialog .settings-content form,
+.identity.settings-dialog .settings-content fieldset {
+  min-width: 0;
+}
+
+.identity.settings-dialog .settings-content .id-panel form {
+  width: 100%;
+  max-width: none;
+}
+
+.identity.settings-dialog .settings-content .id-panel label {
+  width: 100%;
+  min-width: 0;
+}
+
+.identity.settings-dialog .settings-content input:not([type="checkbox"]),
+.identity.settings-dialog .settings-content select,
+.identity.settings-dialog .settings-content textarea {
+  max-width: 100%;
+  min-width: 0;
+}
+
+.identity.settings-dialog .settings-content .account-field > span {
+  min-width: 0;
+}
+
+.identity.settings-dialog .settings-content .account-field small {
+  overflow-wrap: anywhere;
+  text-align: right;
+}
+
+.identity.settings-dialog .settings-content .account-field > button {
+  flex: 0 0 auto;
+}
+
+.identity.settings-dialog .settings-content .id-session {
+  min-width: 0;
+  align-items: center;
+}
+
+.identity.settings-dialog .settings-content .id-session > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.identity.settings-dialog .settings-session-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-left: auto;
+}
+.identity.settings-dialog .id-section-heading:has(.settings-session-actions) {
+  flex-wrap: wrap;
+}
+
+.identity.settings-dialog .settings-content .id-check {
+  margin: 0;
+  gap: 20px;
+}
+
+.identity.settings-dialog .settings-content .id-check input[type="checkbox"] {
+  flex-shrink: 0;
+}
+
+.identity.settings-dialog .settings-content .community-rule {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+}
+
+.identity.settings-dialog .settings-content .community-rule label {
+  margin: 0;
+}
+
+.identity.settings-dialog .settings-content .community-card:first-child,
+.identity.settings-dialog .settings-content .id-section-heading:first-child {
+  margin-top: 0;
+}
+
+.identity.settings-dialog .settings-content .profile-editor .id-profile-preview {
+  width: 100%;
+}
+
+.identity .community-guild {
+  min-width: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.identity .community-guild .community-page-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 40px;
+  height: auto;
+  padding: 0;
+  margin-bottom: 24px;
+  border: 0;
+}
+
+.identity .community-guild .community-page-heading h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.identity .community-guild .community-page-heading button {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.identity .community-guild .community-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.identity .community-guild .community-list > article {
+  min-width: 0;
+  padding: 20px 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+}
+
+.identity .community-guild .community-list > article > div {
+  min-width: 0;
+}
+
+.identity .community-guild .community-list small {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.identity .community-guild .community-list p {
+  line-height: 1.5;
+}
+
+.identity .community-guild .community-toolbar {
+  justify-content: flex-end;
+}
+
+.identity .community-guild .community-technical {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.identity .community-guild .community-technical summary {
+  cursor: pointer;
+}
+
+.identity .community-guild .community-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  min-height: 240px;
+  color: var(--muted);
+}
+
+.identity .community-guild .community-empty h4 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.identity .community-guild .community-empty > svg {
+  opacity: 0.5;
+}
+
+.identity.app-modal.community-action-dialog .community-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+  margin: 24px 0 0;
+}
+
+.identity.app-modal.community-action-dialog .community-form label {
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.identity.app-modal.community-action-dialog .community-form :is(input, select, textarea) {
+  width: 100%;
+  min-width: 0;
+  margin-top: 0;
+  background: #1e1f22;
+}
+
+.identity.app-modal.community-action-dialog .community-form textarea {
+  font: inherit;
+  resize: vertical;
+  min-height: 80px;
+  max-height: 180px;
+}
+
+.identity.app-modal.community-action-dialog .community-form > footer {
+  grid-column: 1;
+  margin-top: 4px;
+}
+
+.identity .community-guild .community-audit-filters {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0 0 24px;
+}
+
+.identity .community-audit {
+  display: grid;
+  grid-template-columns: 194px minmax(0, 1fr);
+  column-gap: 16px;
+  align-items: start;
+}
+
+.identity .community-audit > * {
+  grid-column: 1 / -1;
+}
+
+.identity .community-audit .community-page-heading {
+  grid-column: 1;
+  grid-row: 1;
+  min-height: 24px;
+  margin: 22px 0 0;
+}
+
+.identity .community-audit .community-page-heading h3 {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.identity .community-audit .community-audit-filters {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+  gap: 8px 16px;
+}
+
+.identity .community-audit .community-audit-filters > label {
+  min-width: 0;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 20px;
+  gap: 0;
+}
+
+.identity .community-audit-filters .community-audit-actor {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.identity .community-audit-filters .community-audit-action {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.identity .community-audit-filters select {
+  height: 40px;
+  min-height: 40px;
+  margin: 8px 0 0;
+  padding: 8px 12px;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.identity .community-audit-filters > label > .select-field {
+  margin-top: 8px;
+}
+
+.identity .community-audit-advanced .community-filter-actions {
+  margin-top: 16px;
+}
+
+.identity .community-guild .community-audit-empty {
+  justify-content: flex-start;
+  min-height: 240px;
+  padding-top: 40px;
+  gap: 12px;
+}
+
+.identity .community-guild .community-audit-empty h4 {
+  color: var(--ink);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.identity .community-guild .community-audit-filters > label {
+  margin: 0;
+}
+
+.identity .community-guild .community-filter-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.identity .community-guild .community-audit-advanced {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.identity .community-guild .community-audit-advanced summary {
+  cursor: pointer;
+  padding: 4px 0;
+}
+
+.identity .community-guild .community-audit-advanced input {
+  width: 100%;
+  max-width: 100%;
+}
+
+.identity.settings-dialog[open] {
+  grid-template-columns: 269px minmax(0, 1fr);
+  grid-template-rows: 49px minmax(0, 1fr);
+}
+
+.identity.settings-dialog > .modal-heading {
+  height: 49px;
+}
+
+.identity.settings-dialog > .modal-heading h2 {
+  line-height: 18px;
+}
+
+.identity.settings-dialog .settings-sidebar {
+  padding: 16px;
+  overflow-x: hidden;
+}
+
+.identity.settings-dialog .settings-profile-link {
+  min-height: 64px;
+  padding: 8px;
+  gap: 12px;
+}
+
+.identity.settings-dialog .settings-profile-link > span:last-child {
+  flex: 1;
+  min-width: 0;
+}
+
+.identity.settings-dialog .settings-profile-link strong {
+  white-space: nowrap;
+}
+
+.identity.settings-dialog .settings-profile-link small {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 16px;
+}
+
+.identity.settings-dialog .settings-search {
+  height: 40px;
+  margin: 8px 0 12px;
+  padding: 0 12px;
+}
+
+.identity.settings-dialog .settings-search input {
+  height: 38px;
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+}
+
+.identity.settings-dialog .settings-sidebar nav > small {
+  display: none;
+}
+
+.identity.settings-dialog .settings-sidebar nav button {
+  min-height: 36px;
+  padding: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  white-space: normal;
+  gap: 12px;
+}
+
+.identity.settings-dialog .settings-sidebar nav button svg {
+  flex-shrink: 0;
+}
+
+.identity.settings-dialog .settings-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 64px 32px;
+}
+
+.identity.settings-dialog .settings-content > * {
+  width: 100%;
+  max-width: 696px;
+}
+
+.identity.settings-dialog .settings-content h2 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0;
+  margin-bottom: 20px;
+}
+
+.identity.settings-dialog .settings-content .account-field {
+  min-height: 72px;
+}
+
+.identity.settings-dialog .settings-content .account-field strong {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.identity.settings-dialog .settings-content .account-field > button {
+  min-height: 32px;
+  padding: 4px 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.identity.settings-dialog .settings-content .account-field + h2 {
+  border: 0;
+  padding-top: 0;
+  margin-top: 74px;
+}
+
+.identity.settings-dialog .settings-content .settings-link-row {
+  min-height: 56px;
+  padding: 16px 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.identity.settings-dialog .settings-content input[type="checkbox"] {
+  width: 48px;
+  flex-basis: 48px;
+  height: 24px;
+  min-height: 24px;
+  background: #0000001f;
+  border: 1px solid #97979f33;
+}
+
+.identity.settings-dialog .settings-content input[type="checkbox"]::after {
+  width: 16px;
+  height: 16px;
+  top: 3px;
+  left: 4px;
+}
+
+.identity.settings-dialog .settings-content input[type="checkbox"]:checked {
+  background: #5865f2;
+  border-color: transparent;
+}
+
+.identity.settings-dialog .settings-content input[type="checkbox"]:checked::after {
+  transform: translateX(22px);
+}
+
+.identity.app-modal.profile-dialog[open] {
+  display: block;
+  width: min(1202px, calc(100vw - 32px));
+  max-width: none;
+  height: 100dvh;
+  max-height: 100dvh;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #34343b;
+  border-top: 0;
+  border-bottom: 0;
+  border-radius: 0;
+  overflow: hidden;
+  background: #1a1a1e;
+}
+
+.identity.app-modal.profile-dialog > .modal-heading {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+}
+
+.identity.app-modal.profile-dialog > .modal-heading h2 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.identity.app-modal.profile-dialog > .modal-heading button {
+  position: static;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: #28282d;
+  border-radius: 8px;
+}
+
+.identity.app-modal.profile-dialog .profile-editor,
+.identity.app-modal.profile-dialog .profile-editor form {
+  height: 100%;
+  width: 100%;
+  min-height: 0;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+
+.identity.app-modal.profile-dialog .profile-editor-layout {
+  display: grid;
+  grid-template-columns: 240px 449px minmax(0, 1fr);
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  overflow: auto;
+}
+
+.identity.app-modal.profile-dialog .profile-customization {
+  display: block;
+  background: #242429;
+  border-right: 1px solid #34343b;
+  padding: 0 16px 32px;
+  min-width: 0;
+}
+
+.identity.app-modal.profile-dialog .profile-customization h2 {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  margin: 0 -16px 20px;
+  border-bottom: 1px solid #34343b;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.identity.app-modal.profile-dialog .profile-customization h3 {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+  margin: 24px 0 12px;
+}
+
+.identity.app-modal.profile-dialog .profile-customization label {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+  margin-top: 28px;
+}
+
+.identity.app-modal.profile-dialog .profile-customization .select-field {
+  margin-top: 12px;
+}
+
+.identity .settings-privacy .privacy-policy-fields {
+  display: grid;
+  gap: 16px;
+}
+
+.identity .settings-privacy .privacy-friend-requests {
+  margin: 0;
+}
+
+.identity .settings-privacy .privacy-friend-requests strong {
+  display: block;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.identity .settings-privacy .privacy-friend-requests small {
+  display: block;
+  margin-top: 4px;
+  color: #a9a9b3;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.identity .settings-privacy :is(.switch-row, .id-check) input[type="checkbox"] {
+  flex: 0 0 48px;
+  width: 48px;
+  background: rgb(0 0 0 / 12%);
+  border: 1px solid rgb(151 151 159 / 20%);
+}
+
+.identity .settings-privacy :is(.switch-row, .id-check) input[type="checkbox"]:checked {
+  background: #5865f2;
+  border: 1px solid rgb(151 151 159 / 12%);
+}
+
+.identity .settings-privacy :is(.switch-row, .id-check) input[type="checkbox"]::after {
+  width: 16px;
+  height: 16px;
+  top: 3px;
+  left: 3px;
+}
+
+.identity .settings-privacy :is(.switch-row, .id-check) input:checked::after {
+  transform: translateX(24px);
+}
+
+.profile-avatar-tile {
+  width: 100px;
+  height: 100px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #303035;
+}
+
+.profile-avatar-preview {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  border: 0;
+  border-radius: 50%;
+  background: #5865f2;
+  color: white;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.profile-avatar-preview.mint {
+  background: #287a65;
+}
+.profile-avatar-preview.rose {
+  background: #96506e;
+}
+.profile-avatar-preview.amber {
+  background: #a96834;
+}
+.profile-avatar-preview.sky {
+  background: #346f94;
+}
+
+.identity.app-modal.profile-dialog .profile-preview-column {
+  padding: 48px 0 48px 49px;
+  min-width: 0;
+}
+
+.identity.app-modal.profile-dialog .id-profile-preview {
+  width: 400px;
+  max-width: 100%;
+  min-height: 480px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 16px;
+  background: #242429;
+}
+
+.identity.app-modal.profile-dialog .profile-banner {
+  height: 140px;
+  margin: 0;
+  padding: 0;
+}
+
+.identity.app-modal.profile-dialog .id-profile-preview > .id-avatar {
+  width: 128px;
+  height: 128px;
+  margin: -68px 0 0 24px;
+  border: 7px solid #242429;
+  font-size: 48px;
+  line-height: 1;
+  background-clip: padding-box;
+}
+
+.identity.app-modal.profile-dialog .profile-preview-info {
+  padding: 24px 32px 32px;
+  overflow-wrap: anywhere;
+}
+
+.identity.app-modal.profile-dialog .profile-preview-info h2 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.identity.app-modal.profile-dialog .profile-preview-info p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.profile-created-at {
+  display: grid;
+  gap: 8px;
+  margin-top: 40px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.profile-created-at span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.identity.app-modal.profile-dialog .profile-details-column {
+  padding: 64px 48px 48px 32px;
+  min-width: 0;
+}
+
+.identity.app-modal.profile-dialog .profile-details-column h2 {
+  margin: 0 0 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.identity.app-modal.profile-dialog .profile-details-column label {
+  margin: 24px 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.identity.app-modal.profile-dialog .profile-details-column input {
+  max-width: 100%;
+}
+.identity:is(.tab-friends, .tab-requests, .tab-blocks) .id-header > span:first-child {
+  font-weight: 500;
+}
+
+.identity:is(.tab-friends, .tab-requests, .tab-blocks) .friends-tabs {
+  gap: 16px;
+}
+
+.identity:is(.tab-friends, .tab-requests, .tab-blocks) .friends-tabs button {
+  min-height: 32px;
+  padding: 4px 12px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.identity.tab-friends .friends-search {
+  height: 40px;
+  gap: 12px;
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+
+.identity.tab-friends .friends-search input {
+  height: 38px;
+  min-height: 0;
+  margin: 0;
+  padding: 1px 12px 1px 0;
+}
+
+.identity:is(.tab-friends, .tab-requests, .tab-blocks) .id-section-heading h2 {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.identity:is(.tab-friends, .tab-requests, .tab-blocks) .id-person-name strong {
+  font-weight: 500;
+}
+
+.identity .guild-profile-editor {
+  width: 100%;
+  min-width: 0;
+}
+
+.identity .guild-profile-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 299px;
+  align-items: start;
+  gap: 40px;
+}
+
+.identity .guild-profile-columns > form {
+  min-width: 0;
+  max-width: none;
+}
+
+.identity .guild-profile-columns h2 {
+  margin: 0 0 24px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+.identity .guild-profile-intro {
+  margin: 0 0 22px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 20px;
+  min-height: 58px;
+}
+
+.identity .guild-profile-section {
+  border-bottom: 1px solid #ffffff2b;
+  padding: 0 0 40px;
+  margin-bottom: 40px;
+}
+
+.identity .guild-profile-section > label,
+.identity .guild-profile-section > h3 {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  margin: 0 0 12px;
+}
+
+.identity .guild-profile-section > input,
+.identity .guild-profile-section > textarea {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid #ffffff0d;
+  border-radius: 8px;
+  background: #1e1e22;
+  font: inherit;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--ink);
+}
+
+.identity .guild-profile-section > textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.guild-profile-icon-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.guild-profile-icon {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  border-radius: 18px;
+  background: #5865f2;
+  color: white;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.guild-profile-icon.mint,
+.identity .guild-profile-colors .mint {
+  background: #287a65;
+}
+.guild-profile-icon.rose,
+.identity .guild-profile-colors .rose {
+  background: #96506e;
+}
+.guild-profile-icon.amber,
+.identity .guild-profile-colors .amber {
+  background: #a96834;
+}
+.guild-profile-icon.sky,
+.identity .guild-profile-colors .sky {
+  background: #346f94;
+}
+
+.guild-profile-colors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.identity .guild-profile-colors button {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: 50%;
+  border: 0;
+  background: #5865f2;
+  color: white;
+}
+
+.identity .guild-profile-colors button[aria-pressed="true"] {
+  outline: 2px solid #f2f3f5;
+  outline-offset: 3px;
+}
+
+.identity .guild-profile-section .guild-profile-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+}
+
+.identity .guild-profile-toggle input {
+  appearance: none;
+  display: block;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 24px;
+  min-height: 24px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #97979f33;
+  border-radius: 12px;
+  background: #0000001f;
+  position: relative;
+  cursor: pointer;
+  transition: background 160ms;
+}
+
+.identity .guild-profile-toggle input::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 4px;
+  top: 3px;
+  border-radius: 50%;
+  background: white;
+  transition: transform 160ms;
+}
+
+.identity .guild-profile-toggle input:checked {
+  background: #5865f2;
+  border-color: transparent;
+}
+
+.identity .guild-profile-toggle input:checked::after {
+  transform: translateX(22px);
+}
+
+.identity .guild-app .guild-profile-card {
+  display: block;
+  position: sticky;
+  top: 0;
+  min-width: 0;
+  width: 299px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ffffff0d;
+  border-radius: 16px;
+  background: #2b2d31;
+  overflow: hidden;
+}
+
+.guild-profile-banner {
+  height: 120px;
+  background: linear-gradient(#5865f288, #dce0ff);
+}
+
+.guild-profile-banner.mint {
+  background: linear-gradient(#287a6588, #e0f7ef);
+}
+.guild-profile-banner.rose {
+  background: linear-gradient(#96506e88, #ffe4ed);
+}
+.guild-profile-banner.amber {
+  background: linear-gradient(#a9683488, #fff0d8);
+}
+.guild-profile-banner.sky {
+  background: linear-gradient(#346f9488, #e3f3ff);
+}
+
+.guild-profile-card > .guild-profile-icon {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  margin: -34px 0 0 16px;
+  border: 3px solid #2b2d31;
+  border-radius: 22px;
+}
+
+.guild-profile-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 12px 16px 16px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 16px;
+  overflow-wrap: anywhere;
+}
+
+.guild-profile-card-info h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.guild-profile-card-info p {
+  margin: 12px 0 0;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--ink);
+  white-space: pre-wrap;
+}
+
+.identity .guild-profile-save {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #111214;
+  border: 1px solid #ffffff14;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px #0004;
+}
+
+.guild-profile-save > span {
+  flex: 1 1 100%;
+  font-size: 14px;
+}
+
+.guild-profile-reload {
+  margin: 0 0 24px;
+}
+
+.guild-profile-saved {
+  color: #76c59d;
+  font-size: 14px;
+}
+
+.identity.id-login .id-auth-card {
+  background: #242429 !important;
+}
+
+.identity.id-login .id-auth-card h2 {
+  margin: 0 0 8px;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 600;
+}
+
+.identity.id-login .id-auth-card label {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.identity.id-login .id-auth-card input {
+  height: 40px;
+  min-height: 40px;
+  border: 1px solid #97979f33;
+  border-radius: 8px;
+  background: #0000001f;
+  padding: 8px 12px;
+}
+
+.identity.id-login .id-auth-card .id-wide {
+  height: 40px;
+  min-height: 40px;
+  border-radius: 8px;
+}
+
+.identity .inbox-popover {
+  position: fixed;
+  z-index: 150;
+  top: 36px;
+  right: 48px;
+  display: flex;
+  flex-direction: column;
+  width: 529px;
+  max-width: calc(100vw - 32px);
+  height: min(80dvh, 720px);
+  max-height: calc(100dvh - 48px);
+  border: 0;
+  border-radius: 8px;
+  background: #242429;
+  color: var(--ink);
+  box-shadow:
+    0 0 0 1px #ffffff14,
+    0 12px 24px #0000003d;
+  overflow: hidden;
+  outline: 0;
+  animation: content-in 140ms ease;
+}
+
+.identity .inbox-popover-heading {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 8px;
+  height: 66px;
+  padding: 0 24px;
+  border: 0;
+}
+
+.identity .inbox-popover-heading > svg {
+  flex-shrink: 0;
+  color: var(--muted);
+}
+
+.identity .inbox-popover-heading h2 {
+  flex: 1;
+  min-width: 0;
+  margin: 0 0 0 4px;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.identity .inbox-popover .icon-button {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  min-height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+}
+
+.identity .inbox-popover .icon-button:hover {
+  background: #ffffff0c;
+  color: var(--ink);
+}
+
+.identity .inbox-popover > .inbox-tabs {
+  display: flex;
+  flex-shrink: 0;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #ffffff0a;
+}
+
+.identity .inbox-popover .inbox-tabs button {
+  flex: 1;
+  min-width: 0;
+  min-height: 36px;
+  padding: 0 8px 14px;
+  margin: 0;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: #b5b5bf;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.identity .inbox-popover .inbox-tabs button[aria-selected="true"] {
+  color: var(--ink);
+  border-bottom-color: #5865f2;
+}
+
+.identity .inbox-popover-body {
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.identity.settings-dialog > .modal-heading [data-tooltip]::after {
+  display: none;
+}
+
+.identity .inbox-popover .community-toolbar [data-tooltip]::after {
+  left: auto;
+  right: 0;
+  transform: translateY(4px);
+}
+
+.identity .inbox-popover .community-toolbar [data-tooltip]:is(:hover, :focus-visible)::after {
+  transform: translateY(0);
+}
+
+.identity .inbox-popover .community-card {
+  padding: 16px;
+  margin: 0;
+  min-width: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.identity .inbox-popover .product-empty {
+  min-height: 360px;
+  padding: 32px 16px;
+  margin: 0;
+  border: 0;
+  background: transparent;
+}
+
+.identity .inbox-popover .product-empty h3 {
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.identity .inbox-popover .inbox-screen .community-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.identity .inbox-popover .inbox-screen .community-list > article {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: start;
+  padding: 16px;
+  margin: 0;
+  border: 1px solid #ffffff0a;
+  border-radius: 8px;
+  background: #202024;
+}
+
+.identity .inbox-popover .inbox-screen .community-list > article.unread {
+  border-left: 2px solid #5865f2;
+  padding-left: 15px;
+}
+
+.inbox-room-icon {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  color: var(--muted);
+}
+
+.inbox-item-content {
+  min-width: 0;
+}
+
+.inbox-item-content strong {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.identity .inbox-popover .inbox-item-content p {
+  margin: 8px 0 4px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.identity .inbox-popover .inbox-item-content small {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.identity .inbox-popover .community-toolbar {
+  display: flex;
+  gap: 4px;
+  flex-wrap: nowrap;
+}
+
+.identity .inbox-popover .favorites-screen .community-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.identity .inbox-popover .favorites-screen article {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 8px;
+  border: 0;
+  background: transparent;
+}
+
+.identity .inbox-popover .favorites-screen article > button:first-child {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  font-size: 16px;
+  line-height: 20px;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.identity .inbox-popover .inbox-screen > button {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.identity:is(.tab-friends, .tab-requests, .tab-blocks) > .id-content {
+  padding: 0 24px 24px;
+}
+
+.identity:is(.tab-friends, .tab-requests, .tab-blocks) .id-header {
+  height: 48px;
+  margin: 0 -24px 14px;
+  padding: 0 24px;
+}
+
+.identity .id-sidebar {
+  padding-left: 9px;
+  padding-right: 7px;
+}
+
+.identity .sidebar-search {
+  margin-top: 9px;
+}
+
+.identity .home-primary-nav {
+  gap: 2px;
+  padding-bottom: 26px;
+  border: 0;
+}
+
+.identity .id-sidebar .home-primary-nav button,
+.identity .dm-list .home-primary-nav button {
+  height: 38px;
+  min-height: 38px;
+  padding: 8px 16px 8px 8px;
+  gap: 16px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.identity .home-primary-nav button > svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.identity .home-dm-heading {
+  height: 24px;
+  min-height: 24px;
+  padding: 0 8px 4px;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+}
+
+.identity .id-sidebar .home-conversations button,
+.identity .dm-list .home-conversations button {
+  height: 42px;
+  min-height: 42px;
+  padding: 1px 8px;
+}
+
+.identity .home-conversations strong {
+  line-height: 20px;
+}
+
+.identity .home-conversations small {
+  margin: 0;
+  line-height: 16px;
+}
+
+@media (max-width: 900px) {
+  .identity:is(.tab-friends, .tab-requests, .tab-blocks) .friends-tabs {
+    order: 3;
+    flex: 1 0 100%;
+    flex-wrap: wrap;
+    overflow: visible;
+    gap: 4px;
+    padding-left: 0;
+    border-left: 0;
+  }
+  .identity:is(.tab-friends, .tab-requests, .tab-blocks) .id-header {
+    height: auto;
+    min-height: 48px;
+    flex-wrap: wrap;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    row-gap: 6px;
+  }
+  .identity:is(.tab-friends, .tab-requests, .tab-blocks) .friends-tabs button {
+    font-size: 14px;
+    padding: 4px 8px;
+  }
+  .identity .community-audit {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .identity .community-audit .community-page-heading {
+    grid-column: 1;
+    grid-row: auto;
+    margin: 0 0 24px;
+  }
+  .identity .community-audit .community-audit-filters {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .identity.settings-dialog[open] {
+    grid-template-columns: 200px minmax(0, 1fr);
+  }
+  .identity.settings-dialog .settings-content {
+    padding: 28px 24px;
+  }
+  .identity.settings-dialog .settings-content > * {
+    width: 100%;
+  }
+  .identity.settings-dialog .settings-content .account-field small {
+    text-align: left;
+  }
+  .identity .guild-profile-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .identity .guild-app .guild-profile-card {
+    position: static;
+    width: min(299px, 100%);
+    grid-row: 1;
+  }
+  .identity.app-modal.profile-dialog .profile-editor-layout {
+    grid-template-columns: 200px minmax(0, 1fr);
+  }
+  .identity.app-modal.profile-dialog .profile-customization {
+    grid-column: 1;
+    grid-row: 1 / 3;
+  }
+  .identity.app-modal.profile-dialog .profile-preview-column {
+    grid-column: 2;
+    padding: 48px 24px 24px;
+  }
+  .identity.app-modal.profile-dialog .profile-details-column {
+    grid-column: 2;
+    padding: 0 24px 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .identity .inbox-popover {
+    right: 8px;
+    width: calc(100vw - 16px);
+    max-width: none;
+  }
+  .identity .inbox-popover-heading {
+    padding: 0 16px;
+  }
+  .identity .inbox-popover .inbox-tabs {
+    gap: 0;
+    justify-content: space-between;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .identity .inbox-popover .inbox-tabs button {
+    flex: 0 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+  }
+  .identity .inbox-popover .inbox-screen .community-list > article {
+    grid-template-columns: 24px minmax(0, 1fr);
+    padding: 12px;
+    gap: 8px;
+  }
+  .identity .inbox-popover .inbox-screen .community-toolbar {
+    grid-column: 2;
+    justify-content: flex-end;
+  }
+  .identity:is(.tab-friends, .tab-requests, .tab-blocks) > .id-content {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+  .identity:is(.tab-friends, .tab-requests, .tab-blocks) .id-header {
+    height: auto;
+    min-height: 48px;
+    margin-right: -16px;
+    margin-left: -16px;
+    padding: 10px 16px;
+  }
+  .identity.settings-dialog[open] {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 50px 54px minmax(0, 1fr);
+  }
+  .identity.settings-dialog .settings-content {
+    padding: 24px 18px 40px;
+  }
+  .identity.settings-dialog .settings-sidebar {
+    padding: 6px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+  }
+  .identity.settings-dialog .settings-sidebar::-webkit-scrollbar {
+    display: none;
+  }
+  .identity.settings-dialog .settings-sidebar nav button {
+    white-space: nowrap;
+    font-size: 12px;
+    gap: 6px;
+  }
+  .identity.settings-dialog .settings-content .id-session {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .identity.settings-dialog .settings-content .id-session > div {
+    flex-basis: 100%;
+  }
+  .identity.settings-dialog .settings-content .id-section-heading > button {
+    white-space: normal;
+  }
+  .identity.settings-dialog .settings-content .account-field {
+    gap: 12px;
+  }
+  .identity:is(.tab-friends, .tab-requests, .tab-blocks) .friends-tabs {
+    gap: 8px;
+  }
+  .identity .inbox-popover .inbox-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .identity:is(.tab-friends, .tab-requests, .tab-blocks) .friends-tabs button {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+  .identity.app-modal.profile-dialog[open] {
+    width: 100vw;
+    border: 0;
+  }
+  .identity.app-modal.profile-dialog .profile-editor-layout {
+    display: flex;
+    flex-direction: column;
+  }
+  .identity.app-modal.profile-dialog .profile-customization {
+    border: 0;
+    padding: 0 20px 24px;
+  }
+  .identity.app-modal.profile-dialog .profile-customization h2 {
+    margin: 0 -20px 20px;
+    padding: 0 20px;
+  }
+  .identity.app-modal.profile-dialog .profile-preview-column {
+    padding: 24px 20px;
+  }
+  .identity.app-modal.profile-dialog .profile-details-column {
+    padding: 0 20px 32px;
+  }
+  .identity .community-guild .community-page-heading {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .identity .community-guild .community-audit-filters {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .identity .community-audit-filters :is(.community-audit-actor, .community-audit-action) {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .identity .community-guild .community-list > article > .community-toolbar {
+    justify-content: flex-start;
+    margin-top: 16px;
+  }
+}

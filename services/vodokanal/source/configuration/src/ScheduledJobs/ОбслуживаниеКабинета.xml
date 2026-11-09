@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+  <ScheduledJob uuid="7b3c550b-3f14-f2d2-6198-8c1867eb7d0b">
+    <Properties>
+      <Name>ОбслуживаниеКабинета</Name>
+      <Synonym>
+        <v8:item>
+          <v8:lang>ru</v8:lang>
+          <v8:content>Обслуживание кабинета</v8:content>
+        </v8:item>
+      </Synonym>
+      <Comment />
+      <MethodName>CommonModule.СервисЭксплуатации.ВыполнитьРегламентноеОбслуживание</MethodName>
+      <Description></Description>
+      <Key />
+      <Use>false</Use>
+      <Predefined>false</Predefined>
+      <RestartCountOnFailure>0</RestartCountOnFailure>
+      <RestartIntervalOnFailure>0</RestartIntervalOnFailure>
+    </Properties>
+  </ScheduledJob>
+</MetaDataObject>

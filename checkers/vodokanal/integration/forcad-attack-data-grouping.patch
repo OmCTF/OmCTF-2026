@@ -1,0 +1,54 @@
+diff --git a/backend/services/api/views.py b/backend/services/api/views.py
+index 02ca7d4..568454a 100644
+--- a/backend/services/api/views.py
++++ b/backend/services/api/views.py
+@@ -1,9 +1,35 @@
++import json
++import re
++
+ from flask import Blueprint
+-from flask import jsonify, make_response
++from flask import jsonify
+ 
+ from lib import storage
+ 
+ client_bp = Blueprint('client_api', __name__)
++uuid_pattern = re.compile(r'^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')
++
++
++def flatten_vodokanal_hints(data):
++    if not isinstance(data, dict) or not isinstance(data.get('vodokanal'), dict):
++        return data
++    flat_teams = {}
++    for ip, hints in data['vodokanal'].items():
++        identifiers = []
++        if isinstance(hints, list):
++            for raw in hints:
++                try:
++                    hint = json.loads(raw) if isinstance(raw, str) else raw
++                except (TypeError, ValueError):
++                    continue
++                if not isinstance(hint, dict):
++                    continue
++                kind, identifier = hint.get('type'), hint.get('id')
++                if kind in ('summary', 'attachment') and isinstance(identifier, str) and uuid_pattern.fullmatch(identifier):
++                    identifiers.append(identifier)
++        flat_teams[ip] = identifiers
++    data['vodokanal'] = flat_teams
++    return data
+ 
+ 
+ @client_bp.route('/teams/')
+@@ -27,10 +53,8 @@ def get_game_config():
+ 
+ @client_bp.route('/attack_data/')
+ def serve_attack_data():
+-    attack_data = storage.attacks.get_attack_data()
+-    response = make_response(attack_data)
+-    response.headers['Content-Type'] = 'application/json'
+-    return response
++    attack_data = json.loads(storage.attacks.get_attack_data())
++    return jsonify(flatten_vodokanal_hints(attack_data))
+ 
+ 
+ @client_bp.route('/teams/<int:team_id>/')

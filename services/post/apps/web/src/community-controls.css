@@ -1,0 +1,105 @@
+.identity .community-rule {
+  grid-template-columns: minmax(0, 1fr);
+}
+.community-notification-modes {
+  display: block;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.community-notification-modes > legend {
+  padding: 0;
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+}
+.identity .community-rule .community-notification-modes > .community-notification-mode {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  min-height: 36px;
+  margin: 0;
+  padding: 8px 0;
+  border-radius: 2px;
+  color: #dbdbe0;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.identity .community-rule .community-notification-mode input[type="radio"] {
+  appearance: none;
+  display: block;
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  min-height: 20px;
+  margin: 0;
+  padding: 0;
+  border: 2px solid #8e8e99;
+  border-radius: 50%;
+  background: transparent;
+  cursor: inherit;
+}
+.identity .community-rule .community-notification-mode input[type="radio"]:checked {
+  border: 6px solid #5865f2;
+  background: #fff;
+}
+.identity .community-rule .community-notification-mode:has(input:focus-visible) {
+  outline: 2px solid var(--focus, #00a8fc);
+  outline-offset: -2px;
+}
+.community-notification-mode > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.community-notification-modes:disabled .community-notification-mode {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.identity .chat-notification-popup {
+  width: 320px;
+  padding: 8px;
+}
+.identity .chat-notification-popup .community-notification-modes > legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.identity .chat-notification-popup .community-rule .community-notification-mode {
+  padding: 8px;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+}
+.identity .chat-notification-popup .community-rule .community-notification-mode:hover {
+  background: #97979f29;
+}
+.identity
+  .chat-notification-popup
+  .community-rule
+  .community-notification-mode
+  input[type="radio"] {
+  order: 1;
+  margin-left: auto;
+}
+.identity .chat-notification-popup .community-rule > label {
+  min-width: 0;
+}
+.identity .chat-header-tools .chat-notification-popup .select-field > button[role="combobox"] {
+  height: 40px;
+  min-height: 40px;
+  padding: 0 12px;
+  background: #202024;
+  color: #f2f2f3;
+  font-size: 16px;
+}

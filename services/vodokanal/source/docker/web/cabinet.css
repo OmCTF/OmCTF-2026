@@ -1,0 +1,113 @@
+
+#application[data-cabinet-ready] .dashboard > [data-cabinet-page]:not([data-cabinet-active]) { display:none!important; }
+body.service-site:has(#application:not([hidden])) { background:#f3f5f7; }
+body.service-site:has(#application:not([hidden])) .site-chrome .rv-wrap { width:min(1360px,calc(100% - 48px)); }
+body.service-site:has(#application:not([hidden])) .site-chrome .rv-header-main { min-height:66px;gap:20px; }
+body.service-site:has(#application:not([hidden])) .site-chrome :is(.rv-nav,.rv-phone,.rv-header-request) { display:none; }
+body.service-site:has(#application:not([hidden])) .rv-brand>svg { width:28px;height:36px; }
+body.service-site:has(#application:not([hidden])) .rv-brand>span { font-size:1.36rem;letter-spacing:.025em; }
+body.service-site:has(#application:not([hidden])) .rv-brand small { font-size:.79rem;margin-top:3px; }
+body.service-site:has(#application:not([hidden])) .rv-header-account { margin-left:auto;font-size:.93rem; }
+body.service-site:has(#application:not([hidden])) .rv-account-icon { width:32px;height:32px; }
+body.service-site #application:not([hidden]) { grid-template-columns:216px minmax(0,1fr);gap:28px;width:min(1360px,calc(100% - 48px));margin:24px auto 40px;min-height:calc(100dvh - 154px); }
+body.service-site #application .sidebar { padding:18px 10px 12px;border:1px solid #e0e6eb;border-radius:8px;top:18px;max-height:calc(100dvh - 36px); }
+body.service-site #application .nav-caption { padding:0 6px;margin:0 6px 15px;font-size:.72rem;letter-spacing:.1em;color:#81909f;font-weight:650; }
+body.service-site #application .navigation { gap:3px; }
+body.service-site #application .nav-item { padding:9px 11px;min-height:36px;font-size:.93rem;line-height:1.45;border:0;border-radius:4px;color:#44556a; }
+body.service-site #application .nav-item.selected { color:#075f9a;background:#eaf3fa;font-weight:600;box-shadow:inset 3px 0 #087bbd; }
+body.service-site #application .nav-section { padding:20px 11px 7px;margin:0;color:#8a96a3;font-size:.72rem;letter-spacing:.08em; }
+body.service-site #application .sidebar-bottom { display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin:18px 0 0;padding:16px 11px 3px;border-top:1px solid #e7ecf0; }
+body.service-site #application .sidebar-bottom a { color:#708094;font-size:.86rem;text-decoration:none; }
+body.service-site #application .topbar { padding:0;min-height:36px;background:transparent;border:0;border-radius:0; }
+body.service-site #application .breadcrumb { color:#8894a2;font-size:.86rem;line-height:1.5; }
+body.service-site #application .breadcrumb strong { color:#586b7f;font-weight:500; }
+body.service-site #application .breadcrumb span { color:#b4bec8;margin-inline:10px; }
+body.service-site #application .topbar #logout-button { border-color:transparent;background:transparent;font-size:.86rem;min-height:36px;padding:5px 10px;color:#6b7c8d; }
+body.service-site #application .service-context { padding:6px 0 14px;min-height:0;gap:8px 12px;border:0;border-bottom:1px solid #e0e6eb;border-radius:0;background:transparent;align-items:center; }
+body.service-site #application .service-context p { margin:0;font-size:.86rem;color:#81909f; }
+body.service-site #application .service-context strong { color:#516478;font-weight:500; }
+body.service-site #application .service-context a { min-height:28px;font-size:.86rem;text-decoration:none; }
+body.service-site #application .dashboard { padding:24px 0 0; }
+body.service-site #application .page-heading { align-items:flex-start;gap:18px;margin:0 0 22px; }
+body.service-site #application .page-heading h1 { margin:0;font-size:1.85rem;line-height:1.25;font-weight:600;letter-spacing:-.025em;color:#233d5d; }
+body.service-site #application .page-heading .muted { margin:8px 0 0;font-size:.93rem;color:#7c8a99; }
+body.service-site #application #refresh-button { font-size:.86rem;min-height:34px;padding:6px 11px;background:transparent;border-color:#d7e0e8;color:#61768b; }
+body.service-site #application .profile-card { display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #e0e6eb;border-radius:7px;padding:18px 20px;color:#233d5d;margin:0 0 26px; }
+body.service-site #application .profile-avatar { flex:0 0 42px;width:42px;height:42px;border-radius:50%;background:#e9f2f8;color:#1378b1;font-size:1.29rem; }
+body.service-site #application .profile-text { min-width:0; }
+body.service-site #application .profile-text h2 { margin:4px 0 0;color:#233d5d;font-size:1.21rem;line-height:1.3;font-weight:600;overflow-wrap:anywhere; }
+body.service-site #application .profile-text .overline { color:#8b97a4;font-size:.72rem;letter-spacing:.08em; }
+body.service-site #application .profile-status { margin-left:auto;display:flex;align-items:flex-end;gap:5px;font-size:.79rem;color:#8895a3; }
+body.service-site #application .profile-status .status-pill { padding:3px 0;background:transparent;border:0;color:#4b8c72;font-size:.79rem; }
+body.service-site #application #session-summary { color:#8895a3;font-size:.79rem; }
+body.service-site #application .cabinet-overview h2 { margin:0 0 14px;color:#3b5067;font-size:1.07rem;font-weight:600; }
+body.service-site #application .cabinet-shortcuts { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px; }
+body.service-site #application .cabinet-shortcut { position:relative;display:grid;grid-template-columns:36px minmax(0,1fr);align-content:center;column-gap:16px;row-gap:5px;min-height:126px;padding:22px 46px 22px 22px;border:1px solid #dde5ec;border-radius:7px;background:#fff;text-decoration:none;color:#708197; }
+body.service-site #application .cabinet-shortcut:hover { border-color:#9dc2db;background:#fafdff; }
+body.service-site #application .cabinet-shortcut strong { grid-column:2;font-size:1.07rem;line-height:1.4;font-weight:600;color:#274663; }
+body.service-site #application .cabinet-shortcut>span:not([class]) { grid-column:2;font-size:.86rem;line-height:1.6; }
+body.service-site #application .shortcut-symbol { grid-row:1/3;align-self:center;width:28px;height:28px;color:#1888c2;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round; }
+body.service-site #application .shortcut-arrow { position:absolute;right:22px;top:50%;transform:translateY(-50%);color:#9cbbd1;font-size:1.36rem; }
+body.service-site #application .card { border-color:#e0e6eb;border-radius:7px;padding:22px;margin-bottom:20px; }
+body.service-site #application .card h2 { margin-top:0;font-size:1.3rem; }
+body.service-site #application[data-cabinet-ready] .dashboard > .card[data-cabinet-active] > h2 { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap; }
+body.service-site #application .card-number { display:none; }
+body.service-site #application .card-heading .overline { font-size:.72rem;letter-spacing:.08em;color:#8a98a6; }
+body.service-site #application :is(input:not([type="checkbox"]):not([type="radio"]),select,textarea) { font-size:.93rem;line-height:1.5;border-radius:4px;border-color:#cfdbe5;min-height:38px; }
+body.service-site #application :is(button,.button) { min-height:36px;font-size:.93rem;line-height:1.45;border-radius:4px;padding:8px 13px; }
+body.service-site #application :is(label,.field label) { font-size:.86rem;color:#586a7e; }
+body.service-site #application .portal-context-note { font-size:.93rem;line-height:1.6;margin-block:0 18px; }
+body.service-site #application .resident-metering { background:transparent;border:0;padding:0; }
+body.service-site #application #metering.resident-metering>.resident-step { background:#fff;border:1px solid #e0e6eb;border-radius:7px;padding:20px 22px;margin:0 0 16px; }
+body.service-site #application #metering.resident-metering>.resident-step h3 { font-size:1rem;color:#324e68;margin:0 0 14px; }
+body.service-site #application #metering.resident-metering .resident-toolbar { display:flex;align-items:flex-end;flex-wrap:wrap;gap:10px;margin:12px 0; }
+body.service-site #application #metering.resident-metering .resident-toolbar .field { flex:1 1 290px;max-width:580px; }
+body.service-site #application #metering.resident-metering .resident-toolbar .button { flex:0 1 auto; }
+body.service-site #application #metering.resident-metering .resident-status { background:#edf4f9;border:0;border-radius:4px;color:#55768f;padding:10px 14px;font-size:.86rem; }
+body.service-site #application #metering.resident-metering .muted { font-size:.86rem;line-height:1.6; }
+body.service-site #application #metering[data-meter-stage="account"] > .resident-step:not([aria-labelledby="meter-account-heading"]) { display:none; }
+body.service-site #application #metering[data-meter-stage="device"] > .resident-step:is([aria-labelledby="meter-reading-heading"],[aria-labelledby="meter-history-heading"]) { display:none; }
+body.service-site #application #metering[data-staff-available="false"] > .meter-staff-details { display:none; }
+body.service-site #application #metering #meter-load-installations-button:disabled { display:none; }
+body.service-site #application #meter-authority-note:empty { display:none; }
+body.service-site #application #identity-account { max-width:840px; }
+body.service-site #application #identity-account .identity-field input { max-width:600px; }
+body.service-site #application #identity-account .identity-actions { display:flex;flex-wrap:wrap;gap:9px;margin-top:16px; }
+body.service-site #application #identity-account .identity-actions button { flex:0 1 auto; }
+body.service-site #application .workspace-grid { gap:18px; }
+body.service-site #application .dashboard-footer { border-top:0;padding-top:8px;color:#99a5b1; }
+
+@media(max-width:1050px) {
+  body.service-site #application:not([hidden]) { grid-template-columns:196px minmax(0,1fr);gap:20px; }
+  body.service-site #application .cabinet-shortcuts { grid-template-columns:1fr; }
+  body.service-site #application .profile-status { max-width:180px; }
+}
+@media(max-width:760px) {
+  body.service-site #application:not([hidden]) { display:block;width:calc(100% - 28px);margin-top:14px; }
+  body.service-site #application .sidebar { position:static;max-height:none;margin-bottom:18px;padding:7px 10px; }
+  body.service-site #application .service-navigation>summary { display:list-item;min-height:44px;padding:10px 7px;font-size:1rem; }
+  body.service-site #application .sidebar :is(.nav-caption,.sidebar-bottom) { display:none; }
+  body.service-site #application .nav-item { min-height:44px;font-size:1rem;padding:10px 11px; }
+  body.service-site #application .dashboard { padding-top:20px; }
+  body.service-site #application .profile-card { padding:16px;gap:12px;flex-wrap:wrap; }
+  body.service-site #application .profile-status { margin-left:54px;max-width:none;align-items:flex-start; }
+}
+@media(max-width:640px) {
+  body.service-site:has(#application:not([hidden])) .site-chrome .rv-wrap { width:calc(100% - 28px); }
+  body.service-site:has(#application:not([hidden])) .site-chrome .rv-header-main { min-height:60px;gap:12px; }
+  body.service-site:has(#application:not([hidden])) .rv-brand>span { font-size:min(1rem,20px); }
+  body.service-site:has(#application:not([hidden])) .rv-brand small { display:none; }
+  body.service-site:has(#application:not([hidden])) .rv-header-account { font-size:0;gap:0; }
+  body.service-site #application .page-heading h1 { font-size:1.5rem; }
+  body.service-site #application .page-heading { margin-bottom:18px; }
+  body.service-site #application .page-heading .muted { font-size:.93rem; }
+  body.service-site #application #refresh-button { font-size:0;min-width:44px;min-height:44px;padding:10px; }
+  body.service-site #application #refresh-button>span { font-size:1.29rem; }
+  body.service-site #application :is(button,.button,.service-context a,.topbar #logout-button) { min-height:44px; }
+  body.service-site #application :is(input:not([type="checkbox"]):not([type="radio"]),select,textarea) { min-height:44px;font-size:1rem; }
+  body.service-site #application .card,body.service-site #application #metering.resident-metering>.resident-step { padding:18px 16px; }
+  body.service-site #application .cabinet-shortcut { min-height:118px;padding:20px 42px 20px 16px;column-gap:12px; }
+  body.service-site #application .profile-status { font-size:.86rem; }
+  body.service-site #application .service-context { flex-wrap:wrap;gap:0 10px; }
+  body.service-site #application .service-context p:first-child { flex-basis:auto; }
+}

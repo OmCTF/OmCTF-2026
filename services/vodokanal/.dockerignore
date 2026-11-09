@@ -1,0 +1,6 @@
+.local-credentials
+license-accounts.json
+license-targets.csv
+.env
+license-input
+backups

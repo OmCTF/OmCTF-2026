@@ -1,0 +1,12 @@
+services:
+  web:
+    environment:
+      WEB_LISTEN_TLS: " ssl"
+    volumes:
+      - ./deploy/tls/ssl.conf:/etc/nginx/tls/ssl.conf:ro
+      - ./tls/runtime:/run/tls:ro
+    healthcheck:
+      test: ["CMD", "wget", "--no-check-certificate", "-q", "-O", "/dev/null", "https://127.0.0.1:8080/"]
+      interval: 5s
+      timeout: 3s
+      retries: 12

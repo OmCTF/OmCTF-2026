@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+  <HTTPService uuid="1500d714-96d9-df0d-8701-f153ef381ce7">
+    <Properties>
+      <Name>СервисСаморегистрации</Name>
+      <Synonym>
+        <v8:item>
+          <v8:lang>ru</v8:lang>
+          <v8:content>СервисСаморегистрации</v8:content>
+        </v8:item>
+      </Synonym>
+      <Comment />
+      <RootURL>identity</RootURL>
+      <ReuseSessions>DontUse</ReuseSessions>
+      <SessionMaxAge>20</SessionMaxAge>
+    </Properties>
+    <ChildObjects>
+      <URLTemplate uuid="87c9c88c-0373-3ae7-f0ad-e60ce4570eab">
+        <Properties>
+          <Name>Регистрация</Name>
+          <Synonym />
+          <Comment />
+          <Template>/register</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="07572af3-25e5-54f4-4ef7-5429f378c967">
+            <Properties>
+              <Name>РегистрацияPOST</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>РегистрацияPOST</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="18b99f03-44c6-83ad-9419-a847c97a6570">
+        <Properties>
+          <Name>ПочтовыйЯщик</Name>
+          <Synonym />
+          <Comment />
+          <Template>/mailbox</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="4be62f48-3ff0-a053-dcd9-df7cacb23813">
+            <Properties>
+              <Name>ПочтовыйЯщикPOST</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ПочтовыйЯщикPOST</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="b08b4f12-14ba-9f72-7fad-eb2225577969">
+        <Properties>
+          <Name>ЗапросВосстановления</Name>
+          <Synonym />
+          <Comment />
+          <Template>/recovery/request</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="f15aa105-be26-1fd1-dc9a-025bd6f3baca">
+            <Properties>
+              <Name>ЗапросВосстановленияPOST</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ЗапросВосстановленияPOST</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+      <URLTemplate uuid="50ad61b4-1f4f-04ff-585d-220263547911">
+        <Properties>
+          <Name>ЗавершениеВосстановления</Name>
+          <Synonym />
+          <Comment />
+          <Template>/recovery/complete</Template>
+        </Properties>
+        <ChildObjects>
+          <Method uuid="fec0fe27-3e53-d967-ca63-f280b4d301b4">
+            <Properties>
+              <Name>ЗавершениеВосстановленияPOST</Name>
+              <Synonym />
+              <Comment />
+              <HTTPMethod>POST</HTTPMethod>
+              <Handler>ЗавершениеВосстановленияPOST</Handler>
+            </Properties>
+          </Method>
+        </ChildObjects>
+      </URLTemplate>
+    </ChildObjects>
+  </HTTPService>
+</MetaDataObject>

@@ -1,0 +1,8 @@
+tasks:
+  - name: vodokanal
+    checker: vodokanal/checker.py
+    checker_type: pfr_balanced
+    checker_timeout: 35
+    puts: 2
+    gets: 2
+    places: 2

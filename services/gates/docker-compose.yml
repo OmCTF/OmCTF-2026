@@ -1,0 +1,88 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    command: ["postgres", "-c", "hba_file=/etc/postgresql/pg_hba.conf"]
+    environment:
+      POSTGRES_USER: kpp7
+      POSTGRES_DB: kpp7
+      POSTGRES_PASSWORD: ${KPP_DATABASE_PASSWORD:?Set KPP_DATABASE_PASSWORD to a deployment-specific URL-safe secret}
+      POSTGRES_INITDB_ARGS: --auth-host=scram-sha-256
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./postgres/pg_hba.conf:/etc/postgresql/pg_hba.conf:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kpp7"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  redis:
+    image: redis:7.4.2-alpine
+    restart: unless-stopped
+    command:
+      - redis-server
+      - --bind
+      - 0.0.0.0
+      - --protected-mode
+      - "no"
+      - --aclfile
+      - /usr/local/etc/redis/users.acl
+      - --save
+      - ""
+      - --appendonly
+      - "no"
+    volumes:
+      - ./redis-config/users.acl:/usr/local/etc/redis/users.acl:ro
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  worker:
+    build: .
+    image: gateguardian-ad:local
+    command: ["./gateguardian", "worker"]
+    restart: unless-stopped
+    environment:
+      KPP_DATABASE_URL: postgresql+asyncpg://kpp7:${KPP_DATABASE_PASSWORD:?Set KPP_DATABASE_PASSWORD to a deployment-specific URL-safe secret}@postgres:5432/kpp7
+      KPP_REDIS_URL: redis://redis:6379/0
+      KPP_REGISTRY_URL_PREFIX: http://web:8000
+      KPP_RUNTIME_KEY_FILE: /run/kpp7/master.key
+      KPP_MASTER_KEY: ${KPP_MASTER_KEY:-}
+    volumes:
+      - runtime-secrets:/run/kpp7
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  kpp7:
+    build: .
+    image: gateguardian-ad:local
+    restart: unless-stopped
+    ports:
+      - "${KPP_SERVICE_PORT:-7777}:8000"
+    environment:
+      KPP_DATABASE_URL: postgresql+asyncpg://kpp7:${KPP_DATABASE_PASSWORD:?Set KPP_DATABASE_PASSWORD to a deployment-specific URL-safe secret}@postgres:5432/kpp7
+      KPP_REDIS_URL: redis://redis:6379/0
+      KPP_REGISTRY_URL_PREFIX: http://web:8000
+      KPP_RUNTIME_KEY_FILE: /run/kpp7/master.key
+      KPP_MASTER_KEY: ${KPP_MASTER_KEY:-}
+    volumes:
+      - runtime-secrets:/run/kpp7
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      default:
+        aliases:
+          - web
+
+volumes:
+  pgdata:
+  runtime-secrets:

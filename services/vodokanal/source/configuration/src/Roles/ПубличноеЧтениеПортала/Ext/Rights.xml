@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Rights xmlns="http://v8.1c.ru/8.2/roles" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Rights" version="2.21">
+  <setForNewObjects>false</setForNewObjects>
+  <setForAttributesByDefault>true</setForAttributesByDefault>
+  <independentRightsOfChildObjects>false</independentRightsOfChildObjects>
+  <object>
+    <name>Catalog.ПубликацииПортала</name>
+    <right>
+      <name>Read</name>
+      <value>true</value>
+      <restrictionByCondition>
+        <condition>ГДЕ ЛОЖЬ</condition>
+      </restrictionByCondition>
+      <restrictionByCondition>
+        <field>Ref</field>
+        <field>DeletionMark</field>
+        <field>РабочееПространство</field>
+        <field>КлючПубликации</field>
+        <field>Вид</field>
+        <field>Версия</field>
+        <field>Состояние</field>
+        <field>Заголовок</field>
+        <field>Текст</field>
+        <field>ДанныеJSON</field>
+        <field>ДляЖителя</field>
+        <field>ДляОрганизации</field>
+        <field>ДействуетС</field>
+        <field>ДействуетПо</field>
+        <field>ДатаПубликации</field>
+        <field>ДатаИзменения</field>
+        <condition>ГДЕ НЕ ПометкаУдаления И Состояние В ("Published", "Archived") И РабочееПространство.Состояние = "Active" И НЕ РабочееПространство.ПометкаУдаления</condition>
+      </restrictionByCondition>
+    </right>
+  </object>
+  <object>
+    <name>Catalog.РабочиеПространства</name>
+    <right>
+      <name>Read</name>
+      <value>true</value>
+      <restrictionByCondition>
+        <condition>ГДЕ ЛОЖЬ</condition>
+      </restrictionByCondition>
+      <restrictionByCondition>
+        <field>Ref</field>
+        <field>DeletionMark</field>
+        <field>Состояние</field>
+        <condition>ГДЕ НЕ ПометкаУдаления И Состояние = "Active"</condition>
+      </restrictionByCondition>
+    </right>
+  </object>
+  <object>
+    <name>HTTPService.СервисПубличногоПорталаHTTP.URLTemplate.Сводка.Method.Сводка</name>
+    <right>
+      <name>Use</name>
+      <value>true</value>
+    </right>
+  </object>
+  <object>
+    <name>HTTPService.СервисПубличногоПорталаHTTP.URLTemplate.Услуги.Method.Услуги</name>
+    <right>
+      <name>Use</name>
+      <value>true</value>
+    </right>
+  </object>
+  <object>
+    <name>HTTPService.СервисПубличногоПорталаHTTP.URLTemplate.Публикации.Method.Публикации</name>
+    <right>
+      <name>Use</name>
+      <value>true</value>
+    </right>
+  </object>
+  <object>
+    <name>HTTPService.СервисПубличногоПорталаHTTP.URLTemplate.Вопросы.Method.Вопросы</name>
+    <right>
+      <name>Use</name>
+      <value>true</value>
+    </right>
+  </object>
+</Rights>

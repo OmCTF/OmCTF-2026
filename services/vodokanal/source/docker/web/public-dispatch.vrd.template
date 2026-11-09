@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<point xmlns="http://v8.1c.ru/8.2/virtual-resource-system"
+    base="/public-dispatch"
+    ib="Srvr=&quot;onec:1541&quot;;Ref=&quot;vodokanal&quot;;Usr=&quot;vodokanal_intake_gateway&quot;;Pwd=&quot;__DISPATCH_GATEWAY_PASSWORD__&quot;;"
+    enable="false">
+    <ws pointEnableCommon="false"/>
+    <httpServices publishByDefault="false" publishExtensionsByDefault="false">
+        <service name="СервисГостевыхОбращений" rootUrl="dispatch" enable="true"/>
+    </httpServices>
+</point>

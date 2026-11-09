@@ -1,0 +1,27 @@
+api_version: arena/v1
+name: treasury
+version: '1.0.0'
+runtime:
+  port: 9090
+  dockerfile: Dockerfile
+submission:
+  format: source
+  max_bytes: 16384
+  max_ahead: 5
+  interval_seconds: 5
+roles: [raider, guard]
+rules:
+  period_rounds: 3
+  announce_ahead: 3
+pairing: directed
+series:
+  matches: 1
+  shared_scenarios: false
+  aggregate: sum
+scoring:
+  policy: captures
+  max_captures: 3
+  max_points: 3
+defaults: [guard]
+disclosure:
+  replay: public
